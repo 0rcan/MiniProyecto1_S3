@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2512db5d0b7457a537ebb8aeae209dc0e3f02711
 =======
@@ -8,6 +9,13 @@
 <<<<<<< HEAD
 >>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
 >>>>>>> 0b6817cb4a3a48b5e68884081d776d2003b8dfdb
+=======
+=======
+<<<<<<< HEAD
+>>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
+=======
+>>>>>>> caa6ccb4adfdd03bb480a3cf3a014a444c373ab9
+>>>>>>> 0f25c18231160a977becb4d9b5e2dc65ba013fa1
 import javax.swing.JOptionPane;
 public class Soldado{ //Clase Principal Soldado 
     
@@ -32,6 +40,7 @@ public class Soldado{ //Clase Principal Soldado
     public Soldado() {
         
     }
+}
 
 
     /////////
@@ -132,7 +141,10 @@ public class Soldado{ //Clase Principal Soldado
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 0f25c18231160a977becb4d9b5e2dc65ba013fa1
 
 
 =======
@@ -149,4 +161,11 @@ public class Soldado {
 >>>>>>> 2512db5d0b7457a537ebb8aeae209dc0e3f02711
 =======
 >>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
+<<<<<<< HEAD
 >>>>>>> 0b6817cb4a3a48b5e68884081d776d2003b8dfdb
+=======
+=======
+
+
+>>>>>>> caa6ccb4adfdd03bb480a3cf3a014a444c373ab9
+>>>>>>> 0f25c18231160a977becb4d9b5e2dc65ba013fa1
