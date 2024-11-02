@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
 import javax.swing.JOptionPane;
 public class Soldado{ //Clase Principal Soldado 
     
@@ -120,5 +124,13 @@ public class Soldado{ //Clase Principal Soldado
 
 
 }
+<<<<<<< HEAD
 
 
+=======
+=======
+public class Soldado {
+    
+}
+>>>>>>> a4b080c79c2258554f842a0a6e3b962a0220aff5
+>>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
