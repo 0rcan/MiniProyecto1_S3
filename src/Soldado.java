@@ -22,8 +22,7 @@ public class Soldado{ //Clase Principal Soldado
     public Soldado() {
         
     }
-}
-
+    
 
     /////////
     //CREAR//
@@ -47,6 +46,11 @@ public class Soldado{ //Clase Principal Soldado
                 nuevoSoldadoRaso.crearSoldado();
                 break;
 
+            case "4":
+                Coronel nuevoCoronel = new Coronel();
+                nuevoCoronel.crearSoldado();
+            break;
+
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
 
@@ -54,7 +58,7 @@ public class Soldado{ //Clase Principal Soldado
         }
         
     }
-
+    
     ///////////
     //MOSTRAR//
     ///////////
@@ -77,6 +81,11 @@ public class Soldado{ //Clase Principal Soldado
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
                 nuevoSoldadoRaso.mostrarInformacion();
                 break;
+
+            case "4":
+                Coronel nuevoCoronel = new Coronel();
+                nuevoCoronel.mostrarInformacion();
+            break;
             
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Mostrar Soldado", JOptionPane.ERROR_MESSAGE);
@@ -108,6 +117,11 @@ public class Soldado{ //Clase Principal Soldado
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
                 nuevoSoldadoRaso.modificarSoldado();
                 break;
+
+            case "4":
+                Coronel nuevoCoronel = new Coronel();
+                nuevoCoronel.modificarSoldado();
+            break;
             
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Modificar Soldado", JOptionPane.ERROR_MESSAGE);
@@ -119,7 +133,4 @@ public class Soldado{ //Clase Principal Soldado
 
     }
 
-
 }
-
-
