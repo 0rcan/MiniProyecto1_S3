@@ -96,6 +96,59 @@ public class Coronel extends Rango implements OperacionesMilitares{
                 }
         
     }
+    //Mostrar informacion
+    @Override
+    public void mostrarInformacion() {
+
+        //Variable para verificar si el soldado fue encontrado
+        boolean encontrado = false;
+        
+        //Datos que se compararan con la lista 
+        rango = "4";
+        nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del coronel: ","Información Coronel ", JOptionPane.QUESTION_MESSAGE);
+        id = JOptionPane.showInputDialog(null, "Ingrese el ID del coronel: ","Información Coronel ", JOptionPane.QUESTION_MESSAGE);
+    
+        int contador = 0;
+        //Siclo para recorrer la lista
+        for (Coronel soldado : listaCoronel) {
+
+            System.out.println(listaCoronel.size());
+            //Condicion para verificar si el soldado existe comparando con los datos ingresados
+            if(nombre.equals(soldado.nombre) && rango.equals(soldado.rango) && id.equals(soldado.id)){
+                
+                //Si se cumple muestra lo siguiente
+                JOptionPane.showMessageDialog(null, 
+                "Nombre: " + soldado.nombre + "\n" +
+                "ID: " + soldado.id + "\n" +
+                "Rango: " + soldado.rango + "\n" +
+                "Nivel: " + soldado.nivel  + "\n" +
+                "Estrategia del coronel: " + soldado.estrategia + "\n", "Información Coronel ", JOptionPane.INFORMATION_MESSAGE);
+                
+                //Cuando el contador este igualado al indice se imprime en pantalla
+                JOptionPane.showMessageDialog(null, "Misión: " + misionCoronel.get(contador), "Información Coronel ", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Reporte: " + reportarCoronel.get(contador), "Información Coronel ", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Acción: " + accionCoronel.get(contador), "Información Coronel ", JOptionPane.INFORMATION_MESSAGE);
+                
+                //asignarMision(mision);
+
+                System.out.println("x");
+
+                //Si el soldado fue encontrado la varieable se actualiza
+                encontrado = true;
+                break;
+            }else{
+                contador++;//incrementamos el contador para que este en el mismo indice que el soldado
+            }
+        }
+        
+        
+        //Si el soldado no fue encontrado se muestra este mensaje
+        if (encontrado == false) {
+            JOptionPane.showMessageDialog(null, "No se encontró el Coronel ", "Información Coronel ", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    //Modificar soldado
+    
 
 
 
