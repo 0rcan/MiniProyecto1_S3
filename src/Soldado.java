@@ -54,6 +54,70 @@ public class Soldado{ //Clase Principal Soldado
         
     }
 
+    ///////////
+    //MOSTRAR//
+    ///////////
+
+    public static void mostrar(){
+
+        //Variable que almacena en que rango nos encontramos
+        String rango = JOptionPane.showInputDialog(null,
+            "[1] SoldadoRaso \n" +
+            "[2] Teniente \n" +
+            "[3] Capitan \n" +
+            "[4] Coronel \n" +
+            
+        "\nIngrese el rango del soldado:", "Información Soldado", JOptionPane.QUESTION_MESSAGE);
+        
+        //Dependiendo del rango ejecuta un metodo en una clase diferente
+        //En este caso se muestra la informacion de un soldado
+        switch (rango) {
+            case "1":
+                SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
+                nuevoSoldadoRaso.mostrarInformacion();
+                break;
+            
+            default:
+                JOptionPane.showMessageDialog(null, "Rango no valido", "Mostrar Soldado", JOptionPane.ERROR_MESSAGE);
+
+                break;
+        }
+
+    }
+
+    /////////////
+    //MODIFICAR//
+    /////////////
+
+    public static void modificar() {
+        
+        //Variable que almacena en que rango nos encontramos
+        String rango = JOptionPane.showInputDialog(null,
+            "[1] SoldadoRaso \n" +
+            "[2] Teniente \n" +
+            "[3] Capitan \n" +
+            "[4] Coronel \n" +
+        
+        "\nIngrese el rango del soldado:", "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
+
+        //Dependiendo del rango ejecuta un metodo en una clase diferente
+        //En este caso se modifica la información de un soldado
+        switch (rango) {
+            case "1":
+                SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
+                nuevoSoldadoRaso.modificarSoldado();
+                break;
+            
+            default:
+                JOptionPane.showMessageDialog(null, "Rango no valido", "Modificar Soldado", JOptionPane.ERROR_MESSAGE);
+
+                break;
+        }
+
+
+
+    }
+
 
 }
 
