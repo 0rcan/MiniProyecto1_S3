@@ -59,9 +59,44 @@ public class Coronel extends Rango implements OperacionesMilitares{
         //El polimorfismo se encarga de añadir el reporte a la lista
         reportarCoronel.add(reporte);
         System.out.println( "Reporte: " + reporte);
-        
-
+       
     }
+    //Crear soldado
+    @Override
+    public void crearSoldado() {
+
+        //Datos que se compararan con la lista 
+        rango = "4";
+
+        nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del coronel: ", "Crear Coronel ", JOptionPane.QUESTION_MESSAGE);
+        id = JOptionPane.showInputDialog(null,"Ingrese el ID del coronel: ", "Crear Coronel ", JOptionPane.QUESTION_MESSAGE);
+        nivel = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el nivel del coronel: ", "Crear Coronel ", JOptionPane.QUESTION_MESSAGE)); 
+        estrategia = JOptionPane.showInputDialog(null,"Ingrese la estrategia del coronel: ", "Crear Coronel ", JOptionPane.QUESTION_MESSAGE); 
+        
+        String mision = JOptionPane.showInputDialog(null, "Asigne una misíon al Coronel: ", "Asignar Misión", JOptionPane.QUESTION_MESSAGE);
+        
+        //Asignamos una mision al soldado
+        asignarMision(mision); //Se asigna la mision al soldado
+        
+        //Reportamos el estado del soldado
+        reportarEstado();
+        realizarAccion();
+
+        Coronel nuevoCoronel = new Coronel(estrategia, nivel,nombre, id,rango);
+                
+                //Verificacion si el ID existe en la lista
+                if(!idExisteEnLista(listaCoronel, id)){
+                    
+                    listaCoronel.add(nuevoCoronel); //Se cumple la condicion se agrega el soldado
+                    
+                    JOptionPane.showMessageDialog(null, "Soldado creado y agregado", "Crear Coronel ", JOptionPane.INFORMATION_MESSAGE);
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Coronel ", JOptionPane.ERROR_MESSAGE);
+                }
+        
+    }
+
 
 
 
