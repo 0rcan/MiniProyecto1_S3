@@ -10,4 +10,8 @@ https://lucid.app/lucidchart/9f50987e-2a03-4713-ae76-e6769f31069e/edit?viewport_
 
 [ REFERENCIAS ]
 
+<<<<<<< HEAD
 https://github.com/jodatm/
+=======
+https://github.com/jodatm/
+>>>>>>> 036fc60a1e9928950d87e516b97e9f8eacd4fb4e
