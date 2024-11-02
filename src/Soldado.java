@@ -23,3 +23,5 @@ public class Soldado{ //Clase Principal Soldado
         
     }
 }
+
+
