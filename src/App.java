@@ -24,10 +24,10 @@ public class App {
                         Soldado.crear();
                         break;
                     case "2":
-                        System.out.println("B");
+                        Soldado.mostrar();
                         break;
                     case "3":
-                        System.out.println("P");
+                        Soldado.modificar();
                         break;
                     case "0":
                         System.exit(0);

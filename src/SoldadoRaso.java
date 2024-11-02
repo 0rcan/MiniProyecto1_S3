@@ -32,7 +32,44 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
 
     @Override
     public void crearSoldado() {
-        System.out.println("se crea soldado");
+        //Datos que se compararan con la lista 
+        rango = "1";
+
+        nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado: ", "Crear Soldado", JOptionPane.QUESTION_MESSAGE);
+        id = JOptionPane.showInputDialog(null,"Ingrese el ID del soldado: ", "Crear Soldado", JOptionPane.QUESTION_MESSAGE);
+        nivel = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el nivel del soldado: ", "Crear Soldado", JOptionPane.QUESTION_MESSAGE)); 
+        
+        
+    }
+
+    //////////////////////
+    //MOSTRARINFORMACION//
+    //////////////////////
+
+    @Override
+    public void mostrarInformacion() {
+        
+        //Datos que se compararan con la lista 
+        rango = "1";
+        nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado:","Información Soldado", JOptionPane.QUESTION_MESSAGE);
+        id = JOptionPane.showInputDialog(null, "Ingrese el ID del soldado:","Información Soldado", JOptionPane.QUESTION_MESSAGE);
+    
+    
+    }
+
+    ////////////////////
+    //MODIFICARSOLDADO//
+    ////////////////////
+
+    @Override
+    public void modificarSoldado() {
+        System.out.println("e");
+        //Datos que se compararan con la lista 
+        rango = "1";
+        nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado:","Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
+        id = JOptionPane.showInputDialog(null, "Ingrese el ID del soldado:", "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
+        
+        
     }
 
 }
