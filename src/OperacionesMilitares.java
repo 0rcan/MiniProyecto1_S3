@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public interface OperacionesMilitares {
      //Interfaces con las acciones del menu
 
@@ -8,9 +7,4 @@ public interface OperacionesMilitares {
 
      public void asignarMisison(String mision);
      public void reportarEstado();
-     
-     // comentario
-     
-
-    
 }

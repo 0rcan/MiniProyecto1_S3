@@ -21,7 +21,7 @@ public class App {
                 //Dependiendo de la opcion se ejecuta el metodo correspondiente
                 switch(opcion){
                     case "1":
-                        System.out.println("X");
+                        Soldado.crear();
                         break;
                     case "2":
                         System.out.println("B");
