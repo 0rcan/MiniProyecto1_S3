@@ -42,4 +42,29 @@ public class Coronel extends Rango implements OperacionesMilitares{
         System.out.println( "Acción: " + accion);
     }
 
+    //Metodos de la interfaz
+
+    @Override
+    public void asignarMision(String mision) {
+        //El polimorfismo se encarga de añadir la mision a la lista
+        misionCoronel.add(mision);
+        System.out.println( "Misión asignada: " + mision);
+    }
+
+    @Override
+    public void reportarEstado() {
+        
+        String reporte = JOptionPane.showInputDialog(null, "Ingrese el reporte del Coronel ", "Reportar Estado", JOptionPane.QUESTION_MESSAGE);
+                
+        //El polimorfismo se encarga de añadir el reporte a la lista
+        reportarCoronel.add(reporte);
+        System.out.println( "Reporte: " + reporte);
+        
+
+    }
+
+
+
+
+
 }
