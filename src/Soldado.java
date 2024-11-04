@@ -1,14 +1,22 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+=======
+>>>>>>> 0355571054c6e0a013cf8142544b78827a1ed065
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> 2512db5d0b7457a537ebb8aeae209dc0e3f02711
+<<<<<<< HEAD
+>>>>>>> 95efb20a7b4a604bb548b20916476d6a73ce5b01
+=======
 =======
 =======
 <<<<<<< HEAD
 >>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
 >>>>>>> 0b6817cb4a3a48b5e68884081d776d2003b8dfdb
+<<<<<<< HEAD
 =======
 =======
 <<<<<<< HEAD
@@ -16,6 +24,9 @@
 =======
 >>>>>>> caa6ccb4adfdd03bb480a3cf3a014a444c373ab9
 >>>>>>> 0f25c18231160a977becb4d9b5e2dc65ba013fa1
+=======
+>>>>>>> 123f07e25b0220ee714aaf789ef96dea7b1ce9fb
+>>>>>>> 0355571054c6e0a013cf8142544b78827a1ed065
 import javax.swing.JOptionPane;
 public class Soldado{ //Clase Principal Soldado 
     
@@ -40,8 +51,7 @@ public class Soldado{ //Clase Principal Soldado
     public Soldado() {
         
     }
-}
-
+    
 
     /////////
     //CREAR//
@@ -65,6 +75,11 @@ public class Soldado{ //Clase Principal Soldado
                 nuevoSoldadoRaso.crearSoldado();
                 break;
 
+            case "4":
+                Coronel nuevoCoronel = new Coronel();
+                nuevoCoronel.crearSoldado();
+            break;
+
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
 
@@ -72,7 +87,8 @@ public class Soldado{ //Clase Principal Soldado
         }
         
     }
-
+<<<<<<< HEAD
+    
     ///////////
     //MOSTRAR//
     ///////////
@@ -95,6 +111,11 @@ public class Soldado{ //Clase Principal Soldado
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
                 nuevoSoldadoRaso.mostrarInformacion();
                 break;
+
+            case "4":
+                Coronel nuevoCoronel = new Coronel();
+                nuevoCoronel.mostrarInformacion();
+            break;
             
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Mostrar Soldado", JOptionPane.ERROR_MESSAGE);
@@ -126,6 +147,11 @@ public class Soldado{ //Clase Principal Soldado
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
                 nuevoSoldadoRaso.modificarSoldado();
                 break;
+
+            case "4":
+                Coronel nuevoCoronel = new Coronel();
+                nuevoCoronel.modificarSoldado();
+            break;
             
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Modificar Soldado", JOptionPane.ERROR_MESSAGE);
@@ -137,9 +163,15 @@ public class Soldado{ //Clase Principal Soldado
 
     }
 
+}
+=======
+
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0355571054c6e0a013cf8142544b78827a1ed065
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -159,13 +191,20 @@ public class Soldado {
 
 
 >>>>>>> 2512db5d0b7457a537ebb8aeae209dc0e3f02711
+<<<<<<< HEAD
+>>>>>>> 95efb20a7b4a604bb548b20916476d6a73ce5b01
+=======
 =======
 >>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
 <<<<<<< HEAD
 >>>>>>> 0b6817cb4a3a48b5e68884081d776d2003b8dfdb
+<<<<<<< HEAD
 =======
 =======
 
 
 >>>>>>> caa6ccb4adfdd03bb480a3cf3a014a444c373ab9
 >>>>>>> 0f25c18231160a977becb4d9b5e2dc65ba013fa1
+=======
+>>>>>>> 123f07e25b0220ee714aaf789ef96dea7b1ce9fb
+>>>>>>> 0355571054c6e0a013cf8142544b78827a1ed065
