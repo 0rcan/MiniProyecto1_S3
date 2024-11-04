@@ -3,8 +3,8 @@ public interface OperacionesMilitares {
 
      public void crearSoldado();
      public void mostrarInformacion();
-     public void modificarSoladado();
+     public void modificarSoldado();
 
-     public void asignarMisison(String mision);
+     public void asignarMision(String mision);
      public void reportarEstado();
 }
