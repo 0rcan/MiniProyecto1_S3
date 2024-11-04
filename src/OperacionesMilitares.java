@@ -5,6 +5,6 @@ public interface OperacionesMilitares {
      public void mostrarInformacion();
      public void modificarSoldado();
 
-     public void asignarMisison(String mision);
+     public void asignarMision(String mision);
      public void reportarEstado();
 }
