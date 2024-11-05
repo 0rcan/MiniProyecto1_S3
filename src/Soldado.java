@@ -46,7 +46,14 @@ public class Soldado{ //Clase Principal Soldado
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
                 nuevoSoldadoRaso.crearSoldado();
                 break;
-
+            case "2":
+                Teniente nuevoTeniente = new Teniente();
+                nuevoTeniente.crearSoldado();
+            break;
+            case "3":
+                Capitan nuevoCapitan = new Capitan();
+                nuevoCapitan.crearSoldado();
+            break;
             case "4":
                 Coronel nuevoCoronel = new Coronel();
                 nuevoCoronel.crearSoldado();
@@ -83,7 +90,14 @@ public class Soldado{ //Clase Principal Soldado
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
                 nuevoSoldadoRaso.mostrarInformacion();
                 break;
-
+            case "2":
+                Teniente nuevoTeniente = new Teniente();
+                nuevoTeniente.mostrarInformacion();
+            break;
+            case "3":
+                Capitan nuevoCapitan = new Capitan();
+                nuevoCapitan.mostrarInformacion();
+            break;
             case "4":
                 Coronel nuevoCoronel = new Coronel();
                 nuevoCoronel.mostrarInformacion();
@@ -119,7 +133,14 @@ public class Soldado{ //Clase Principal Soldado
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
                 nuevoSoldadoRaso.modificarSoldado();
                 break;
-
+            case "2":
+                Teniente nuevoTeniente = new Teniente();
+                nuevoTeniente.modificarSoldado();
+            break;
+            case "3":
+                Capitan nuevoCapitan = new Capitan();
+                nuevoCapitan.modificarSoldado();
+            break;
             case "4":
                 Coronel nuevoCoronel = new Coronel();
                 nuevoCoronel.modificarSoldado();
