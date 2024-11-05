@@ -1,16 +1,17 @@
 import javax.swing.JOptionPane;
-public class Soldado{ //Clase Principal Soldado 
-    
+
+public class Soldado { // Clase Principal Soldado
+
     /////////////
-    //ATRIBUTOS//
+    // ATRIBUTOS//
     /////////////
 
     String nombre;
     String id;
     String rango;
-    
+
     ///////////////
-    //CONSTRUCTOR//
+    // CONSTRUCTOR//
     ///////////////
 
     public Soldado(String nombre, String id, String rango) {
@@ -18,28 +19,28 @@ public class Soldado{ //Clase Principal Soldado
         this.id = id;
         this.rango = rango;
     }
-    
+
     public Soldado() {
-        
+
     }
-    
 
     /////////
-    //CREAR//
+    // CREAR//
     /////////
 
-    public static void crear(){ 
+    public static void crear() {
 
-        //Variable que almacena en que rango nos encontramos
+        // Variable que almacena en que rango nos encontramos
         String rango = JOptionPane.showInputDialog(null,
-        "[1] SoldadoRaso \n" +
-        "[2] Teniente \n" +
-        "[3] Capitan \n" +
-        "[4] Coronel \n" +
-        "\nIngrese el rango del soldado:", "Crear Soldado", JOptionPane.QUESTION_MESSAGE);
-        
-        //Dependiendo del rango ejecuta un metodo en una clase diferente
-        //En este caso se crea un soldado
+                "[1] SoldadoRaso \n" +
+                        "[2] Teniente \n" +
+                        "[3] Capitan \n" +
+                        "[4] Coronel \n" +
+                        "\nIngrese el rango del soldado:",
+                "Crear Soldado", JOptionPane.QUESTION_MESSAGE);
+
+        // Dependiendo del rango ejecuta un metodo en una clase diferente
+        // En este caso se crea un soldado
         switch (rango) {
             case "1":
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
@@ -48,41 +49,42 @@ public class Soldado{ //Clase Principal Soldado
             case "2":
                 Teniente nuevoTeniente = new Teniente();
                 nuevoTeniente.crearSoldado();
-            break;
+                break;
             case "3":
                 Capitan nuevoCapitan = new Capitan();
                 nuevoCapitan.crearSoldado();
-            break;
+                break;
             case "4":
                 Coronel nuevoCoronel = new Coronel();
                 nuevoCoronel.crearSoldado();
-            break;
+                break;
 
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
 
                 break;
         }
-        
+
     }
-    
+
     ///////////
-    //MOSTRAR//
+    // MOSTRAR//
     ///////////
 
-    public static void mostrar(){
+    public static void mostrar() {
 
-        //Variable que almacena en que rango nos encontramos
+        // Variable que almacena en que rango nos encontramos
         String rango = JOptionPane.showInputDialog(null,
-            "[1] SoldadoRaso \n" +
-            "[2] Teniente \n" +
-            "[3] Capitan \n" +
-            "[4] Coronel \n" +
-            
-        "\nIngrese el rango del soldado:", "Información Soldado", JOptionPane.QUESTION_MESSAGE);
-        
-        //Dependiendo del rango ejecuta un metodo en una clase diferente
-        //En este caso se muestra la informacion de un soldado
+                "[1] SoldadoRaso \n" +
+                        "[2] Teniente \n" +
+                        "[3] Capitan \n" +
+                        "[4] Coronel \n" +
+
+                        "\nIngrese el rango del soldado:",
+                "Información Soldado", JOptionPane.QUESTION_MESSAGE);
+
+        // Dependiendo del rango ejecuta un metodo en una clase diferente
+        // En este caso se muestra la informacion de un soldado
         switch (rango) {
             case "1":
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
@@ -91,16 +93,16 @@ public class Soldado{ //Clase Principal Soldado
             case "2":
                 Teniente nuevoTeniente = new Teniente();
                 nuevoTeniente.mostrarInformacion();
-            break;
+                break;
             case "3":
                 Capitan nuevoCapitan = new Capitan();
                 nuevoCapitan.mostrarInformacion();
-            break;
+                break;
             case "4":
                 Coronel nuevoCoronel = new Coronel();
                 nuevoCoronel.mostrarInformacion();
-            break;
-            
+                break;
+
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Mostrar Soldado", JOptionPane.ERROR_MESSAGE);
 
@@ -110,22 +112,23 @@ public class Soldado{ //Clase Principal Soldado
     }
 
     /////////////
-    //MODIFICAR//
+    // MODIFICAR//
     /////////////
 
     public static void modificar() {
-        
-        //Variable que almacena en que rango nos encontramos
-        String rango = JOptionPane.showInputDialog(null,
-            "[1] SoldadoRaso \n" +
-            "[2] Teniente \n" +
-            "[3] Capitan \n" +
-            "[4] Coronel \n" +
-        
-        "\nIngrese el rango del soldado:", "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
 
-        //Dependiendo del rango ejecuta un metodo en una clase diferente
-        //En este caso se modifica la información de un soldado
+        // Variable que almacena en que rango nos encontramos
+        String rango = JOptionPane.showInputDialog(null,
+                "[1] SoldadoRaso \n" +
+                        "[2] Teniente \n" +
+                        "[3] Capitan \n" +
+                        "[4] Coronel \n" +
+
+                        "\nIngrese el rango del soldado:",
+                "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
+
+        // Dependiendo del rango ejecuta un metodo en una clase diferente
+        // En este caso se modifica la información de un soldado
         switch (rango) {
             case "1":
                 SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
@@ -134,23 +137,21 @@ public class Soldado{ //Clase Principal Soldado
             case "2":
                 Teniente nuevoTeniente = new Teniente();
                 nuevoTeniente.modificarSoldado();
-            break;
+                break;
             case "3":
                 Capitan nuevoCapitan = new Capitan();
                 nuevoCapitan.modificarSoldado();
-            break;
+                break;
             case "4":
                 Coronel nuevoCoronel = new Coronel();
                 nuevoCoronel.modificarSoldado();
-            break;
-            
+                break;
+
             default:
                 JOptionPane.showMessageDialog(null, "Rango no valido", "Modificar Soldado", JOptionPane.ERROR_MESSAGE);
 
                 break;
         }
-
-
 
     }
 
