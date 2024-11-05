@@ -3,19 +3,22 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-public class Capitan extends implements OperacionesMilitares { // clase hija de Rango e implementa la interfaz
-                                                               // OperacionesMilitares
+public class Capitan extends Rango implements OperacionesMilitares { // clase hija de Rango e implementa la interfaz
+                                                                     // OperacionesMilitares
 
+    /////////////
     // ATRIBUTOS//
+    /////////////
 
-    git
     int cantidadSoldadosBajoSuMando;
-    static ArrayList<Capitan> listaCapitanes = new ArrayList<>();
-    static list<String> accionCapitan = new ArrayList<>();
+    static ArrayList<Capitan> listaCapitan = new ArrayList<>();
+    static List<String> accionCapitan = new ArrayList<>();
     static List<String> misionCapitan = new ArrayList<>();
-    static List<String> reportarCapitan = new Arraylist<>();
+    static List<String> reportarCapitan = new ArrayList<>();
 
+    ///////////////
     // CONSTRUCTOR//
+    ///////////////
 
     public Capitan(int cantidadSoldadosBajoSuMando, int nivel, String nombre, String id, String rango) { // constructor
         super(nivel, nombre, id, rango);
@@ -26,7 +29,9 @@ public class Capitan extends implements OperacionesMilitares { // clase hija de 
 
     }
 
+    //////////
     // METODO//
+    //////////
 
     // Metodo para verificar si el ID ya existe en la lista
     public static boolean idExisteEnLista(List<Capitan> lista, String id) {
@@ -38,10 +43,11 @@ public class Capitan extends implements OperacionesMilitares { // clase hija de 
             }
         }
         return false;
-
     }
 
+    ////////////////////
     // METODO/ABSTRACTO//
+    ////////////////////
 
     public void realizarAccion() {
 
@@ -52,7 +58,9 @@ public class Capitan extends implements OperacionesMilitares { // clase hija de 
         System.out.println("Acción: " + accion);
     }
 
-    // metodos de la interfaz//
+    //////////////////////////
+    // metodos/de/la/interfaz//
+    //////////////////////////
 
     @Override
     public void asignarMision(String mision) {
@@ -70,9 +78,12 @@ public class Capitan extends implements OperacionesMilitares { // clase hija de 
         // El polimorfismo se encarga de añadir el reporte a la lista
         reportarCapitan.add(reporte);
         System.out.println("Reporte: " + reporte);
+
     }
 
+    ////////////////
     // CREARSOLDADO//
+    ////////////////
 
     @Override
     public void crearSoldado() {
@@ -113,6 +124,7 @@ public class Capitan extends implements OperacionesMilitares { // clase hija de 
         }
 
     }
+
     //////////////////////
     // MOSTRARINFORMACION//
     //////////////////////
@@ -174,6 +186,7 @@ public class Capitan extends implements OperacionesMilitares { // clase hija de 
                     JOptionPane.ERROR_MESSAGE);
         }
     }
+
     ////////////////////
     // MODIFICARSOLDADO//
     ////////////////////
