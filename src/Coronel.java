@@ -12,7 +12,7 @@ public class Coronel extends Rango implements OperacionesMilitares{
     static List<String> misionCoronel=new ArrayList<>();
     static List<String> reportarCoronel=new ArrayList<>();
 
-    public  Coronel (String estrategia, int nivel, String nombre, String id, String Rango){
+    public  Coronel (String estrategia, int nivel, String nombre, String id, String rango){
         super(nivel, nombre,id,rango);
         this.estrategia=estrategia;
     }

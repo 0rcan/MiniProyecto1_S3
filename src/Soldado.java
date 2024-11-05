@@ -1,28 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0355571054c6e0a013cf8142544b78827a1ed065
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2512db5d0b7457a537ebb8aeae209dc0e3f02711
-<<<<<<< HEAD
->>>>>>> 95efb20a7b4a604bb548b20916476d6a73ce5b01
-=======
-=======
-=======
-<<<<<<< HEAD
->>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
-<<<<<<< HEAD
-=======
->>>>>>> caa6ccb4adfdd03bb480a3cf3a014a444c373ab9
-=======
->>>>>>> 0b6817cb4a3a48b5e68884081d776d2003b8dfdb
->>>>>>> 123f07e25b0220ee714aaf789ef96dea7b1ce9fb
->>>>>>> 0355571054c6e0a013cf8142544b78827a1ed065
+
 import javax.swing.JOptionPane;
 public class Soldado{ //Clase Principal Soldado 
     
@@ -54,6 +30,7 @@ public class Soldado{ //Clase Principal Soldado
     /////////
 
     public static void crear(){ 
+        //System.out.println("Crear Soldado");
 
         //Variable que almacena en que rango nos encontramos
         String rango = JOptionPane.showInputDialog(null,
@@ -83,7 +60,7 @@ public class Soldado{ //Clase Principal Soldado
         }
         
     }
-<<<<<<< HEAD
+
     
     ///////////
     //MOSTRAR//
@@ -160,42 +137,5 @@ public class Soldado{ //Clase Principal Soldado
     }
 
 }
-=======
 
 
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 0355571054c6e0a013cf8142544b78827a1ed065
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-
-=======
->>>>>>> 0b6817cb4a3a48b5e68884081d776d2003b8dfdb
-=======
-public class Soldado {
-    
-}
->>>>>>> a4b080c79c2258554f842a0a6e3b962a0220aff5
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 2512db5d0b7457a537ebb8aeae209dc0e3f02711
-<<<<<<< HEAD
->>>>>>> 95efb20a7b4a604bb548b20916476d6a73ce5b01
-=======
-=======
->>>>>>> a4e71552db734f4da4e62b97e2c2dd4f36058596
-<<<<<<< HEAD
-=======
-
-
->>>>>>> caa6ccb4adfdd03bb480a3cf3a014a444c373ab9
-=======
->>>>>>> 0b6817cb4a3a48b5e68884081d776d2003b8dfdb
->>>>>>> 123f07e25b0220ee714aaf789ef96dea7b1ce9fb
->>>>>>> 0355571054c6e0a013cf8142544b78827a1ed065
