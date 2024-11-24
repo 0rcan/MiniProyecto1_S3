@@ -22,6 +22,7 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
     public BaseMilitar() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,22 +107,9 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
         buttonCrearSoldado.addActionListener(new java.awt.event.ActionListener() {
            
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                //MenuRangos menuRangos = new MenuRangos();
-                //menuRangos.setVisible(true);
-               if (evt.getSource() == buttonCrearSoldado) {
-                    MenuRangos menuRangos = new MenuRangos();
-                    menuRangos.setVisible(true);
-                }
-                if (evt.getSource() == buttonModificarInformación) {
-                    MenuRangos menuRangos = new MenuRangos();
-                    menuRangos.setVisible(true);                   
-                }
-                if (evt.getSource() == buttonMostrarInformacíon) {
-                    MenuRangos menuRangos = new MenuRangos();
-                    menuRangos.setVisible(true);
-                }
-
-                
+                MenuRangos menuRangos = new MenuRangos();
+                menuRangos.setVisible(true);
+                      
             }
             
         });
@@ -133,7 +121,7 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
         buttonMostrarInformacíon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMostrarInformacíonActionPerformed(evt);
-                MenuRangos menuRangos = new MenuRangos();
+                MenuRangosMostrar menuRangos = new MenuRangosMostrar();
                 menuRangos.setVisible(true);
                 
                 
@@ -149,8 +137,10 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 
                 buttonModificarInformaciónActionPerformed(evt);
-                Ventana2 ventana2 = new Ventana2();
-                ventana2.setVisible(true);
+                MenuRangosModificar menuRangos = new MenuRangosModificar();
+                menuRangos.setVisible(true);
+                //Ventana2 ventana2 = new Ventana2();
+                //ventana2.setVisible(true);
             }
         });
 
