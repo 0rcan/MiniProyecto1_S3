@@ -95,6 +95,19 @@ public class MenuRangos extends javax.swing.JFrame implements ItemListener, Acti
         botonRangos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRangosActionPerformed(evt);
+                if (radioSoldadoRaso.isSelected()) {
+                    SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso();
+                    nuevoSoldadoRaso.crearSoldado();
+                } else if (radioTeniente.isSelected()) {
+                    Teniente nuevoTeniente = new Teniente();
+                    nuevoTeniente.crearSoldado();
+                } else if (radioCoronel.isSelected()) {
+                    Coronel nuevoCoronel = new Coronel();
+                    nuevoCoronel.crearSoldado();
+                } else if (radioCapitan.isSelected()) {
+                    Capitan nuevoCapitan = new Capitan();
+                    nuevoCapitan.crearSoldado();
+                }
             }
         });
         ButtonGroup group = new ButtonGroup();
