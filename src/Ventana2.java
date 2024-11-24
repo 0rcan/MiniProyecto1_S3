@@ -35,7 +35,8 @@ public class Ventana2 extends javax.swing.JFrame implements ActionListener, Item
         recibeIdSoldado = new javax.swing.JTextField();
         nextIdSoldado = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        //setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(19, 71, 89));
 
@@ -151,4 +152,5 @@ public class Ventana2 extends javax.swing.JFrame implements ActionListener, Item
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
+    
 }

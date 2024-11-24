@@ -41,7 +41,7 @@ public class Ventana extends javax.swing.JFrame implements ActionListener, ItemL
         botonSiguienteRangoSoldado = new javax.swing.JButton();
         textSelecionarRango = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(19, 71, 89));
 

@@ -42,7 +42,7 @@ public class MenuRangos extends javax.swing.JFrame implements ItemListener, Acti
         radioCapitan = new javax.swing.JRadioButton();
         botonRangos = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         PanelRangos.setBackground(new java.awt.Color(19, 71, 89));
 
