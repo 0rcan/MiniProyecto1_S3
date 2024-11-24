@@ -137,8 +137,8 @@ public class Capitan extends Rango implements OperacionesMilitares { // clase hi
 
         // Datos que se compararan con la lista
         rango = "3";
-        nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del capitan: ", "Información capitan",
-                JOptionPane.QUESTION_MESSAGE);
+        //nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del capitan: ", "Información capitan",
+         //       JOptionPane.QUESTION_MESSAGE);
         id = JOptionPane.showInputDialog(null, "Ingrese el ID del capitan: ", "Información capitan",
                 JOptionPane.QUESTION_MESSAGE);
 
@@ -149,7 +149,7 @@ public class Capitan extends Rango implements OperacionesMilitares { // clase hi
             System.out.println(listaCapitan.size());
             // Condicion para verificar si el soldado existe comparando con los datos
             // ingresados
-            if (nombre.equals(soldado.nombre) && rango.equals(soldado.rango) && id.equals(soldado.id)) {
+            if (/*nombre.equals(soldado.nombre) && */rango.equals(soldado.rango) && id.equals(soldado.id)) {
 
                 // Si se cumple muestra lo siguiente
                 JOptionPane.showMessageDialog(null,
@@ -196,13 +196,13 @@ public class Capitan extends Rango implements OperacionesMilitares { // clase hi
 
         // Variable para verificar si el soldado fue encontrado
         boolean encontrado = false;
-        String nuevoId;
-        boolean idValido;
+        //String nuevoId;
+        //boolean idValido;
 
         // Datos que se compararan con la lista
         rango = "3";
-        nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del capitan: ", "Modificar capitan",
-                JOptionPane.QUESTION_MESSAGE);
+        // nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del capitan: ", "Modificar capitan",
+        //         JOptionPane.QUESTION_MESSAGE);
         id = JOptionPane.showInputDialog(null, "Ingrese el ID del capitan: ", "Modificar capitan",
                 JOptionPane.QUESTION_MESSAGE);
         int contador = 0;
@@ -211,7 +211,7 @@ public class Capitan extends Rango implements OperacionesMilitares { // clase hi
 
             // Condicion para verificar si el soldado existe comparando con los datos
             // ingresados
-            if (nombre.equals(soldado.nombre) && rango.equals(soldado.rango) && id.equals(soldado.id)) {
+            if (/*nombre.equals(soldado.nombre) &&*/ rango.equals(soldado.rango) && id.equals(soldado.id)) {
 
                 // Recordatorio no se puede modificar Rangos ya que hace conflicto con la lista
                 // donde se almacenan los soldados
@@ -230,23 +230,23 @@ public class Capitan extends Rango implements OperacionesMilitares { // clase hi
                 // do while para evitar ids repetidos
                 do {
                     // Variable para ingresar el nuevo id
-                    nuevoId = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del capitan: ",
-                            "Modificar ID capitan", JOptionPane.QUESTION_MESSAGE);
+                    //nuevoId = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del capitan: ",
+                      //      "Modificar ID capitan", JOptionPane.QUESTION_MESSAGE);
 
                     // Si el id existe entonces la variable idValido sera falsa
                     // De lo contrario sera false
-                    idValido = !idExisteEnLista(listaCapitan, nuevoId);
+                   // idValido = !idExisteEnLista(listaCapitan, nuevoId);
 
                     // convertimos la variable a lo contrario entonces se muestra el mensaje
-                    if (!idValido && nuevoId == null) {
-                        JOptionPane.showMessageDialog(null, "El ID ya existe en la lista", "Información capitan",
-                                JOptionPane.ERROR_MESSAGE);
-                    }
+                    //if (!idValido && nuevoId == null) {
+                     //   JOptionPane.showMessageDialog(null, "El ID ya existe en la lista", "Información capitan",
+                    //            JOptionPane.ERROR_MESSAGE);
+                  //  }
 
                     // Mientras siga siendo verdad
                     // seguira en el siclo hasta que el id sea diferente a uno existente
-                } while (!idValido);
-                soldado.id = nuevoId; // Se actualiza el id del soldado
+                //} while (!idValido);
+                //soldado.id = nuevoId; // Se actualiza el id del soldado
 
                 // Remplazamos el elemento de la posicion contador con su nueva mision,reprote y
                 // accion
@@ -284,8 +284,8 @@ public class Capitan extends Rango implements OperacionesMilitares { // clase hi
                 encontrado = true;
 
                 // Fin del siclo for
-                break;
-            } else {
+        break;
+} while (true);{
                 contador++;// incrementamos el contador para que este en el mismo indice que el soldado
             }
         }
@@ -297,4 +297,5 @@ public class Capitan extends Rango implements OperacionesMilitares { // clase hi
 
     }
 
+}
 }

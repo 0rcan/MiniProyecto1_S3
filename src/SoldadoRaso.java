@@ -126,7 +126,7 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
         
         //Datos que se compararan con la lista 
         rango = "1";
-        nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado:","Información Soldado", JOptionPane.QUESTION_MESSAGE);
+       // nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado:","Información Soldado", JOptionPane.QUESTION_MESSAGE);
         id = JOptionPane.showInputDialog(null, "Ingrese el ID del soldado:","Información Soldado", JOptionPane.QUESTION_MESSAGE);
     
         int contador = 0;
@@ -135,7 +135,7 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
 
             System.out.println(listaSoldadoRaso.size());
             //Condicion para verificar si el soldado existe comparando con los datos ingresados
-            if(nombre.equals(soldado.nombre) && rango.equals(soldado.rango) && id.equals(soldado.id)){
+            if(/*nombre.equals(soldado.nombre) && */rango.equals(soldado.rango) && id.equals(soldado.id)){
                 
                 //Si se cumple muestra lo siguiente
                 JOptionPane.showMessageDialog(null, 
@@ -177,19 +177,19 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
         
         //Variable para verificar si el soldado fue encontrado
         boolean encontrado = false;
-        String nuevoId;
+        //String nuevoId;
         boolean idValido;
         
         //Datos que se compararan con la lista 
         rango = "1";
-        nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado:","Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
+        //nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado:","Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
         id = JOptionPane.showInputDialog(null, "Ingrese el ID del soldado:", "Modificar Soldado", JOptionPane.QUESTION_MESSAGE);
         int contador = 0;
         //Siclo para recorrer la lista
         for (SoldadoRaso soldado : listaSoldadoRaso) {
 
             //Condicion para verificar si el soldado existe comparando con los datos ingresados
-            if(nombre.equals(soldado.nombre) && rango.equals(soldado.rango) && id.equals(soldado.id)){
+            if(/*nombre.equals(soldado.nombre) &&*/ rango.equals(soldado.rango) && id.equals(soldado.id)){
                 
                 //Recordatorio no se puede modificar Rangos ya que hace conflicto con la lista donde se almacenan los soldados
                 //Remplazo de datos
@@ -200,22 +200,21 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
                 //do while para evitar ids repetidos
                 do {
                     //Variable para ingresar el nuevo id
-                    nuevoId = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado: ", "Modificar ID Soldado", JOptionPane.QUESTION_MESSAGE);
+                    //nuevoId = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del soldado: ", "Modificar ID Soldado", JOptionPane.QUESTION_MESSAGE);
                     
                     //Si el id existe entonces la variable idValido sera falsa
                     //De lo contrario sera false
-                    idValido = !idExisteEnLista(listaSoldadoRaso, nuevoId);
+                   // idValido = !idExisteEnLista(listaSoldadoRaso, nuevoId);
 
                     //convertimos la variable a lo contrario entonces se muestra el mensaje
-                    if (!idValido && nuevoId == null) { 
-                        JOptionPane.showMessageDialog(null, "El ID ya existe en la lista", "Información Soldado", JOptionPane.ERROR_MESSAGE);
-                    }
+                    //if (!idValido && nuevoId == null) { 
+                        //JOptionPane.showMessageDialog(null, "El ID ya existe en la lista", "Información Soldado", JOptionPane.ERROR_MESSAGE);
+                    //}
 
                 //Mientras siga siendo verdad 
                 //seguira en el siclo hasta que el id sea diferente a uno existente
-                } while (!idValido);
-                soldado.id = nuevoId; //Se actualiza el id del soldado
-
+                //soldado.id = nuevoId; //Se actualiza el id del soldado
+                
                 //Remplazamos el elemento de la posicion contador con su nueva mision,reprote y accion
                 String mision = JOptionPane.showInputDialog(null, "Ingrese la nueva misión del soldado: ", "Modificar Misión", JOptionPane.QUESTION_MESSAGE);
                 misionSoldadoRaso.set(contador,mision);
@@ -233,7 +232,7 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
                 "Rango: " + soldado.rango + "\n" + 
                 "Nivel: " + soldado.nivel + "\n", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                 System.out.println("FUNCIONA");
-
+                
                 JOptionPane.showMessageDialog(null, "Misión: " + misionSoldadoRaso.get(contador), "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                 JOptionPane.showMessageDialog(null, "Reporte: " + reportarSoldadoRaso.get(contador), "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
                 JOptionPane.showMessageDialog(null, "Acción: " + accionSoldadoRaso.get(contador), "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
@@ -243,7 +242,8 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
 
                 //Fin del siclo for
                 break;
-            }else{
+            } while (true);
+            {
                 contador++;//incrementamos el contador para que este en el mismo indice que el soldado
             }
         }
@@ -254,4 +254,4 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
     
     }
 
-}
+}}
