@@ -47,8 +47,9 @@ public class crearCapitan extends javax.swing.JFrame {
         areaMisionCrearCoronel = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         areaEstrategiaCrearCoronel = new javax.swing.JTextArea();
+        botonCapitan = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelCrearCapitan.setBackground(new java.awt.Color(19, 71, 89));
 
@@ -115,6 +116,10 @@ public class crearCapitan extends javax.swing.JFrame {
         areaEstrategiaCrearCoronel.setRows(5);
         jScrollPane2.setViewportView(areaEstrategiaCrearCoronel);
 
+        botonCapitan.setBackground(new java.awt.Color(0, 153, 153));
+        botonCapitan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonCapitan.setText("Next");
+
         javax.swing.GroupLayout panelCrearCapitanLayout = new javax.swing.GroupLayout(panelCrearCapitan);
         panelCrearCapitan.setLayout(panelCrearCapitanLayout);
         panelCrearCapitanLayout.setHorizontalGroup(
@@ -139,13 +144,17 @@ public class crearCapitan extends javax.swing.JFrame {
                             .addComponent(textNivelCrearCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelAccionCrearCapitan)
                             .addComponent(textAccionCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelCrearCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelReporteCrearCapitan)
                             .addComponent(labelEstrategia)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(43, 43, 43))))
+            .addGroup(panelCrearCapitanLayout.createSequentialGroup()
+                .addGap(227, 227, 227)
+                .addComponent(botonCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 227, Short.MAX_VALUE))
         );
         panelCrearCapitanLayout.setVerticalGroup(
             panelCrearCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +192,9 @@ public class crearCapitan extends javax.swing.JFrame {
                 .addComponent(labelMisionCrearCapitan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonCapitan)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,7 +207,9 @@ public class crearCapitan extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelCrearCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -245,6 +258,7 @@ public class crearCapitan extends javax.swing.JFrame {
     private javax.swing.JTextArea areaEstrategiaCrearCoronel;
     private javax.swing.JTextArea areaMisionCrearCoronel;
     private javax.swing.JTextArea areaReporteCrearCoronel;
+    private javax.swing.JButton botonCapitan;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

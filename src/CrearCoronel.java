@@ -46,8 +46,9 @@ public class CrearCoronel extends javax.swing.JFrame {
         textMando = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteCrearCoronel1 = new javax.swing.JTextArea();
+        botonCoronel = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelCrearCoronel.setBackground(new java.awt.Color(19, 71, 89));
 
@@ -110,6 +111,10 @@ public class CrearCoronel extends javax.swing.JFrame {
         areaReporteCrearCoronel1.setRows(5);
         jScrollPane3.setViewportView(areaReporteCrearCoronel1);
 
+        botonCoronel.setBackground(new java.awt.Color(0, 153, 153));
+        botonCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonCoronel.setText("Next");
+
         javax.swing.GroupLayout panelCrearCoronelLayout = new javax.swing.GroupLayout(panelCrearCoronel);
         panelCrearCoronel.setLayout(panelCrearCoronelLayout);
         panelCrearCoronelLayout.setHorizontalGroup(
@@ -134,13 +139,17 @@ public class CrearCoronel extends javax.swing.JFrame {
                             .addComponent(textNivelCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelAccionCrearCoronel)
                             .addComponent(textAccionCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelReporteCrearCoronel)
                             .addComponent(labelMando)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textMando, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(43, 43, 43))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearCoronelLayout.createSequentialGroup()
+                .addContainerGap(227, Short.MAX_VALUE)
+                .addComponent(botonCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(227, 227, 227))
         );
         panelCrearCoronelLayout.setVerticalGroup(
             panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +184,9 @@ public class CrearCoronel extends javax.swing.JFrame {
                 .addComponent(labelMisionCrearCoronel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonCoronel)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,7 +197,9 @@ public class CrearCoronel extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearCoronel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -235,6 +248,7 @@ public class CrearCoronel extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaMisionCrearCoronel;
     private javax.swing.JTextArea areaReporteCrearCoronel1;
+    private javax.swing.JButton botonCoronel;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;

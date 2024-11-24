@@ -1,3 +1,4 @@
+import java.awt.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -105,9 +106,21 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
         buttonCrearSoldado.addActionListener(new java.awt.event.ActionListener() {
            
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuRangos menuRangos = new MenuRangos();
-                menuRangos.setVisible(true);
-               
+                //MenuRangos menuRangos = new MenuRangos();
+                //menuRangos.setVisible(true);
+               if (evt.getSource() == buttonCrearSoldado) {
+                    MenuRangos menuRangos = new MenuRangos();
+                    menuRangos.setVisible(true);
+                }
+                if (evt.getSource() == buttonModificarInformación) {
+                    MenuRangos menuRangos = new MenuRangos();
+                    menuRangos.setVisible(true);                   
+                }
+                if (evt.getSource() == buttonMostrarInformacíon) {
+                    MenuRangos menuRangos = new MenuRangos();
+                    menuRangos.setVisible(true);
+                }
+
                 
             }
             
@@ -120,8 +133,10 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
         buttonMostrarInformacíon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMostrarInformacíonActionPerformed(evt);
-                Ventana2 ventana2 = new Ventana2();
-                ventana2.setVisible(true);
+                MenuRangos menuRangos = new MenuRangos();
+                menuRangos.setVisible(true);
+                
+                
                 
             }
         });

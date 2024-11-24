@@ -43,8 +43,9 @@ public class CrearSoldadoRaso extends javax.swing.JFrame {
         labelCrearSoldado = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteCrearSoldado1 = new javax.swing.JTextArea();
+        botonSoldado = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelCrearSoldado.setBackground(new java.awt.Color(19, 71, 89));
 
@@ -104,6 +105,10 @@ public class CrearSoldadoRaso extends javax.swing.JFrame {
         areaReporteCrearSoldado1.setRows(5);
         jScrollPane3.setViewportView(areaReporteCrearSoldado1);
 
+        botonSoldado.setBackground(new java.awt.Color(0, 153, 153));
+        botonSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonSoldado.setText("Next");
+
         javax.swing.GroupLayout panelCrearSoldadoLayout = new javax.swing.GroupLayout(panelCrearSoldado);
         panelCrearSoldado.setLayout(panelCrearSoldadoLayout);
         panelCrearSoldadoLayout.setHorizontalGroup(
@@ -128,11 +133,15 @@ public class CrearSoldadoRaso extends javax.swing.JFrame {
                             .addComponent(textNivelCrearSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelAccionCrearSoldado)
                             .addComponent(textAccionCrearSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelCrearSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelReporteCrearSoldado)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(43, 43, 43))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearSoldadoLayout.createSequentialGroup()
+                .addContainerGap(227, Short.MAX_VALUE)
+                .addComponent(botonSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(227, 227, 227))
         );
         panelCrearSoldadoLayout.setVerticalGroup(
             panelCrearSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,7 +172,9 @@ public class CrearSoldadoRaso extends javax.swing.JFrame {
                 .addComponent(labelMisionCrearSoldado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonSoldado)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -223,6 +234,7 @@ public class CrearSoldadoRaso extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaMisionCrearSoldado;
     private javax.swing.JTextArea areaReporteCrearSoldado1;
+    private javax.swing.JButton botonSoldado;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionCrearSoldado;

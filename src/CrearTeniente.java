@@ -45,9 +45,9 @@ public class CrearTeniente extends javax.swing.JFrame {
         textUnidades = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteCrearTeniente1 = new javax.swing.JTextArea();
+        botonTeniente = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(541, 300));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelCrearTeniente.setBackground(new java.awt.Color(19, 71, 89));
 
@@ -110,6 +110,10 @@ public class CrearTeniente extends javax.swing.JFrame {
         areaReporteCrearTeniente1.setRows(5);
         jScrollPane3.setViewportView(areaReporteCrearTeniente1);
 
+        botonTeniente.setBackground(new java.awt.Color(0, 153, 153));
+        botonTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonTeniente.setText("Next");
+
         javax.swing.GroupLayout panelCrearTenienteLayout = new javax.swing.GroupLayout(panelCrearTeniente);
         panelCrearTeniente.setLayout(panelCrearTenienteLayout);
         panelCrearTenienteLayout.setHorizontalGroup(
@@ -134,13 +138,17 @@ public class CrearTeniente extends javax.swing.JFrame {
                             .addComponent(textNivelCrearTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelAccionCrearTeniente)
                             .addComponent(textAccionCrearTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelCrearTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelReporteCrearTeniente)
                             .addComponent(labelUnidades)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(textUnidades, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(43, 43, 43))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearTenienteLayout.createSequentialGroup()
+                .addContainerGap(227, Short.MAX_VALUE)
+                .addComponent(botonTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(227, 227, 227))
         );
         panelCrearTenienteLayout.setVerticalGroup(
             panelCrearTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,9 +181,11 @@ public class CrearTeniente extends javax.swing.JFrame {
                 .addComponent(textAccionCrearTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(labelMisionCrearTeniente)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonTeniente)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,7 +196,7 @@ public class CrearTeniente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelCrearTeniente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelCrearTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -234,6 +244,7 @@ public class CrearTeniente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaMisionCrearTeniente;
     private javax.swing.JTextArea areaReporteCrearTeniente1;
+    private javax.swing.JButton botonTeniente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionCrearTeniente;
