@@ -94,7 +94,7 @@ public class MostrarCapitan extends javax.swing.JFrame {
         labelMostrarCapitan2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         labelMostrarCapitan2.setForeground(new java.awt.Color(255, 255, 255));
         labelMostrarCapitan2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelMostrarCapitan2.setText("Informacion del capitan");
+        labelMostrarCapitan2.setText("Mostrar Capitan");
 
         javax.swing.GroupLayout panelMostrarCapitan2Layout = new javax.swing.GroupLayout(panelMostrarCapitan2);
         panelMostrarCapitan2.setLayout(panelMostrarCapitan2Layout);

@@ -96,13 +96,19 @@ public class MenuRangosModificar extends javax.swing.JFrame {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRangosModificarActionPerformed(evt);
                 if (radioSoldadoRasoModificar.isSelected()) {
-                   
-                        
-                } else if (radioCapitanModificar.isSelected()) {
+                    ModificarSoldadoRaso modificar=new ModificarSoldadoRaso();
+                    modificar.setVisible(true);                       
+               } else if (radioCapitanModificar.isSelected()) {
+                    ModificarCapitan modificar = new ModificarCapitan();
+                    modificar.setVisible(true);
                   
                 } else if (radioCoronelModificar.isSelected()) {
+                    ModificarCoronel modificar= new ModificarCoronel();
+                    modificar.setVisible(true);
                    
                 } else if (radioTenienteModificar.isSelected()) {
+                    ModificarTeniente modificar = new ModificarTeniente();
+                    modificar.setVisible(true);
                     
                 }
             }

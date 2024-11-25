@@ -237,9 +237,9 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 accionSoldadoRaso.add(accion);
                 misionSoldadoRaso.add(mision);
                 reportarSoldadoRaso.add(reporte);
-
-
-            
+                SoldadoRaso soldado = new SoldadoRaso(getDefaultCloseOperation(), nombre, id, nivel);
+                listaSoldadoRaso.add(soldado);
+                limpiarCampos();          
                 
             }
             
