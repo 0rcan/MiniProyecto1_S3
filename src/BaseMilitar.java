@@ -1,9 +1,3 @@
-import java.awt.Menu;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-//import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,7 +8,7 @@ import java.awt.event.ItemListener;
  *
  * @author josue
  */
-public class BaseMilitar extends javax.swing.JFrame implements ActionListener, ItemListener {
+public class BaseMilitar extends javax.swing.JFrame {
 
     /**
      * Creates new form pp
@@ -22,7 +16,6 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
     public BaseMilitar() {
         initComponents();
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +36,7 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
         buttonCrearSoldado = new javax.swing.JButton();
         buttonMostrarInformacíon = new javax.swing.JButton();
         buttonModificarInformación = new javax.swing.JButton();
+        buttonResetSoldado = new javax.swing.JButton();
         FrameBaseSoldado = new javax.swing.JInternalFrame();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -67,7 +61,7 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelBaseMilitar.setBackground(new java.awt.Color(11, 6, 34));
 
@@ -105,13 +99,11 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
         buttonCrearSoldado.setForeground(new java.awt.Color(19, 71, 89));
         buttonCrearSoldado.setText("Crear Soldado");
         buttonCrearSoldado.addActionListener(new java.awt.event.ActionListener() {
-           
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuRangos menuRangos = new MenuRangos();
-                menuRangos.setVisible(true);
-                      
+                buttonCrearSoldadoActionPerformed(evt);
+                MenuRangos menu = new MenuRangos();
+                menu.setVisible(true);
             }
-            
         });
 
         buttonMostrarInformacíon.setBackground(new java.awt.Color(0, 186, 167));
@@ -121,11 +113,8 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
         buttonMostrarInformacíon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMostrarInformacíonActionPerformed(evt);
-                MenuRangosMostrar menuRangos = new MenuRangosMostrar();
-                menuRangos.setVisible(true);
-                
-                
-                
+                MenuRangosMostrar menu= new MenuRangosMostrar();
+                menu.setVisible(true);
             }
         });
 
@@ -135,12 +124,19 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
         buttonModificarInformación.setText("Modificar Información");
         buttonModificarInformación.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                
                 buttonModificarInformaciónActionPerformed(evt);
-                MenuRangosModificar menuRangos = new MenuRangosModificar();
-                menuRangos.setVisible(true);
-                //Ventana2 ventana2 = new Ventana2();
-                //ventana2.setVisible(true);
+                MenuRangosModificar menu= new MenuRangosModificar();
+                menu.setVisible(true);
+            }
+        });
+
+        buttonResetSoldado.setBackground(new java.awt.Color(0, 186, 167));
+        buttonResetSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        buttonResetSoldado.setForeground(new java.awt.Color(19, 71, 89));
+        buttonResetSoldado.setText("Reset");
+        buttonResetSoldado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonResetSoldadoActionPerformed(evt);
             }
         });
 
@@ -153,19 +149,22 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(buttonMostrarInformacíon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(buttonModificarInformación, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonCrearSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(buttonCrearSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonResetSoldado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(162, 162, 162)
+                .addGap(115, 115, 115)
                 .addComponent(buttonCrearSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(buttonMostrarInformacíon, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(55, 55, 55)
                 .addComponent(buttonModificarInformación, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(buttonResetSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         FrameBaseSoldado.setVisible(true);
@@ -197,7 +196,7 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
             panelBaseMilitarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBaseMilitarLayout.createSequentialGroup()
                 .addComponent(panelBaseMilitar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(panelBaseMilitarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(FrameBaseSoldado))
@@ -229,8 +228,12 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
     }//GEN-LAST:event_buttonMostrarInformacíonActionPerformed
 
     private void buttonCrearSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearSoldadoActionPerformed
-        
-    }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonCrearSoldadoActionPerformed
+
+    private void buttonResetSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonResetSoldadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonResetSoldadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -273,6 +276,7 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
     private javax.swing.JButton buttonCrearSoldado;
     private javax.swing.JButton buttonModificarInformación;
     private javax.swing.JButton buttonMostrarInformacíon;
+    private javax.swing.JButton buttonResetSoldado;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -281,15 +285,4 @@ public class BaseMilitar extends javax.swing.JFrame implements ActionListener, I
     private javax.swing.JPanel panelBaseMilitar;
     private javax.swing.JPanel panelBaseMilitar2;
     // End of variables declaration//GEN-END:variables
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
-    }
 }
