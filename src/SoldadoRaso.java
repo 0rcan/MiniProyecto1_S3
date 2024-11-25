@@ -30,6 +30,10 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
     //METODO//
     //////////
 
+    public SoldadoRaso(String nombre, String id, String nivel, String accion, String mision) {
+        //TODO Auto-generated constructor stub
+    }
+
     //Metodo para verificar si el ID ya existe en la lista
     public static boolean idExisteEnLista(List<SoldadoRaso> lista, String id) {
         

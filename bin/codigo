@@ -1,0 +1,9 @@
+            String  nombre = textNombreCrearSoldado1.getText();
+            int id = Integer.parseInt(textIDCrearSoldado.getText());
+            int nivel = Integer.parseInt(textNivelCrearSoldado.getText());
+            String accion = textAccionCrearSoldado.getText();
+            String mision = areaMisionCrearSoldado.getText();
+            CrearSoldadoRaso soldado = new CrearSoldadoRaso(nombre, id, nivel, accion, mision);
+            listaSoldados.add(soldado);
+            areaReporteCrearSoldado1.setText("Nombre: " + nombre + "\n" + "ID: " + id + "\n" + "Nivel: " + nivel + "\n" + "Acción: " + accion + "\n" + "Misión: " + mision);
+            JOptionPane.showMessageDialog(null, "Soldado creado con éxito");

@@ -1,3 +1,13 @@
+import java.util.ArrayList;
+import java.util.ArrayList;  
+import java.util.List;
+
+import javax.swing.JOptionPane;  
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+//import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,7 +18,8 @@
  *
  * @author josue
  */
-public class CrearTeniente extends javax.swing.JFrame {
+public class CrearTeniente extends javax.swing.JFrame  implements ActionListener, ItemListener{
+    static ArrayList<Teniente> listaTeniente = new ArrayList<>();
 
     /**
      * Creates new form CrearTeniente
@@ -113,6 +124,11 @@ public class CrearTeniente extends javax.swing.JFrame {
         botonTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonTeniente.setText("Next");
+        botonTeniente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTenienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCrearTenienteLayout = new javax.swing.GroupLayout(panelCrearTeniente);
         panelCrearTeniente.setLayout(panelCrearTenienteLayout);
@@ -205,6 +221,30 @@ public class CrearTeniente extends javax.swing.JFrame {
     private void textNombreCrearTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearTenienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearTenienteActionPerformed
+    @SuppressWarnings("unused")
+    private void botonTenienteActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
+        String nombre = textNombreCrearTeniente.getText();
+        String id = textIDCrearTeniente.getText();
+        String nivel = textNivelCrearTeniente.getText();
+        String unidades = textUnidades.getText();
+        String accion = textAccionCrearTeniente.getText();
+        String mision = areaMisionCrearTeniente.getText();
+        String reporte = areaReporteCrearTeniente1.getText();
+
+        if (!nombre.isEmpty() && !id.isEmpty() && !accion.isEmpty()) {
+            listaTeniente.add(new Teniente());
+            JOptionPane.showMessageDialog(this, "Soldado creado con éxito!");
+            
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
+        }
+        
+       
+        
+    }
+    
+
 
     /**
      * @param args the command line arguments
@@ -263,4 +303,15 @@ public class CrearTeniente extends javax.swing.JFrame {
     private javax.swing.JTextField textNombreCrearTeniente;
     private javax.swing.JTextField textUnidades;
     // End of variables declaration//GEN-END:variables
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+    }
 }
