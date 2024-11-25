@@ -113,7 +113,7 @@ public class BaseMilitar extends javax.swing.JFrame {
         buttonMostrarInformacíon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMostrarInformacíonActionPerformed(evt);
-                MenuRangosMostrar menu= new MenuRangosMostrar();
+                MenuRangosMostrar menu = new MenuRangosMostrar();
                 menu.setVisible(true);
             }
         });
@@ -125,7 +125,7 @@ public class BaseMilitar extends javax.swing.JFrame {
         buttonModificarInformación.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonModificarInformaciónActionPerformed(evt);
-                MenuRangosModificar menu= new MenuRangosModificar();
+                MenuRangosModificar menu = new MenuRangosModificar();
                 menu.setVisible(true);
             }
         });
@@ -196,11 +196,11 @@ public class BaseMilitar extends javax.swing.JFrame {
             panelBaseMilitarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBaseMilitarLayout.createSequentialGroup()
                 .addComponent(panelBaseMilitar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelBaseMilitarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(FrameBaseSoldado))
-                .addContainerGap())
+                .addGap(9, 9, 9))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
