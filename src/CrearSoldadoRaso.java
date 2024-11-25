@@ -26,6 +26,10 @@ import java.awt.event.ItemListener;
 
 public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener {
     static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
+    static List<String> accionSoldadoRaso = new ArrayList<>();
+    static List<String> misionSoldadoRaso = new ArrayList<>();
+    static List<String> reportarSoldadoRaso = new ArrayList<>();
+
    
     /**
      * Creates new form CrearSoldado
@@ -221,6 +225,7 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 
                 pack();
             }// </editor-fold>//GEN-END:initComponents
+           
             @SuppressWarnings("unused")
             private void botonSoldadoActionPerformed(java.awt.event.ActionEvent evt) {
                 String nombre = textNombreCrearSoldado1.getText();
@@ -229,14 +234,13 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 String accion = textAccionCrearSoldado.getText();
                 String mision = areaMisionCrearSoldado.getText();
                 String reporte = areaReporteCrearSoldado1.getText();
+                accionSoldadoRaso.add(accion);
+                misionSoldadoRaso.add(mision);
+                reportarSoldadoRaso.add(reporte);
+
+
             
-                if (!nombre.isEmpty() && !id.isEmpty() && !accion.isEmpty()) {
-                    listaSoldadoRaso.add(new SoldadoRaso(nombre, id, nivel, accion, mision));
-                    JOptionPane.showMessageDialog(this, "Soldado creado con éxito!");
-                    limpiarCampos();
-                } else {
-                    JOptionPane.showMessageDialog(this, "Por favor, complete todos los campos.");
-                }
+                
             }
             
             private void limpiarCampos() {
@@ -245,6 +249,8 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 textNivelCrearSoldado.setText("");
                 textAccionCrearSoldado.setText("");
                 areaMisionCrearSoldado.setText("");
+                areaReporteCrearSoldado1.setText("");
+
         }
         
         

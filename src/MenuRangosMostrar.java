@@ -66,20 +66,20 @@ public class MenuRangosMostrar extends javax.swing.JFrame {
         radioSoldadoRasoMostrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radioSoldadoRasoMostrar.setForeground(new java.awt.Color(255, 255, 255));
         radioSoldadoRasoMostrar.setText("\tSoldadoRaso");
-        radioSoldadoRasoMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioSoldadoRasoMostrarActionPerformed(evt);
-            }
-        });
+        //radioSoldadoRasoMostrar.addActionListener(new java.awt.event.ActionListener() {
+            // public void actionPerformed(java.awt.event.ActionEvent evt) {
+            //     radioSoldadoRasoMostrarActionPerformed(evt);
+            // }
+        //});
 
         radioTenienteMostrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radioTenienteMostrar.setForeground(new java.awt.Color(255, 255, 255));
         radioTenienteMostrar.setText("Teniente");
-        radioTenienteMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioTenienteMostrarActionPerformed(evt);
-            }
-        });
+       // radioTenienteMostrar.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         radioTenienteMostrarActionPerformed(evt);
+        //     }
+        // });
 
         radioCoronelMostrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         radioCoronelMostrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,8 +95,32 @@ public class MenuRangosMostrar extends javax.swing.JFrame {
         botonRangosMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRangosMostrarActionPerformed(evt);
+                if (radioSoldadoRasoMostrar.isSelected()) {
+                    MostrarSoldadoRaso mostrar = new MostrarSoldadoRaso();
+                    mostrar.setVisible(true);
+                        
+                } else if (radioCapitanMostrar.isSelected()) {
+                    MostrarCapitan mostrar = new MostrarCapitan();
+                    mostrar.setVisible(true);    
+                } else if (radioCoronelMostrar.isSelected()) {
+                    MostrarCoronel mostrar= new MostrarCoronel();
+                    mostrar.setVisible(true);
+                } else if (radioTenienteMostrar.isSelected()) {
+                    MostrarTeniente mostrar = new MostrarTeniente();
+                    mostrar.setVisible(true);
+                }
             }
+                
+            
         });
+        ButtonGroup grupo = new ButtonGroup();
+        grupo.add(radioSoldadoRasoMostrar);
+        grupo.add(radioCapitanMostrar);
+        grupo.add(radioCoronelMostrar);
+        grupo.add(radioTenienteMostrar);
+        
+
+
 
         javax.swing.GroupLayout PanelRangosMostrarLayout = new javax.swing.GroupLayout(PanelRangosMostrar);
         PanelRangosMostrar.setLayout(PanelRangosMostrarLayout);
@@ -147,33 +171,32 @@ public class MenuRangosMostrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
-    private void radioSoldadoRasoMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSoldadoRasoMostrarActionPerformed
-        ButtonGroup group = new ButtonGroup();
-        CrearSoldadoRaso nuevoSoldadoRaso = new CrearSoldadoRaso();
-        nuevoSoldadoRaso.setVisible(true);     
-        group.add(radioSoldadoRasoMostrar);
-    }//GEN-LAST:event_radioSoldadoRasoMostrarActionPerformed
+    // private void radioSoldadoRasoMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioSoldadoRasoMostrarActionPerformed
+    //     ButtonGroup group = new ButtonGroup();
+    //     CrearSoldadoRaso nuevoSoldadoRaso = new CrearSoldadoRaso();
+    //     nuevoSoldadoRaso.setVisible(true);     
+    //     group.add(radioSoldadoRasoMostrar);
+    // }//GEN-LAST:event_radioSoldadoRasoMostrarActionPerformed
 
-    private void radioTenienteMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioTenienteMostrarActionPerformed
-        ButtonGroup group = new ButtonGroup();
-        CrearTeniente nuevoTeniente = new CrearTeniente();
-        nuevoTeniente.setVisible(true);
-        group.add(radioTenienteMostrar);
-    }//GEN-LAST:event_radioTenienteMostrarActionPerformed
+    // private void radioTenienteMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioTenienteMostrarActionPerformed
+    //     ButtonGroup group = new ButtonGroup();
+       
+     
+    // }//GEN-LAST:event_radioTenienteMostrarActionPerformed
 
-    private void radioCoronelMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioTenienteMostrarActionPerformed
-        ButtonGroup group = new ButtonGroup();
-        CrearCoronel nuevoCoronel = new CrearCoronel();
-        nuevoCoronel.setVisible(rootPaneCheckingEnabled);;
-        group.add(radioCoronelMostrar);
-    }//GEN-LAST:event_radioTenienteMostrarActionPerformed
+    // private void radioCoronelMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioTenienteMostrarActionPerformed
+    //     ButtonGroup group = new ButtonGroup();
+    //     CrearCoronel nuevoCoronel = new CrearCoronel();
+    //     nuevoCoronel.setVisible(rootPaneCheckingEnabled);;
+        
+    // }//GEN-LAST:event_radioTenienteMostrarActionPerformed
 
-    private void radioCapitanMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioTenienteMostrarActionPerformed
-        ButtonGroup group = new ButtonGroup();
-        crearCapitan nuevoCapitan = new crearCapitan();
-        nuevoCapitan.setVisible(true);
-        group.add(radioCapitanMostrar);
-    }//GEN-LAST:event_radioTenienteMostrarActionPerformed
+    // private void radioCapitanMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioTenienteMostrarActionPerformed
+    //     ButtonGroup group = new ButtonGroup();
+    //     crearCapitan nuevoCapitan = new crearCapitan();
+    //     nuevoCapitan.setVisible(true);
+    
+    // }//GEN-LAST:event_radioTenienteMostrarActionPerformed
 
 
     private void botonRangosMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRangosMostrarActionPerformed
