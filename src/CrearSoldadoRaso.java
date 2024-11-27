@@ -231,19 +231,23 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
             private void botonSoldadoActionPerformed(java.awt.event.ActionEvent evt) {
                 String nombre = textNombreCrearSoldado1.getText();
                 String id = textIDCrearSoldado.getText();
-                String nivel = textNivelCrearSoldado.getText();
+                int nivel = Integer.parseInt(textNivelCrearSoldado.getText());
                 String accion = textAccionCrearSoldado.getText();
                 String mision = areaMisionCrearSoldado.getText();
                 String reporte = areaReporteCrearSoldado1.getText();
-                accionSoldadoRaso.add(accion);
-                misionSoldadoRaso.add(mision);
-                reportarSoldadoRaso.add(reporte);
-                SoldadoRaso soldado = new SoldadoRaso(getDefaultCloseOperation(), nombre, id, nivel);
-                listaSoldadoRaso.add(soldado);
-                limpiarCampos();      
-                
-                
+            
+                SoldadoRaso soldado = new SoldadoRaso(nivel, nombre, id, "1", accion, mision, reporte);
+                SoldadoRaso.listaSoldadoRaso.add(soldado);
+            
+                limpiarCampos();
+            
+                // Mostrar datos del soldado
+                MostrarSoldadoRaso mostrarSoldado = new MostrarSoldadoRaso(soldado, nivel);
+                mostrarSoldado.setVisible(true);
             }
+            
+            
+          
             
             private void limpiarCampos() {
                 textNombreCrearSoldado1.setText("");

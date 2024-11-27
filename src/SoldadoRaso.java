@@ -12,18 +12,40 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
     static List<String> accionSoldadoRaso = new ArrayList<>();
     static List<String> misionSoldadoRaso = new ArrayList<>();
     static List<String> reportarSoldadoRaso = new ArrayList<>();
-
-    ///////////////
-    //CONSTRUCTOR//
-    ///////////////
-
-    public SoldadoRaso(int nivel, String nombre, String id, String rango) {
-        super(nivel, nombre, id, rango);
-        
+        private String accion;
+                private String mision;
+                                private String reporte;
+                            
+                                ///////////////
+                                //CONSTRUCTOR//
+                                ///////////////
+                            
+                                public SoldadoRaso(int nivel, String nombre, String id, String rango) {
+                                    super(nivel, nombre, id, rango);
+                                    
+                                }
+                                
+                                public SoldadoRaso(){ //constructor vacio necesario para crear objetos de la clase
+                                    
+                                }
+                                public SoldadoRaso(int nivel, String nombre, String id, String rango, String accion, String mision, String reporte) {
+                                    super(nivel, nombre, id, rango);
+                                    this.accion = accion;
+                                this.mision = mision;
+                        this.reporte = reporte;
     }
-    
-    public SoldadoRaso(){ //constructor vacio necesario para crear objetos de la clase
-        
+
+    // Getters para las nuevas propiedades
+    public String getAccion() {
+        return accion;
+    }
+
+    public String getMision() {
+        return mision;
+    }
+
+    public String getReporte() {
+        return reporte;
     }
 
     //////////
