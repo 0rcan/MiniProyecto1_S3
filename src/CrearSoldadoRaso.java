@@ -26,9 +26,10 @@ import java.awt.event.ItemListener;
  * @author josue
  */
 
-public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener {
-    static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
-   
+public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
+
+
+
     /**
      * Creates new form CrearSoldado
      */
@@ -133,6 +134,7 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 botonSoldado.setText("Next");
                 botonSoldado.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        botonSoldadoActionPerformed(evt);
                         
                     }
                 });
@@ -223,22 +225,34 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 
                 pack();
             }// </editor-fold>//GEN-END:initComponents
-
-          
-                // Crear un nuevo soldado raso con todos los datos
-                
-                
-                // Agregarlo a la lista
-               
-            
-                // Limpiar los campos de entrada
-               // limpiarCampos();          
-            
-         
            
-         
+            @SuppressWarnings("unused")
+            private void botonSoldadoActionPerformed(java.awt.event.ActionEvent evt) {
+                String nombre = textNombreCrearSoldado1.getText();
+                String id = textIDCrearSoldado.getText();
+                String nivel = textNivelCrearSoldado.getText();
+                String accion = textAccionCrearSoldado.getText();
+                String mision = areaMisionCrearSoldado.getText();
+                String reporte = areaReporteCrearSoldado1.getText();
+                accionSoldadoRaso.add(accion);
+                misionSoldadoRaso.add(mision);
+                reportarSoldadoRaso.add(reporte);
+                SoldadoRaso soldado = new SoldadoRaso(getDefaultCloseOperation(), nombre, id, nivel);
+                listaSoldadoRaso.add(soldado);
+                limpiarCampos();      
+                
+                
+            }
             
-        
+            private void limpiarCampos() {
+                textNombreCrearSoldado1.setText("");
+                textIDCrearSoldado.setText("");
+                textNivelCrearSoldado.setText("");
+                textAccionCrearSoldado.setText("");
+                areaMisionCrearSoldado.setText("");
+                areaReporteCrearSoldado1.setText("");
+
+        }
         
         
         private void textNombreCrearSoldado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearSoldado1ActionPerformed
@@ -315,5 +329,45 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+    }
+
+
+
+    @Override
+    public void crearSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crearSoldado'");
+    }
+
+
+
+    @Override
+    public void mostrarInformacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+    }
+
+
+
+    @Override
+    public void modificarSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
+    }
+
+
+
+    @Override
+    public void asignarMision(String mision) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'asignarMision'");
+    }
+
+
+
+    @Override
+    public void reportarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
     }
 }
