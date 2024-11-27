@@ -24,13 +24,10 @@ import java.awt.event.ItemListener;
  * @author josue
  */
 
-public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener {
-    static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
-    static List<String> accionSoldadoRaso = new ArrayList<>();
-    static List<String> misionSoldadoRaso = new ArrayList<>();
-    static List<String> reportarSoldadoRaso = new ArrayList<>();
+public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
 
-   
+
+
     /**
      * Creates new form CrearSoldado
      */
@@ -136,6 +133,7 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 botonSoldado.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         botonSoldadoActionPerformed(evt);
+                        
                     }
                 });
                 
@@ -239,7 +237,8 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 reportarSoldadoRaso.add(reporte);
                 SoldadoRaso soldado = new SoldadoRaso(getDefaultCloseOperation(), nombre, id, nivel);
                 listaSoldadoRaso.add(soldado);
-                limpiarCampos();          
+                limpiarCampos();      
+                
                 
             }
             
@@ -328,5 +327,45 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+    }
+
+
+
+    @Override
+    public void crearSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crearSoldado'");
+    }
+
+
+
+    @Override
+    public void mostrarInformacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+    }
+
+
+
+    @Override
+    public void modificarSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
+    }
+
+
+
+    @Override
+    public void asignarMision(String mision) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'asignarMision'");
+    }
+
+
+
+    @Override
+    public void reportarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
     }
 }

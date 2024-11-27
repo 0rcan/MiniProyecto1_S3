@@ -101,8 +101,6 @@ public class BaseMilitar extends javax.swing.JFrame {
         buttonCrearSoldado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCrearSoldadoActionPerformed(evt);
-                MenuRangos menu = new MenuRangos();
-                menu.setVisible(true);
             }
         });
 
@@ -113,8 +111,6 @@ public class BaseMilitar extends javax.swing.JFrame {
         buttonMostrarInformacíon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMostrarInformacíonActionPerformed(evt);
-                MenuRangosMostrar menu = new MenuRangosMostrar();
-                menu.setVisible(true);
             }
         });
 
@@ -125,8 +121,6 @@ public class BaseMilitar extends javax.swing.JFrame {
         buttonModificarInformación.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonModificarInformaciónActionPerformed(evt);
-                MenuRangosModificar menu = new MenuRangosModificar();
-                menu.setVisible(true);
             }
         });
 
@@ -218,18 +212,22 @@ public class BaseMilitar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void buttonCrearSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearSoldadoActionPerformed
+        MenuRangos menu = new MenuRangos();
+        menu.setVisible(true);
+    }//GEN-LAST:event_buttonCrearSoldadoActionPerformed
+    
+    private void buttonMostrarInformacíonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMostrarInformacíonActionPerformed
+        MenuRangosMostrar menu = new MenuRangosMostrar();
+        menu.setVisible(true);
+    }//GEN-LAST:event_buttonMostrarInformacíonActionPerformed
+    
     private void buttonModificarInformaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonModificarInformaciónActionPerformed
-        // TODO add your handling code here:
+        MenuRangosModificar menu = new MenuRangosModificar();
+        menu.setVisible(true);
     }//GEN-LAST:event_buttonModificarInformaciónActionPerformed
 
-    private void buttonMostrarInformacíonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMostrarInformacíonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonMostrarInformacíonActionPerformed
-
-    private void buttonCrearSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCrearSoldadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCrearSoldadoActionPerformed
 
     private void buttonResetSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonResetSoldadoActionPerformed
         // TODO add your handling code here:
