@@ -13,9 +13,9 @@ public class Coronel extends Rango implements OperacionesMilitares {
     static List<String> misionCoronel = new ArrayList<>();
     static List<String> reportarCoronel = new ArrayList<>();
 
-    public Coronel(String estrategia, int nivel, String nombre, String id, String rango) {
-        super(nivel, nombre, id, rango);
-        this.estrategia = estrategia;
+    public  Coronel (String estrategia, int nivel, String nombre, String id, String rango){
+        super(nivel, nombre,id,rango);
+        this.estrategia=estrategia;
     }
 
     public Coronel() {// Constructor vacio necesario para crear onjetos de la clase

@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.ArrayList;  
 import java.util.List;
+//import path.to.package.SoldadoRaso;
+
 
 import javax.swing.JOptionPane;  
 import java.awt.event.ActionEvent;
@@ -26,10 +28,6 @@ import java.awt.event.ItemListener;
 
 public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener {
     static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
-    static List<String> accionSoldadoRaso = new ArrayList<>();
-    static List<String> misionSoldadoRaso = new ArrayList<>();
-    static List<String> reportarSoldadoRaso = new ArrayList<>();
-
    
     /**
      * Creates new form CrearSoldado
@@ -135,7 +133,7 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 botonSoldado.setText("Next");
                 botonSoldado.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        botonSoldadoActionPerformed(evt);
+                        
                     }
                 });
                 
@@ -225,33 +223,22 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 
                 pack();
             }// </editor-fold>//GEN-END:initComponents
-           
-            @SuppressWarnings("unused")
-            private void botonSoldadoActionPerformed(java.awt.event.ActionEvent evt) {
-                String nombre = textNombreCrearSoldado1.getText();
-                String id = textIDCrearSoldado.getText();
-                String nivel = textNivelCrearSoldado.getText();
-                String accion = textAccionCrearSoldado.getText();
-                String mision = areaMisionCrearSoldado.getText();
-                String reporte = areaReporteCrearSoldado1.getText();
-                accionSoldadoRaso.add(accion);
-                misionSoldadoRaso.add(mision);
-                reportarSoldadoRaso.add(reporte);
-                SoldadoRaso soldado = new SoldadoRaso(getDefaultCloseOperation(), nombre, id, nivel);
-                listaSoldadoRaso.add(soldado);
-                limpiarCampos();          
-                
-            }
-            
-            private void limpiarCampos() {
-                textNombreCrearSoldado1.setText("");
-                textIDCrearSoldado.setText("");
-                textNivelCrearSoldado.setText("");
-                textAccionCrearSoldado.setText("");
-                areaMisionCrearSoldado.setText("");
-                areaReporteCrearSoldado1.setText("");
 
-        }
+          
+                // Crear un nuevo soldado raso con todos los datos
+                
+                
+                // Agregarlo a la lista
+               
+            
+                // Limpiar los campos de entrada
+               // limpiarCampos();          
+            
+         
+           
+         
+            
+        
         
         
         private void textNombreCrearSoldado1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearSoldado1ActionPerformed

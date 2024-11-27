@@ -1,5 +1,4 @@
 
-
 import javax.swing.JOptionPane;
 public class Soldado{ //Clase Principal Soldado 
     
@@ -31,6 +30,7 @@ public class Soldado{ //Clase Principal Soldado
     /////////
 
     public static void crear(){ 
+        //System.out.println("Crear Soldado");
 
         //Variable que almacena en que rango nos encontramos
         String rango = JOptionPane.showInputDialog(null,
@@ -158,4 +158,5 @@ public class Soldado{ //Clase Principal Soldado
     }
 
 }
+
 
