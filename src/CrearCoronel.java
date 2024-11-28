@@ -4,11 +4,6 @@
  */
 //package com.mycompany.project;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-
 /**
  *
  * @author josue
@@ -52,6 +47,7 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteCrearCoronel1 = new javax.swing.JTextArea();
         botonCoronel = new javax.swing.JButton();
+        botonResetCoronel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -120,6 +116,10 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
         botonCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonCoronel.setText("Next");
 
+        botonResetCoronel.setBackground(new java.awt.Color(0, 153, 153));
+        botonResetCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonResetCoronel.setText("Reset");
+
         javax.swing.GroupLayout panelCrearCoronelLayout = new javax.swing.GroupLayout(panelCrearCoronel);
         panelCrearCoronel.setLayout(panelCrearCoronelLayout);
         panelCrearCoronelLayout.setHorizontalGroup(
@@ -134,27 +134,29 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
                     .addGroup(panelCrearCoronelLayout.createSequentialGroup()
                         .addComponent(labelMisionCrearCoronel)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelCrearCoronelLayout.createSequentialGroup()
-                        .addGroup(panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIDCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNombreCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelIDCrearCoronel)
-                            .addComponent(labelNivelCrearCoronel)
-                            .addComponent(labelNameCrearCoronel)
-                            .addComponent(textNivelCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAccionCrearCoronel)
-                            .addComponent(textAccionCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelReporteCrearCoronel)
-                            .addComponent(labelMando)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textMando, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearCoronelLayout.createSequentialGroup()
+                        .addGroup(panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelCrearCoronelLayout.createSequentialGroup()
+                                .addComponent(botonResetCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelCrearCoronelLayout.createSequentialGroup()
+                                .addGroup(panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNombreCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelIDCrearCoronel)
+                                    .addComponent(labelNivelCrearCoronel)
+                                    .addComponent(labelNameCrearCoronel)
+                                    .addComponent(textNivelCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAccionCrearCoronel)
+                                    .addComponent(textAccionCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                .addGroup(panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelReporteCrearCoronel)
+                                    .addComponent(labelMando)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textMando, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(43, 43, 43))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearCoronelLayout.createSequentialGroup()
-                .addContainerGap(227, Short.MAX_VALUE)
-                .addComponent(botonCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 227, 227))
         );
         panelCrearCoronelLayout.setVerticalGroup(
             panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,9 +191,11 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
                 .addComponent(labelMisionCrearCoronel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonCoronel)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(panelCrearCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonCoronel)
+                    .addComponent(botonResetCoronel))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -254,6 +258,7 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
     private javax.swing.JTextArea areaMisionCrearCoronel;
     private javax.swing.JTextArea areaReporteCrearCoronel1;
     private javax.swing.JButton botonCoronel;
+    private javax.swing.JButton botonResetCoronel;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
@@ -301,17 +306,5 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
     public void reportarEstado() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
-    }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }

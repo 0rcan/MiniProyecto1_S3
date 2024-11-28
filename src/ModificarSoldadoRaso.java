@@ -4,11 +4,6 @@
  */
 //package com.mycompany.project;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-
 /**
  *
  * @author josue
@@ -34,7 +29,6 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
         panelModificarSoldado = new javax.swing.JPanel();
         labelNameModificarSoldado = new javax.swing.JLabel();
         textIDModificarSoldado = new javax.swing.JTextField();
-        textIDModificarSoldado.setEditable(false);
         labelIDModificarSoldado = new javax.swing.JLabel();
         textNombreModificarSoldado1 = new javax.swing.JTextField();
         labelNivelModificarSoldado = new javax.swing.JLabel();
@@ -50,6 +44,7 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteModificarSoldado1 = new javax.swing.JTextArea();
         botonModificarSoldado = new javax.swing.JButton();
+        botonModificarSoldado1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -115,6 +110,10 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
         botonModificarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonModificarSoldado.setText("Next");
 
+        botonModificarSoldado1.setBackground(new java.awt.Color(0, 153, 153));
+        botonModificarSoldado1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonModificarSoldado1.setText("Next");
+
         javax.swing.GroupLayout panelModificarSoldadoLayout = new javax.swing.GroupLayout(panelModificarSoldado);
         panelModificarSoldado.setLayout(panelModificarSoldadoLayout);
         panelModificarSoldadoLayout.setHorizontalGroup(
@@ -124,30 +123,32 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
                 .addGap(43, 43, 43)
                 .addGroup(panelModificarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelModificarSoldadoLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelModificarSoldadoLayout.createSequentialGroup()
                         .addComponent(labelMisionModificarSoldado)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarSoldadoLayout.createSequentialGroup()
+                        .addGroup(panelModificarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelModificarSoldadoLayout.createSequentialGroup()
+                                .addGroup(panelModificarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNombreModificarSoldado1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelIDModificarSoldado)
+                                    .addComponent(labelNivelModificarSoldado)
+                                    .addComponent(labelNameModificarSoldado)
+                                    .addComponent(textNivelModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAccionModificarSoldado)
+                                    .addComponent(textAccionModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                .addGroup(panelModificarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelReporteModificarSoldado)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelModificarSoldadoLayout.createSequentialGroup()
+                                .addComponent(botonModificarSoldado1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(43, 43, 43))
                     .addGroup(panelModificarSoldadoLayout.createSequentialGroup()
-                        .addGroup(panelModificarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIDModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNombreModificarSoldado1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelIDModificarSoldado)
-                            .addComponent(labelNivelModificarSoldado)
-                            .addComponent(labelNameModificarSoldado)
-                            .addComponent(textNivelModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAccionModificarSoldado)
-                            .addComponent(textAccionModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelModificarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelReporteModificarSoldado)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarSoldadoLayout.createSequentialGroup()
-                .addContainerGap(227, Short.MAX_VALUE)
-                .addComponent(botonModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 227, 227))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         panelModificarSoldadoLayout.setVerticalGroup(
             panelModificarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,9 +179,11 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
                 .addComponent(labelMisionModificarSoldado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonModificarSoldado)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(panelModificarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonModificarSoldado1)
+                    .addComponent(botonModificarSoldado))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,7 +194,7 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelModificarSoldado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelModificarSoldado, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
         );
 
         pack();
@@ -243,6 +246,7 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
     private javax.swing.JTextArea areaMisionModificarSoldado;
     private javax.swing.JTextArea areaReporteModificarSoldado1;
     private javax.swing.JButton botonModificarSoldado;
+    private javax.swing.JButton botonModificarSoldado1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionModificarSoldado;
@@ -258,7 +262,6 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
     private javax.swing.JTextField textIDModificarSoldado;
     private javax.swing.JTextField textNivelModificarSoldado;
     private javax.swing.JTextField textNombreModificarSoldado1;
-    // End of variables declaration//GEN-END:variables
     @Override
     public void crearSoldado() {
         // TODO Auto-generated method stub
@@ -288,16 +291,5 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
     }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
-    }
+    // End of variables declaration//GEN-END:variables
 }

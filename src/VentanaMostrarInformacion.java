@@ -43,7 +43,7 @@ public class VentanaMostrarInformacion extends javax.swing.JFrame {
         reporteInformacion = new javax.swing.JLabel();
         mostrarReporte = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(19, 71, 89));
 

@@ -4,11 +4,6 @@
  */
 //package com.mycompany.project;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-
 /**
  *
  * @author josue
@@ -35,7 +30,6 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
         labelNameModificarTeniente = new javax.swing.JLabel();
         textIDModificarTeniente = new javax.swing.JTextField();
         labelIDModificarTeniente = new javax.swing.JLabel();
-        textIDModificarTeniente.setEditable(false);
         textNombreModificarTeniente = new javax.swing.JTextField();
         labelNivelModificarTeniente = new javax.swing.JLabel();
         textNivelModificarTeniente = new javax.swing.JTextField();
@@ -52,6 +46,7 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteModificarTeniente1 = new javax.swing.JTextArea();
         botonModificarTeniente = new javax.swing.JButton();
+        botonResetModificarTeniente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -119,6 +114,20 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
         botonModificarTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonModificarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonModificarTeniente.setText("Next");
+        botonModificarTeniente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarTenienteActionPerformed(evt);
+            }
+        });
+
+        botonResetModificarTeniente.setBackground(new java.awt.Color(0, 153, 153));
+        botonResetModificarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonResetModificarTeniente.setText("Reset");
+        botonResetModificarTeniente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetModificarTenienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelModificarTenienteLayout = new javax.swing.GroupLayout(panelModificarTeniente);
         panelModificarTeniente.setLayout(panelModificarTenienteLayout);
@@ -134,27 +143,29 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
                     .addGroup(panelModificarTenienteLayout.createSequentialGroup()
                         .addComponent(labelMisionModificarTeniente)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelModificarTenienteLayout.createSequentialGroup()
-                        .addGroup(panelModificarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIDModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNombreModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelIDModificarTeniente)
-                            .addComponent(labelNivelModificarTeniente)
-                            .addComponent(labelNameModificarTeniente)
-                            .addComponent(textNivelModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAccionModificarTeniente)
-                            .addComponent(textAccionModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelModificarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelReporteModificarTeniente)
-                            .addComponent(labelModificarUnidades)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textModificarUnidades, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarTenienteLayout.createSequentialGroup()
+                        .addGroup(panelModificarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelModificarTenienteLayout.createSequentialGroup()
+                                .addComponent(botonResetModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelModificarTenienteLayout.createSequentialGroup()
+                                .addGroup(panelModificarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNombreModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelIDModificarTeniente)
+                                    .addComponent(labelNivelModificarTeniente)
+                                    .addComponent(labelNameModificarTeniente)
+                                    .addComponent(textNivelModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAccionModificarTeniente)
+                                    .addComponent(textAccionModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                .addGroup(panelModificarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelReporteModificarTeniente)
+                                    .addComponent(labelModificarUnidades)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textModificarUnidades, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(43, 43, 43))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarTenienteLayout.createSequentialGroup()
-                .addContainerGap(227, Short.MAX_VALUE)
-                .addComponent(botonModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 227, 227))
         );
         panelModificarTenienteLayout.setVerticalGroup(
             panelModificarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,9 +200,11 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
                 .addComponent(labelMisionModificarTeniente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonModificarTeniente)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(panelModificarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonModificarTeniente)
+                    .addComponent(botonResetModificarTeniente))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,6 +224,14 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
     private void textNombreModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreModificarTenienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreModificarTenienteActionPerformed
+
+    private void botonModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarTenienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModificarTenienteActionPerformed
+
+    private void botonResetModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResetModificarTenienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonResetModificarTenienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,6 +273,7 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
     private javax.swing.JTextArea areaMisionModificarTeniente;
     private javax.swing.JTextArea areaReporteModificarTeniente1;
     private javax.swing.JButton botonModificarTeniente;
+    private javax.swing.JButton botonResetModificarTeniente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionModificarTeniente;
@@ -298,17 +320,5 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
     public void reportarEstado() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
-    }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }

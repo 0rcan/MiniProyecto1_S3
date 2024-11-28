@@ -10,7 +10,7 @@ import javax.swing.ButtonGroup;
  *
  * @author josue
  */
-public class MenuRangosModificar extends javax.swing.JFrame {
+public class MenuRangosModificar extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
 
     /**
      * Creates new form MenuRangosModificar
@@ -259,4 +259,33 @@ public class MenuRangosModificar extends javax.swing.JFrame {
     private javax.swing.JRadioButton radioSoldadoRasoModificar;
     private javax.swing.JRadioButton radioTenienteModificar;
     // End of variables declaration//GEN-END:variables
+    @Override
+    public void crearSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crearSoldado'");
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+    }
+
+    @Override
+    public void modificarSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
+    }
+
+    @Override
+    public void asignarMision(String mision) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'asignarMision'");
+    }
+
+    @Override
+    public void reportarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
+    }
 }

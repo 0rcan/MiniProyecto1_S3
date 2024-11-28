@@ -4,11 +4,6 @@
  */
 //package com.mycompany.project;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-
 /**
  *
  * @author josue
@@ -50,7 +45,8 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
         textMostrarMando = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteMostrarCoronel = new javax.swing.JTextArea();
-        botonMostrarCoronel = new javax.swing.JButton();
+        botonResetMostrarCoronel = new javax.swing.JButton();
+        botonMostrarCoronel1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -59,7 +55,7 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
         labelNameMostrarCoronel.setForeground(new java.awt.Color(255, 255, 255));
         labelNameMostrarCoronel.setText("Nombre");
 
-        textIDMostrarCoronel.setEditable(false);
+        textIDMostrarCoronel.setEditable(true);
 
         labelIDMostrarCoronel.setForeground(new java.awt.Color(255, 255, 255));
         labelIDMostrarCoronel.setText("ID");
@@ -126,9 +122,13 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
         areaReporteMostrarCoronel.setRows(5);
         jScrollPane3.setViewportView(areaReporteMostrarCoronel);
 
-        botonMostrarCoronel.setBackground(new java.awt.Color(0, 153, 153));
-        botonMostrarCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonMostrarCoronel.setText("Next");
+        botonResetMostrarCoronel.setBackground(new java.awt.Color(0, 153, 153));
+        botonResetMostrarCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonResetMostrarCoronel.setText("Reset");
+
+        botonMostrarCoronel1.setBackground(new java.awt.Color(0, 153, 153));
+        botonMostrarCoronel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonMostrarCoronel1.setText("Next");
 
         javax.swing.GroupLayout panelMostrarCoronelLayout = new javax.swing.GroupLayout(panelMostrarCoronel);
         panelMostrarCoronel.setLayout(panelMostrarCoronelLayout);
@@ -146,25 +146,27 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelMostrarCoronelLayout.createSequentialGroup()
                         .addGroup(panelMostrarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIDMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNombreMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelIDMostrarCoronel)
-                            .addComponent(labelNivelMostrarCoronel)
-                            .addComponent(labelNameMostrarCoronel)
-                            .addComponent(textNivelMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAccionMostrarCoronel)
-                            .addComponent(textAccionMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                        .addGroup(panelMostrarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelReporteMostrarCoronel)
-                            .addComponent(labelMostrarMando)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textMostrarMando, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelMostrarCoronelLayout.createSequentialGroup()
+                                .addGroup(panelMostrarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNombreMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelIDMostrarCoronel)
+                                    .addComponent(labelNivelMostrarCoronel)
+                                    .addComponent(labelNameMostrarCoronel)
+                                    .addComponent(textNivelMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAccionMostrarCoronel)
+                                    .addComponent(textAccionMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                .addGroup(panelMostrarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelReporteMostrarCoronel)
+                                    .addComponent(labelMostrarMando)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textMostrarMando, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(panelMostrarCoronelLayout.createSequentialGroup()
+                                .addComponent(botonResetMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonMostrarCoronel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(43, 43, 43))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMostrarCoronelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonMostrarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 227, 227))
         );
         panelMostrarCoronelLayout.setVerticalGroup(
             panelMostrarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,9 +201,11 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
                 .addComponent(labelMisionMostrarCoronel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonMostrarCoronel)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(panelMostrarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonResetMostrarCoronel)
+                    .addComponent(botonMostrarCoronel1))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -265,7 +269,8 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaMisionMostrarCoronel;
     private javax.swing.JTextArea areaReporteMostrarCoronel;
-    private javax.swing.JButton botonMostrarCoronel;
+    private javax.swing.JButton botonMostrarCoronel1;
+    private javax.swing.JButton botonResetMostrarCoronel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionMostrarCoronel;
@@ -312,17 +317,5 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
     public void reportarEstado() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
-    }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }

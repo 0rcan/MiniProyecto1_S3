@@ -4,14 +4,9 @@
  */
 //package com.mycompany.project;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-
 /**
  *
- * @author diego
+ * @author josue
  */
 public class MostrarTeniente extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
 
@@ -51,6 +46,7 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteMostrarTeniente1 = new javax.swing.JTextArea();
         botonMostrarTeniente = new javax.swing.JButton();
+        botonResetMostrarTeniente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -59,7 +55,7 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
         labelNameMostrarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         labelNameMostrarTeniente.setText("Nombre");
 
-        textIDMostrarTeniente.setEditable(false);
+        textIDMostrarTeniente.setEditable(true);
 
         labelIDMostrarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         labelIDMostrarTeniente.setText("ID");
@@ -98,7 +94,7 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
         labelMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         labelMostrarSoldado.setForeground(new java.awt.Color(255, 255, 255));
         labelMostrarSoldado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelMostrarSoldado.setText("Mostrar Teniente");
+        labelMostrarSoldado.setText("Modificar Teniente");
 
         javax.swing.GroupLayout panelMostrarTeniente2Layout = new javax.swing.GroupLayout(panelMostrarTeniente2);
         panelMostrarTeniente2.setLayout(panelMostrarTeniente2Layout);
@@ -130,6 +126,10 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
         botonMostrarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonMostrarTeniente.setText("Next");
 
+        botonResetMostrarTeniente.setBackground(new java.awt.Color(0, 153, 153));
+        botonResetMostrarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonResetMostrarTeniente.setText("Reset");
+
         javax.swing.GroupLayout panelMostrarTenienteLayout = new javax.swing.GroupLayout(panelMostrarTeniente);
         panelMostrarTeniente.setLayout(panelMostrarTenienteLayout);
         panelMostrarTenienteLayout.setHorizontalGroup(
@@ -144,27 +144,29 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
                     .addGroup(panelMostrarTenienteLayout.createSequentialGroup()
                         .addComponent(labelMisionMostrarTeniente)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelMostrarTenienteLayout.createSequentialGroup()
-                        .addGroup(panelMostrarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIDMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNombreMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelIDMostrarTeniente)
-                            .addComponent(labelNivelMostrarTeniente)
-                            .addComponent(labelNameMostrarTeniente)
-                            .addComponent(textNivelMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAccionMostrarTeniente)
-                            .addComponent(textAccionMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                        .addGroup(panelMostrarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelReporteMostrarTeniente)
-                            .addComponent(labelMostrarUnidades)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textMostrarUnidades, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMostrarTenienteLayout.createSequentialGroup()
+                        .addGroup(panelMostrarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelMostrarTenienteLayout.createSequentialGroup()
+                                .addComponent(botonResetMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelMostrarTenienteLayout.createSequentialGroup()
+                                .addGroup(panelMostrarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNombreMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelIDMostrarTeniente)
+                                    .addComponent(labelNivelMostrarTeniente)
+                                    .addComponent(labelNameMostrarTeniente)
+                                    .addComponent(textNivelMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAccionMostrarTeniente)
+                                    .addComponent(textAccionMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                .addGroup(panelMostrarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelReporteMostrarTeniente)
+                                    .addComponent(labelMostrarUnidades)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textMostrarUnidades, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(43, 43, 43))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMostrarTenienteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 227, 227))
         );
         panelMostrarTenienteLayout.setVerticalGroup(
             panelMostrarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,9 +201,11 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
                 .addComponent(labelMisionMostrarTeniente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonMostrarTeniente)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(panelMostrarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonMostrarTeniente)
+                    .addComponent(botonResetMostrarTeniente))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -263,6 +267,7 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
     private javax.swing.JTextArea areaMisionCrearTeniente;
     private javax.swing.JTextArea areaReporteMostrarTeniente1;
     private javax.swing.JButton botonMostrarTeniente;
+    private javax.swing.JButton botonResetMostrarTeniente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionMostrarTeniente;
@@ -309,17 +314,5 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
     public void reportarEstado() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
-    }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }

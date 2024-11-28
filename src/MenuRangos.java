@@ -106,7 +106,7 @@ public class MenuRangos extends javax.swing.JFrame implements ItemListener, Acti
                     CrearCoronel nuevoCoronel = new CrearCoronel();
                     nuevoCoronel.setVisible(rootPaneCheckingEnabled);;
                 } else if (radioCapitan.isSelected()) {
-                    crearCapitan nuevoCapitan = new crearCapitan();
+                    CrearCapitan nuevoCapitan = new CrearCapitan();
                     nuevoCapitan.setVisible(true);
                 }
             }

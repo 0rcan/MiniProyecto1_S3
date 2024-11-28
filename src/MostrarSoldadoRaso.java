@@ -4,11 +4,6 @@
  */
 //package com.mycompany.project;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-
 /**
  *
  * @author josue
@@ -49,10 +44,12 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteMostrarSoldado = new javax.swing.JTextArea();
         botonMostrarSoldado = new javax.swing.JButton();
+        botonResetMostrarSoldado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelMostrarSoldado.setBackground(new java.awt.Color(19, 71, 89));
+        panelMostrarSoldado.setPreferredSize(new java.awt.Dimension(544, 593));
 
         labelNameMostrarSoldado.setForeground(new java.awt.Color(255, 255, 255));
         labelNameMostrarSoldado.setText("Nombre");
@@ -123,6 +120,15 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
         botonMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonMostrarSoldado.setText("Next");
 
+        botonResetMostrarSoldado.setBackground(new java.awt.Color(0, 153, 153));
+        botonResetMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonResetMostrarSoldado.setText("Reset");
+        botonResetMostrarSoldado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetMostrarSoldadoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelMostrarSoldadoLayout = new javax.swing.GroupLayout(panelMostrarSoldado);
         panelMostrarSoldado.setLayout(panelMostrarSoldadoLayout);
         panelMostrarSoldadoLayout.setHorizontalGroup(
@@ -137,25 +143,27 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
                     .addGroup(panelMostrarSoldadoLayout.createSequentialGroup()
                         .addComponent(labelMisionMostrarSoldado)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelMostrarSoldadoLayout.createSequentialGroup()
-                        .addGroup(panelMostrarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIDMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNombreMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelIDMostrarSoldado)
-                            .addComponent(labelNivelMostrarSoldado)
-                            .addComponent(labelNameMostrarSoldado)
-                            .addComponent(textNivelMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAccionMostrarSoldado)
-                            .addComponent(textAccionMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                        .addGroup(panelMostrarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelReporteMostrarSoldado)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMostrarSoldadoLayout.createSequentialGroup()
+                        .addGroup(panelMostrarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelMostrarSoldadoLayout.createSequentialGroup()
+                                .addComponent(botonResetMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelMostrarSoldadoLayout.createSequentialGroup()
+                                .addGroup(panelMostrarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNombreMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelIDMostrarSoldado)
+                                    .addComponent(labelNivelMostrarSoldado)
+                                    .addComponent(labelNameMostrarSoldado)
+                                    .addComponent(textNivelMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAccionMostrarSoldado)
+                                    .addComponent(textAccionMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                .addGroup(panelMostrarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelReporteMostrarSoldado)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(43, 43, 43))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMostrarSoldadoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 227, 227))
         );
         panelMostrarSoldadoLayout.setVerticalGroup(
             panelMostrarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,9 +194,11 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
                 .addComponent(labelMisionMostrarSoldado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonMostrarSoldado)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(panelMostrarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonMostrarSoldado)
+                    .addComponent(botonResetMostrarSoldado))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -212,6 +222,10 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
     private void textNombreMostrarSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreMostrarSoldadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreMostrarSoldadoActionPerformed
+
+    private void botonResetMostrarSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResetMostrarSoldadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonResetMostrarSoldadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,6 +266,7 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
     private javax.swing.JTextArea areaMisionCrearSoldado;
     private javax.swing.JTextArea areaReporteMostrarSoldado;
     private javax.swing.JButton botonMostrarSoldado;
+    private javax.swing.JButton botonResetMostrarSoldado;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionMostrarSoldado;
@@ -296,17 +311,5 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
     public void reportarEstado() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
-    }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }
