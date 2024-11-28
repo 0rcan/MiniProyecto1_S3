@@ -29,7 +29,7 @@ import java.awt.event.ItemListener;
 
 public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
 
-
+    static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
 
     /**
      * Creates new form CrearSoldado

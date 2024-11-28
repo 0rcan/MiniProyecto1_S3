@@ -8,14 +8,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
 /**
  *
  * @author josue
  */
 public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
+    private int index;
+    static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
+
     public MostrarSoldadoRaso(SoldadoRaso soldado, int index) {
         initComponents();
+        this.index = index;
         llenarDatos(soldado);
     }
 
@@ -132,9 +137,21 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
         areaReporteMostrarSoldado.setRows(5);
         jScrollPane3.setViewportView(areaReporteMostrarSoldado);
 
-        botonMostrarSoldado.setBackground(new java.awt.Color(0, 153, 153));
-        botonMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonMostrarSoldado.setText("Next");
+    botonMostrarSoldado.setText("Siguiente");
+    botonMostrarSoldado.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            index = (index + 1) % OperacionesMilitares.listaSoldadoRaso.size();
+            SoldadoRaso nextSoldado = OperacionesMilitares.listaSoldadoRaso.get(index);
+            llenarDatos(nextSoldado);
+        }
+    });
+
+    if (OperacionesMilitares.listaSoldadoRaso.size() == 1) {
+        botonMostrarSoldado.setEnabled(false);
+    } else {
+        botonMostrarSoldado.setEnabled(true);
+    }
 
         javax.swing.GroupLayout panelMostrarSoldadoLayout = new javax.swing.GroupLayout(panelMostrarSoldado);
         panelMostrarSoldado.setLayout(panelMostrarSoldadoLayout);
