@@ -4,11 +4,6 @@
  */
 //package com.mycompany.project;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-
 /**
  *
  * @author josue
@@ -35,8 +30,6 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         panelModificarCapitan = new javax.swing.JPanel();
         labelNameModificarCapitan = new javax.swing.JLabel();
         textIDModificarCapitan = new javax.swing.JTextField();
-        textIDModificarCapitan.setEditable(false);
-        
         labelIDModificarCapitan = new javax.swing.JLabel();
         textNombreModificarCapitan = new javax.swing.JTextField();
         labelNivelModificarCapitan = new javax.swing.JLabel();
@@ -55,6 +48,7 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         jScrollPane2 = new javax.swing.JScrollPane();
         areaEstrategiaModificarCoronel = new javax.swing.JTextArea();
         botonModificarCapitan = new javax.swing.JButton();
+        botonResetModificarCapitan1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -127,6 +121,10 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         botonModificarCapitan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonModificarCapitan.setText("Next");
 
+        botonResetModificarCapitan1.setBackground(new java.awt.Color(0, 153, 153));
+        botonResetModificarCapitan1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonResetModificarCapitan1.setText("Reset");
+
         javax.swing.GroupLayout panelModificarCapitanLayout = new javax.swing.GroupLayout(panelModificarCapitan);
         panelModificarCapitan.setLayout(panelModificarCapitanLayout);
         panelModificarCapitanLayout.setHorizontalGroup(
@@ -141,27 +139,29 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
                     .addGroup(panelModificarCapitanLayout.createSequentialGroup()
                         .addComponent(labelMisionModificarCapitan)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                        .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textIDModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textNombreModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelIDModificarCapitan)
-                            .addComponent(labelNivelModificarCapitan)
-                            .addComponent(labelNameModificarCapitan)
-                            .addComponent(textNivelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelAccionModificarCapitan)
-                            .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelReporteModificarCapitan)
-                            .addComponent(labelModificarEstrategia)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarCapitanLayout.createSequentialGroup()
+                        .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(panelModificarCapitanLayout.createSequentialGroup()
+                                .addComponent(botonResetModificarCapitan1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelModificarCapitanLayout.createSequentialGroup()
+                                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textIDModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNombreModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelIDModificarCapitan)
+                                    .addComponent(labelNivelModificarCapitan)
+                                    .addComponent(labelNameModificarCapitan)
+                                    .addComponent(textNivelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelAccionModificarCapitan)
+                                    .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelReporteModificarCapitan)
+                                    .addComponent(labelModificarEstrategia)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(43, 43, 43))))
-            .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                .addGap(227, 227, 227)
-                .addComponent(botonModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 227, Short.MAX_VALUE))
         );
         panelModificarCapitanLayout.setVerticalGroup(
             panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,9 +199,11 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
                 .addComponent(labelMisionModificarCapitan)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonModificarCapitan)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonModificarCapitan)
+                    .addComponent(botonResetModificarCapitan1))
+                .addGap(41, 41, 41))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -267,6 +269,7 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
     private javax.swing.JTextArea areaMisionModificarCoronel;
     private javax.swing.JTextArea areaReporteModificarCoronel;
     private javax.swing.JButton botonModificarCapitan;
+    private javax.swing.JButton botonResetModificarCapitan1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -314,17 +317,5 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
     public void reportarEstado() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
-    }
-
-    @Override
-    public void itemStateChanged(ItemEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }

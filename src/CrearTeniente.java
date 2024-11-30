@@ -45,8 +45,8 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
         textUnidades = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         areaReporteCrearTeniente = new javax.swing.JTextArea();
+        botonNextTeniente = new javax.swing.JButton();
         botonResetTeniente = new javax.swing.JButton();
-        botonTeniente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -111,13 +111,21 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
         areaReporteCrearTeniente.setRows(5);
         jScrollPane3.setViewportView(areaReporteCrearTeniente);
 
+        botonNextTeniente.setBackground(new java.awt.Color(0, 153, 153));
+        botonNextTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonNextTeniente.setText("Next");
+
+        
+
         botonResetTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonResetTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonResetTeniente.setText("Next");
+        botonResetTeniente.setText("Reset");
 
-        botonTeniente.setBackground(new java.awt.Color(0, 153, 153));
-        botonTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonTeniente.setText("Reset");
+        botonResetTeniente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetTenienteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelCrearTenienteLayout = new javax.swing.GroupLayout(panelCrearTeniente);
         panelCrearTeniente.setLayout(panelCrearTenienteLayout);
@@ -136,9 +144,9 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearTenienteLayout.createSequentialGroup()
                         .addGroup(panelCrearTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panelCrearTenienteLayout.createSequentialGroup()
-                                .addComponent(botonTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(botonResetTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonResetTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botonNextTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelCrearTenienteLayout.createSequentialGroup()
                                 .addGroup(panelCrearTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textIDCrearTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,8 +200,8 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(panelCrearTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonResetTeniente)
-                    .addComponent(botonTeniente))
+                    .addComponent(botonNextTeniente)
+                    .addComponent(botonResetTeniente))
                 .addGap(41, 41, 41))
         );
 
@@ -218,6 +226,19 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
     private void textNombreCrearTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearTenienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearTenienteActionPerformed
+
+    private void botonResetTenienteActionPerformed(java.awt.event.ActionEvent evt) {
+
+        textNombreCrearTeniente.setText("");
+        textIDCrearTeniente.setText("");
+        textNivelCrearTeniente.setText("");
+        textAccionCrearTeniente.setText("");
+        areaMisionCrearTeniente.setText("");
+        areaReporteCrearTeniente.setText("");
+        textUnidades.setText("");
+        
+    }
+
 
     /**
      * @param args the command line arguments
@@ -257,8 +278,8 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaMisionCrearTeniente;
     private javax.swing.JTextArea areaReporteCrearTeniente;
+    private javax.swing.JButton botonNextTeniente;
     private javax.swing.JButton botonResetTeniente;
-    private javax.swing.JButton botonTeniente;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionCrearTeniente;

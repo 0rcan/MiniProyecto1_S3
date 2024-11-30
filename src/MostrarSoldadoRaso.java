@@ -15,6 +15,7 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
      */
     public MostrarSoldadoRaso() {
         initComponents();
+        
     }
 
     /**

@@ -93,23 +93,23 @@ public class MenuRangos extends javax.swing.JFrame implements ItemListener, Acti
         botonRangos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonRangos.setText("Next");
         botonRangos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRangosActionPerformed(evt);
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            botonRangosActionPerformed(evt);
                 
-                if (radioSoldadoRaso.isSelected()) {
-                    CrearSoldadoRaso nuevoSoldadoRaso = new CrearSoldadoRaso();
-                    nuevoSoldadoRaso.setVisible(true);     
-                } else if (radioTeniente.isSelected()) {
-                    CrearTeniente nuevoTeniente = new CrearTeniente();
-                    nuevoTeniente.setVisible(true);
-                } else if (radioCoronel.isSelected()) {
-                    CrearCoronel nuevoCoronel = new CrearCoronel();
-                    nuevoCoronel.setVisible(rootPaneCheckingEnabled);;
-                } else if (radioCapitan.isSelected()) {
-                    CrearCapitan nuevoCapitan = new CrearCapitan();
-                    nuevoCapitan.setVisible(true);
-                }
+            if (radioSoldadoRaso.isSelected()) {
+                CrearSoldadoRaso nuevoSoldadoRaso = new CrearSoldadoRaso();
+                nuevoSoldadoRaso.setVisible(true);     
+            } else if (radioTeniente.isSelected()) {
+                CrearTeniente nuevoTeniente = new CrearTeniente();
+                nuevoTeniente.setVisible(true);
+            } else if (radioCoronel.isSelected()) {
+                CrearCoronel nuevoCoronel = new CrearCoronel();
+                nuevoCoronel.setVisible(rootPaneCheckingEnabled);;
+            } else if (radioCapitan.isSelected()) {
+                CrearCapitan nuevoCapitan = new CrearCapitan();
+                nuevoCapitan.setVisible(true);
             }
+        }
         });
         ButtonGroup group = new ButtonGroup();
         group.add(radioSoldadoRaso);

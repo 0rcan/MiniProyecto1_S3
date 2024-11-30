@@ -4,6 +4,8 @@
  */
 //package com.mycompany.project;
 
+
+
 /**
  *
  * @author josue
@@ -214,7 +216,14 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
     }//GEN-LAST:event_textNombreCrearSoldadoRasoActionPerformed
 
     private void BototnResetSoldadoRasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BototnResetSoldadoRasoActionPerformed
-        // TODO add your handling code here:
+        
+        textNombreCrearSoldadoRaso.setText("");
+        textIDCrearSoldadoRaso.setText("");
+        textNivelCrearSoldadoRaso.setText("");
+        textAccionCrearSoldadoRaso.setText("");
+        areaMisionCrearSoldadoRaso.setText("");
+        areaReporteCrearSoldadoRaso.setText("");
+    
     }//GEN-LAST:event_BototnResetSoldadoRasoActionPerformed
 
     /**

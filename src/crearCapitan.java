@@ -36,17 +36,17 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
         textNivelCrearCapitan = new javax.swing.JTextField();
         labelReporteCrearCapitan = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        areaReporteCrearCoronel = new javax.swing.JTextArea();
+        areaReporteCrearCapitan = new javax.swing.JTextArea();
         labelMisionCrearCapitan = new javax.swing.JLabel();
         labelAccionCrearCapitan = new javax.swing.JLabel();
-        textAccionCrearCoronel = new javax.swing.JTextField();
+        textAccionCrearCapitan = new javax.swing.JTextField();
         panelCrearCapitan2 = new javax.swing.JPanel();
         labelCrearCapitan2 = new javax.swing.JLabel();
         labelEstrategia = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        areaMisionCrearCoronel = new javax.swing.JTextArea();
+        areaMisionCrearCapitan = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        areaEstrategiaCrearCoronel = new javax.swing.JTextArea();
+        areaEstrategiaCrearCapitan = new javax.swing.JTextArea();
         botonCapitan = new javax.swing.JButton();
         botonResetCapitan1 = new javax.swing.JButton();
 
@@ -72,9 +72,9 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
         labelReporteCrearCapitan.setForeground(new java.awt.Color(255, 255, 255));
         labelReporteCrearCapitan.setText("Reporte");
 
-        areaReporteCrearCoronel.setColumns(20);
-        areaReporteCrearCoronel.setRows(5);
-        jScrollPane1.setViewportView(areaReporteCrearCoronel);
+        areaReporteCrearCapitan.setColumns(20);
+        areaReporteCrearCapitan.setRows(5);
+        jScrollPane1.setViewportView(areaReporteCrearCapitan);
 
         labelMisionCrearCapitan.setForeground(new java.awt.Color(255, 255, 255));
         labelMisionCrearCapitan.setText("Misión");
@@ -109,13 +109,13 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
         labelEstrategia.setForeground(new java.awt.Color(255, 255, 255));
         labelEstrategia.setText("Estrategia");
 
-        areaMisionCrearCoronel.setColumns(20);
-        areaMisionCrearCoronel.setRows(5);
-        jScrollPane3.setViewportView(areaMisionCrearCoronel);
+        areaMisionCrearCapitan.setColumns(20);
+        areaMisionCrearCapitan.setRows(5);
+        jScrollPane3.setViewportView(areaMisionCrearCapitan);
 
-        areaEstrategiaCrearCoronel.setColumns(20);
-        areaEstrategiaCrearCoronel.setRows(5);
-        jScrollPane2.setViewportView(areaEstrategiaCrearCoronel);
+        areaEstrategiaCrearCapitan.setColumns(20);
+        areaEstrategiaCrearCapitan.setRows(5);
+        jScrollPane2.setViewportView(areaEstrategiaCrearCapitan);
 
         botonCapitan.setBackground(new java.awt.Color(0, 153, 153));
         botonCapitan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -124,6 +124,13 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
         botonResetCapitan1.setBackground(new java.awt.Color(0, 153, 153));
         botonResetCapitan1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetCapitan1.setText("Reset");
+
+        botonResetCapitan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetCapitan1ActionPerformed(evt);
+            }
+        });
+        
 
         javax.swing.GroupLayout panelCrearCapitanLayout = new javax.swing.GroupLayout(panelCrearCapitan);
         panelCrearCapitan.setLayout(panelCrearCapitanLayout);
@@ -154,7 +161,7 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
                                     .addComponent(labelNameCrearCapitan)
                                     .addComponent(textNivelCrearCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(labelAccionCrearCapitan)
-                                    .addComponent(textAccionCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(textAccionCrearCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                                 .addGroup(panelCrearCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelReporteCrearCapitan)
@@ -193,7 +200,7 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
                         .addGap(18, 18, 18)
                         .addComponent(labelAccionCrearCapitan)
                         .addGap(12, 12, 12)
-                        .addComponent(textAccionCrearCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textAccionCrearCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(labelMisionCrearCapitan)
@@ -227,6 +234,19 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
     private void textNombreCrearCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearCapitanActionPerformed
+
+    private void botonResetCapitan1ActionPerformed(java.awt.event.ActionEvent evt) {
+        textNombreCrearCapitan.setText("");
+        textIDCrearCapitan.setText("");
+        textNivelCrearCapitan.setText("");
+        textAccionCrearCapitan.setText("");
+        areaMisionCrearCapitan.setText("");
+        areaReporteCrearCapitan.setText("");
+        areaEstrategiaCrearCapitan.setText("");
+        
+    }
+
+    
 
     /**
      * @param args the command line arguments
@@ -265,9 +285,9 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea areaEstrategiaCrearCoronel;
-    private javax.swing.JTextArea areaMisionCrearCoronel;
-    private javax.swing.JTextArea areaReporteCrearCoronel;
+    private javax.swing.JTextArea areaEstrategiaCrearCapitan;
+    private javax.swing.JTextArea areaMisionCrearCapitan;
+    private javax.swing.JTextArea areaReporteCrearCapitan;
     private javax.swing.JButton botonCapitan;
     private javax.swing.JButton botonResetCapitan1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -284,7 +304,7 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
     private javax.swing.JLabel labelReporteCrearCapitan;
     private javax.swing.JPanel panelCrearCapitan;
     private javax.swing.JPanel panelCrearCapitan2;
-    private javax.swing.JTextField textAccionCrearCoronel;
+    private javax.swing.JTextField textAccionCrearCapitan;
     private javax.swing.JTextField textIDCrearCapitan;
     private javax.swing.JTextField textNivelCrearCapitan;
     private javax.swing.JTextField textNombreCrearCapitan;

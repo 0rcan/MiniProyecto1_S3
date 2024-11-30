@@ -4,6 +4,8 @@
  */
 //package com.mycompany.project;
 
+import java.awt.event.ActionEvent;
+
 /**
  *
  * @author josue
@@ -120,6 +122,14 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
         botonResetCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetCoronel.setText("Reset");
 
+        botonResetCoronel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetCoronelActionPerformed(evt);
+            }
+
+           
+        });
+
         javax.swing.GroupLayout panelCrearCoronelLayout = new javax.swing.GroupLayout(panelCrearCoronel);
         panelCrearCoronel.setLayout(panelCrearCoronelLayout);
         panelCrearCoronelLayout.setHorizontalGroup(
@@ -217,6 +227,17 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
     private void textNombreCrearCoronelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearCoronelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearCoronelActionPerformed
+
+    private void botonResetCoronelActionPerformed(java.awt.event.ActionEvent evt) {
+        textNombreCrearCoronel.setText("");
+        textIDCrearCoronel.setText("");
+        textNivelCrearCoronel.setText("");
+        textAccionCrearCoronel.setText("");
+        areaMisionCrearCoronel.setText("");
+        areaReporteCrearCoronel1.setText("");
+        textMando.setText("");
+        
+    }
 
     /**
      * @param args the command line arguments
