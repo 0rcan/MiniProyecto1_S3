@@ -1,7 +1,7 @@
 public abstract class Rango extends Soldado { // Esta es una clase abstracta, no puede instanciasrse como objeto 
     //Atributos abstractos
-    int nivel;
-    public Rango (int nivel, String nombre, String id, String rango){
+    String nivel;
+    public Rango (String nivel, String nombre, String id, String rango){
         super(nombre,id,rango);
         this.nivel=nivel;
     }

@@ -27,10 +27,11 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
     private void initComponents() {
 
         jScrollBar1 = new javax.swing.JScrollBar();
+        panelBuscadorModificarCoronel = new javax.swing.JPanel();
+        textBuscarModificarCoronel = new javax.swing.JLabel();
+        textBuscadorModificarCoronel = new javax.swing.JTextField();
         panelModificarCoronel = new javax.swing.JPanel();
         labelNameModificarCoronel = new javax.swing.JLabel();
-        textIDModificarCoronel = new javax.swing.JTextField();
-        labelIDModificarCoronel = new javax.swing.JLabel();
         textNombreModificarCoronel = new javax.swing.JTextField();
         labelNivelModificarCoronel = new javax.swing.JLabel();
         textNivelModificarCoronel = new javax.swing.JTextField();
@@ -48,16 +49,46 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
         areaReporteModificarCoronel1 = new javax.swing.JTextArea();
         botonModificarCoronel = new javax.swing.JButton();
         botonResetModificarCoronel1 = new javax.swing.JButton();
+        botonEliminarCoronel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        panelBuscadorModificarCoronel.setBackground(new java.awt.Color(0, 153, 153));
+
+        textBuscarModificarCoronel.setForeground(new java.awt.Color(255, 255, 255));
+        textBuscarModificarCoronel.setText("Buscar ID");
+
+        textBuscadorModificarCoronel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textBuscadorModificarCoronelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelBuscadorModificarCoronelLayout = new javax.swing.GroupLayout(panelBuscadorModificarCoronel);
+        panelBuscadorModificarCoronel.setLayout(panelBuscadorModificarCoronelLayout);
+        panelBuscadorModificarCoronelLayout.setHorizontalGroup(
+            panelBuscadorModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBuscadorModificarCoronelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(panelBuscadorModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textBuscadorModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textBuscarModificarCoronel))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        panelBuscadorModificarCoronelLayout.setVerticalGroup(
+            panelBuscadorModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBuscadorModificarCoronelLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(textBuscarModificarCoronel)
+                .addGap(18, 18, 18)
+                .addComponent(textBuscadorModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         panelModificarCoronel.setBackground(new java.awt.Color(19, 71, 89));
 
         labelNameModificarCoronel.setForeground(new java.awt.Color(255, 255, 255));
         labelNameModificarCoronel.setText("Nombre");
-
-        labelIDModificarCoronel.setForeground(new java.awt.Color(255, 255, 255));
-        labelIDModificarCoronel.setText("ID");
 
         textNombreModificarCoronel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,6 +151,15 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
         botonResetModificarCoronel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetModificarCoronel1.setText("Reset");
 
+        botonEliminarCoronel.setBackground(new java.awt.Color(0, 153, 153));
+        botonEliminarCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonEliminarCoronel.setText("Eliminar");
+        botonEliminarCoronel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarCoronelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelModificarCoronelLayout = new javax.swing.GroupLayout(panelModificarCoronel);
         panelModificarCoronel.setLayout(panelModificarCoronelLayout);
         panelModificarCoronelLayout.setHorizontalGroup(
@@ -138,19 +178,19 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
                         .addGroup(panelModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panelModificarCoronelLayout.createSequentialGroup()
                                 .addComponent(botonResetModificarCoronel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(94, 94, 94)
+                                .addComponent(botonEliminarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                                 .addComponent(botonModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(panelModificarCoronelLayout.createSequentialGroup()
                                 .addGroup(panelModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textIDModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(textNombreModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelIDModificarCoronel)
                                     .addComponent(labelNivelModificarCoronel)
                                     .addComponent(labelNameModificarCoronel)
                                     .addComponent(textNivelModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(labelAccionModificarCoronel)
                                     .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(panelModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelReporteModificarCoronel)
                                     .addComponent(labelModificarMando)
@@ -169,44 +209,46 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
                 .addGap(12, 12, 12)
                 .addGroup(panelModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelModificarCoronelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(labelModificarMando)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textMando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelModificarCoronelLayout.createSequentialGroup()
                         .addComponent(textNombreModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(labelIDModificarCoronel)
+                        .addComponent(labelNivelModificarCoronel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textIDModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNivelModificarCoronel)
-                    .addComponent(labelModificarMando))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textNivelModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textMando, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(labelAccionModificarCoronel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textNivelModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelAccionModificarCoronel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(labelMisionModificarCoronel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(panelModificarCoronelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonModificarCoronel)
-                    .addComponent(botonResetModificarCoronel1))
-                .addGap(41, 41, 41))
+                    .addComponent(botonResetModificarCoronel1)
+                    .addComponent(botonEliminarCoronel))
+                .addGap(70, 70, 70))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelModificarCoronel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(panelBuscadorModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelModificarCoronel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelBuscadorModificarCoronel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -215,6 +257,14 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
     private void textNombreModificarCoronelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreModificarCoronelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreModificarCoronelActionPerformed
+
+    private void textBuscadorModificarCoronelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorModificarCoronelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textBuscadorModificarCoronelActionPerformed
+
+    private void botonEliminarCoronelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCoronelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminarCoronelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,23 +307,25 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaMisionModificarCoronel;
     private javax.swing.JTextArea areaReporteModificarCoronel1;
+    private javax.swing.JButton botonEliminarCoronel;
     private javax.swing.JButton botonModificarCoronel;
     private javax.swing.JButton botonResetModificarCoronel1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionModificarCoronel;
-    private javax.swing.JLabel labelIDModificarCoronel;
     private javax.swing.JLabel labelMisionModificarCoronel;
     private javax.swing.JLabel labelModificarCoronel;
     private javax.swing.JLabel labelModificarMando;
     private javax.swing.JLabel labelNameModificarCoronel;
     private javax.swing.JLabel labelNivelModificarCoronel;
     private javax.swing.JLabel labelReporteModificarCoronel;
+    private javax.swing.JPanel panelBuscadorModificarCoronel;
     private javax.swing.JPanel panelModificarCoronel;
     private javax.swing.JPanel panelModificarCoronel2;
     private javax.swing.JTextField textAccionModificarCoronel;
-    private javax.swing.JTextField textIDModificarCoronel;
+    private javax.swing.JTextField textBuscadorModificarCoronel;
+    private javax.swing.JLabel textBuscarModificarCoronel;
     private javax.swing.JTextField textMando;
     private javax.swing.JTextField textNivelModificarCoronel;
     private javax.swing.JTextField textNombreModificarCoronel;

@@ -8,7 +8,7 @@
  *
  * @author josue
  */
-public class MostrarCapitan extends javax.swing.JFrame {
+public class MostrarCapitan extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
 
     /**
      * Creates new form MostrarCapitan
@@ -48,6 +48,9 @@ public class MostrarCapitan extends javax.swing.JFrame {
         botonMostrarCapitan = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         areaReporteMostrarCapitan1 = new javax.swing.JTextArea();
+        panelBuscadorCapitan = new javax.swing.JPanel();
+        textBuscadorCapitan = new javax.swing.JTextField();
+        textBuscarCapitan = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -56,7 +59,7 @@ public class MostrarCapitan extends javax.swing.JFrame {
         labelNameMostrarCapitan.setForeground(new java.awt.Color(255, 255, 255));
         labelNameMostrarCapitan.setText("Nombre");
 
-        textIDMostrarCapitan.setEditable(true);
+        textIDMostrarCapitan.setEditable(false);
         textIDMostrarCapitan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textIDMostrarCapitanActionPerformed(evt);
@@ -100,7 +103,7 @@ public class MostrarCapitan extends javax.swing.JFrame {
         labelMostrarCapitan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         labelMostrarCapitan.setForeground(new java.awt.Color(255, 255, 255));
         labelMostrarCapitan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelMostrarCapitan.setText("Mostrar Capitan");
+        labelMostrarCapitan.setText("Mostrar Coronel");
 
         javax.swing.GroupLayout panelMostrarCapitan2Layout = new javax.swing.GroupLayout(panelMostrarCapitan2);
         panelMostrarCapitan2.setLayout(panelMostrarCapitan2Layout);
@@ -132,7 +135,12 @@ public class MostrarCapitan extends javax.swing.JFrame {
 
         botonMostrarCapitan.setBackground(new java.awt.Color(0, 153, 153));
         botonMostrarCapitan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonMostrarCapitan.setText("Next");
+        botonMostrarCapitan.setText("Mostrar");
+        botonMostrarCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMostrarCapitanActionPerformed(evt);
+            }
+        });
 
         areaReporteMostrarCapitan1.setEditable(false);
         areaReporteMostrarCapitan1.setColumns(20);
@@ -218,19 +226,53 @@ public class MostrarCapitan extends javax.swing.JFrame {
                 .addGap(41, 41, 41))
         );
 
+        panelBuscadorCapitan.setBackground(new java.awt.Color(0, 153, 153));
+
+        textBuscadorCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textBuscadorCapitanActionPerformed(evt);
+            }
+        });
+
+        textBuscarCapitan.setForeground(new java.awt.Color(255, 255, 255));
+        textBuscarCapitan.setText("Buscar ID");
+
+        javax.swing.GroupLayout panelBuscadorCapitanLayout = new javax.swing.GroupLayout(panelBuscadorCapitan);
+        panelBuscadorCapitan.setLayout(panelBuscadorCapitanLayout);
+        panelBuscadorCapitanLayout.setHorizontalGroup(
+            panelBuscadorCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBuscadorCapitanLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(panelBuscadorCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textBuscarCapitan)
+                    .addComponent(textBuscadorCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
+        );
+        panelBuscadorCapitanLayout.setVerticalGroup(
+            panelBuscadorCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBuscadorCapitanLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(textBuscarCapitan)
+                .addGap(18, 18, 18)
+                .addComponent(textBuscadorCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelMostrarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(panelBuscadorCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelMostrarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelMostrarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelBuscadorCapitan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -243,6 +285,14 @@ public class MostrarCapitan extends javax.swing.JFrame {
     private void textIDMostrarCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textIDMostrarCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textIDMostrarCapitanActionPerformed
+
+    private void textBuscadorCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textBuscadorCapitanActionPerformed
+
+    private void botonMostrarCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonMostrarCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonMostrarCapitanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,11 +346,82 @@ public class MostrarCapitan extends javax.swing.JFrame {
     private javax.swing.JLabel labelNameMostrarCapitan;
     private javax.swing.JLabel labelNivelMostrarCapitan;
     private javax.swing.JLabel labelReporteMostrarCapitan;
+    private javax.swing.JPanel panelBuscadorCapitan;
+    private javax.swing.JPanel panelBuscadorCoronel;
+    private javax.swing.JPanel panelBuscadorCoronel1;
+    private javax.swing.JPanel panelBuscadorCoronel2;
+    private javax.swing.JPanel panelBuscadorCoronel3;
+    private javax.swing.JPanel panelBuscadorCoronel4;
+    private javax.swing.JPanel panelBuscadorCoronel5;
+    private javax.swing.JPanel panelBuscadorCoronel6;
+    private javax.swing.JPanel panelBuscadorSoldadoRaso;
+    private javax.swing.JPanel panelBuscadorSoldadoRaso1;
+    private javax.swing.JPanel panelBuscadorSoldadoRaso2;
+    private javax.swing.JPanel panelBuscadorSoldadoRaso3;
+    private javax.swing.JPanel panelBuscadorSoldadoRaso4;
+    private javax.swing.JPanel panelBuscadorSoldadoRaso5;
     private javax.swing.JPanel panelMostrarCapitan;
     private javax.swing.JPanel panelMostrarCapitan2;
     private javax.swing.JTextField textAccionMostrarCapitan;
+    private javax.swing.JTextField textBuscadorCapitan;
+    private javax.swing.JTextField textBuscadorCoronel;
+    private javax.swing.JTextField textBuscadorCoronel1;
+    private javax.swing.JTextField textBuscadorCoronel2;
+    private javax.swing.JTextField textBuscadorCoronel3;
+    private javax.swing.JTextField textBuscadorCoronel4;
+    private javax.swing.JTextField textBuscadorCoronel5;
+    private javax.swing.JTextField textBuscadorCoronel6;
+    private javax.swing.JTextField textBuscadorSoldadoRaso;
+    private javax.swing.JTextField textBuscadorSoldadoRaso1;
+    private javax.swing.JTextField textBuscadorSoldadoRaso2;
+    private javax.swing.JTextField textBuscadorSoldadoRaso3;
+    private javax.swing.JTextField textBuscadorSoldadoRaso4;
+    private javax.swing.JTextField textBuscadorSoldadoRaso5;
+    private javax.swing.JLabel textBuscarCapitan;
+    private javax.swing.JLabel textBuscarCoronel;
+    private javax.swing.JLabel textBuscarCoronel1;
+    private javax.swing.JLabel textBuscarCoronel2;
+    private javax.swing.JLabel textBuscarCoronel3;
+    private javax.swing.JLabel textBuscarCoronel4;
+    private javax.swing.JLabel textBuscarCoronel5;
+    private javax.swing.JLabel textBuscarCoronel6;
+    private javax.swing.JLabel textBuscarSoldadoRaso;
+    private javax.swing.JLabel textBuscarSoldadoRaso1;
+    private javax.swing.JLabel textBuscarSoldadoRaso2;
+    private javax.swing.JLabel textBuscarSoldadoRaso3;
+    private javax.swing.JLabel textBuscarSoldadoRaso4;
+    private javax.swing.JLabel textBuscarSoldadoRaso5;
     private javax.swing.JTextField textIDMostrarCapitan;
     private javax.swing.JTextField textNivelMostrarCapitan;
     private javax.swing.JTextField textNombreMostrarCapitan;
     // End of variables declaration//GEN-END:variables
+    @Override
+    public void crearSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crearSoldado'");
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+    }
+
+    @Override
+    public void modificarSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
+    }
+
+    @Override
+    public void asignarMision(String mision) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'asignarMision'");
+    }
+
+    @Override
+    public void reportarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
+    }
 }

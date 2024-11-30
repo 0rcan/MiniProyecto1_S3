@@ -4,7 +4,10 @@
  */
 //package com.mycompany.project;
 
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -111,6 +114,12 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
         botonSoldadoRaso.setBackground(new java.awt.Color(0, 153, 153));
         botonSoldadoRaso.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonSoldadoRaso.setText("Next");
+        botonSoldadoRaso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSoldadoRasoActionPerformed(evt);
+            }
+        });
+
 
         BototnResetSoldadoRaso.setBackground(new java.awt.Color(0, 153, 153));
         BototnResetSoldadoRaso.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -215,6 +224,47 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearSoldadoRasoActionPerformed
 
+    private void botonSoldadoRasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BototnResetSoldadoRasoActionPerformed
+        
+        //  static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
+        // static List<String> accionSoldadoRaso = new ArrayList<>();
+        // static List<String> misionSoldadoRaso = new ArrayList<>();
+        // static List<String> reportarSoldadoRaso = new ArrayList<>();
+        String rango = "1";
+        String nombre= textNombreCrearSoldadoRaso.getText();
+        String id =textIDCrearSoldadoRaso.getText();
+        String nivel =  textNivelCrearSoldadoRaso.getText();
+        String mision = areaMisionCrearSoldadoRaso.getText();
+        String reporte = areaReporteCrearSoldadoRaso.getText();
+
+        String accion= textAccionCrearSoldadoRaso.getText();
+
+        SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso(nivel,nombre, id,rango,mision,reporte);
+
+        listaSoldadoRaso.add(nuevoSoldadoRaso);
+        accionSoldadoRaso.add(accion);
+
+        
+            if (nombre.equals("") || id.equals("")||nivel.equals("") || accion.equals("") || mision.equals("") || reporte.equals("")) {
+                JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
+            } else {
+                JOptionPane.showMessageDialog(null, "Soldado Raso creado exitosamente");
+        
+                // Limpiar campos
+                textNombreCrearSoldadoRaso.setText("");
+                textIDCrearSoldadoRaso.setText("");
+                textNivelCrearSoldadoRaso.setText("");
+                textAccionCrearSoldadoRaso.setText("");
+                areaMisionCrearSoldadoRaso.setText("");
+                areaReporteCrearSoldadoRaso.setText("");
+            }
+
+        
+
+    }
+
+
+
     private void BototnResetSoldadoRasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BototnResetSoldadoRasoActionPerformed
         
         textNombreCrearSoldadoRaso.setText("");
@@ -224,7 +274,9 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
         areaMisionCrearSoldadoRaso.setText("");
         areaReporteCrearSoldadoRaso.setText("");
     
-    }//GEN-LAST:event_BototnResetSoldadoRasoActionPerformed
+    }
+
+
 
     /**
      * @param args the command line arguments

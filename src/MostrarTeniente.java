@@ -47,6 +47,9 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
         areaReporteMostrarTeniente1 = new javax.swing.JTextArea();
         botonMostrarTeniente = new javax.swing.JButton();
         botonResetMostrarTeniente = new javax.swing.JButton();
+        panelBuscadorTeniente = new javax.swing.JPanel();
+        textBuscadorTeniente = new javax.swing.JTextField();
+        textBuscarTeniente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -55,7 +58,7 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
         labelNameMostrarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         labelNameMostrarTeniente.setText("Nombre");
 
-        textIDMostrarTeniente.setEditable(true);
+        textIDMostrarTeniente.setEditable(false);
 
         labelIDMostrarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         labelIDMostrarTeniente.setText("ID");
@@ -124,7 +127,7 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
 
         botonMostrarTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonMostrarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonMostrarTeniente.setText("Next");
+        botonMostrarTeniente.setText("Mostrar");
 
         botonResetMostrarTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonResetMostrarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -201,24 +204,58 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
                 .addComponent(labelMisionMostrarTeniente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(panelMostrarTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonMostrarTeniente)
                     .addComponent(botonResetMostrarTeniente))
                 .addGap(41, 41, 41))
         );
 
+        panelBuscadorTeniente.setBackground(new java.awt.Color(0, 153, 153));
+
+        textBuscadorTeniente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textBuscadorTenienteActionPerformed(evt);
+            }
+        });
+
+        textBuscarTeniente.setForeground(new java.awt.Color(255, 255, 255));
+        textBuscarTeniente.setText("Buscar ID");
+
+        javax.swing.GroupLayout panelBuscadorTenienteLayout = new javax.swing.GroupLayout(panelBuscadorTeniente);
+        panelBuscadorTeniente.setLayout(panelBuscadorTenienteLayout);
+        panelBuscadorTenienteLayout.setHorizontalGroup(
+            panelBuscadorTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBuscadorTenienteLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(panelBuscadorTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textBuscarTeniente)
+                    .addComponent(textBuscadorTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
+        );
+        panelBuscadorTenienteLayout.setVerticalGroup(
+            panelBuscadorTenienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBuscadorTenienteLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(textBuscarTeniente)
+                .addGap(18, 18, 18)
+                .addComponent(textBuscadorTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(panelBuscadorTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelMostrarTeniente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelBuscadorTeniente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -227,6 +264,10 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
     private void textNombreMostrarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreMostrarTenienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreMostrarTenienteActionPerformed
+
+    private void textBuscadorTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorTenienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textBuscadorTenienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,9 +319,12 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
     private javax.swing.JLabel labelNameMostrarTeniente;
     private javax.swing.JLabel labelNivelMostrarTeniente;
     private javax.swing.JLabel labelReporteMostrarTeniente;
+    private javax.swing.JPanel panelBuscadorTeniente;
     private javax.swing.JPanel panelMostrarTeniente;
     private javax.swing.JPanel panelMostrarTeniente2;
     private javax.swing.JTextField textAccionMostrarTeniente;
+    private javax.swing.JTextField textBuscadorTeniente;
+    private javax.swing.JLabel textBuscarTeniente;
     private javax.swing.JTextField textIDMostrarTeniente;
     private javax.swing.JTextField textMostrarUnidades;
     private javax.swing.JTextField textNivelMostrarTeniente;

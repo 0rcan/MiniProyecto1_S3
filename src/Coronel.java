@@ -4,29 +4,43 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Coronel extends Rango implements OperacionesMilitares {
-    // Clase coronel que hereda de Rango e implemebta la interfaz
-    // OperacionesMilitares
 
+    /////////////
+    // ATRIBUTOS//
+    /////////////
+
+    String mision;
+    String reporte;
     String estrategia;
+
     static ArrayList<Coronel> listaCoronel = new ArrayList<>();
     static List<String> accionCoronel = new ArrayList<>();
-    static List<String> misionCoronel = new ArrayList<>();
-    static List<String> reportarCoronel = new ArrayList<>();
+//     static List<String> misionCoronel = new ArrayList<>();
+//     static List<String> reportarCoronel = new ArrayList<>();
 
-    public Coronel(String estrategia, int nivel, String nombre, String id, String rango) {
-        super(nivel, nombre, id, rango);
-        this.estrategia = estrategia;
+    ///////////////
+    // CONSTRUCTOR//
+    ///////////////
+
+    public Coronel(String estrategia,String nivel, String nombre, String id, String rango,String mision,String reporte) {
+            super(nivel, nombre, id, rango);
+            this.mision = mision;
+            this.reporte = reporte;
+            this.estrategia = estrategia;
+    }    
+
+    public Coronel() { // constructor vacio necesario para crear objetos de la clase
+
     }
 
-    public Coronel() {// Constructor vacio necesario para crear onjetos de la clase
-
-    }
-    // Metodo
+    //////////
+    // METODO//
+    //////////
 
     // Metodo para verificar si el ID ya existe en la lista
-    public static boolean idExisteEnLista(List<Coronel> lista, String id) {
+    public static boolean idExisteEnLista(ArrayList<Coronel> lista, String id) {
 
-        // Recorre la lista <Coronel> verificando si el id ya existe
+        // Recorre la lista<Coronel> verificando si el id ya existe
         for (Coronel soldado : lista) {
             if (soldado.id.equals(id)) {
                 return true;
@@ -35,7 +49,10 @@ public class Coronel extends Rango implements OperacionesMilitares {
         return false;
     }
 
-    // Metodo abstracto
+    ////////////////////
+    // METODO/ABSTRACTO//
+    ////////////////////
+
     public void realizarAccion() {
 
         String accion = JOptionPane.showInputDialog(null, "Ingrese la accion del Coronel ", "Acción Coronel ",
@@ -45,54 +62,32 @@ public class Coronel extends Rango implements OperacionesMilitares {
         System.out.println("Acción: " + accion);
     }
 
-    // Metodos de la interfaz
 
-    @Override
-    public void asignarMision(String mision) {
-        // El polimorfismo se encarga de añadir la mision a la lista
-        misionCoronel.add(mision);
-        System.out.println("Misión asignada: " + mision);
-    }
+    ////////////////
+    // CREARSOLDADO//
+    ////////////////
 
-    @Override
-    public void reportarEstado() {
-
-        String reporte = JOptionPane.showInputDialog(null, "Ingrese el reporte del Coronel ", "Reportar Estado",
-                JOptionPane.QUESTION_MESSAGE);
-
-        // El polimorfismo se encarga de añadir el reporte a la lista
-        reportarCoronel.add(reporte);
-        System.out.println("Reporte: " + reporte);
-
-    }
-
-    // Crear soldado
     @Override
     public void crearSoldado() {
 
-        // Datos que se compararan con la lista
+        //Datos que se compararan con la lista 
         rango = "4";
 
-        nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del coronel: ", "Crear Coronel ",
-                JOptionPane.QUESTION_MESSAGE);
-        id = JOptionPane.showInputDialog(null, "Ingrese el ID del coronel: ", "Crear Coronel ",
-                JOptionPane.QUESTION_MESSAGE);
-        nivel = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el nivel del coronel: ", "Crear Coronel ",
-                JOptionPane.QUESTION_MESSAGE));
-        estrategia = JOptionPane.showInputDialog(null, "Ingrese la estrategia del coronel: ", "Crear Coronel ",
-                JOptionPane.QUESTION_MESSAGE);
+        nombre = JOptionPane.showInputDialog(null,"Ingrese el nombre del soldado: ", "Crear Soldado", JOptionPane.QUESTION_MESSAGE);
+        id = JOptionPane.showInputDialog(null,"Ingrese el ID del soldado: ", "Crear Soldado", JOptionPane.QUESTION_MESSAGE);
+        nivel = JOptionPane.showInputDialog(null,"Ingrese el nivel del soldado: ", "Crear Soldado", JOptionPane.QUESTION_MESSAGE); 
+        
+        //Asignamos una mision al soldado
+        mision = JOptionPane.showInputDialog(null, "Asigne una misíon al soldado Raso: ", "Asignar Misión", JOptionPane.QUESTION_MESSAGE);
+        
+        //Reportamos el estado del soldado
+        reporte = JOptionPane.showInputDialog(null, "Ingrese el reporte del soldado", "Reportar Estado", JOptionPane.QUESTION_MESSAGE);
+        
+        estrategia = JOptionPane.showInputDialog(null, "Ingrese la cantidad de soldados bajo su mando: ","Crear Coronel ", JOptionPane.QUESTION_MESSAGE);
 
-        String mision = JOptionPane.showInputDialog(null, "Asigne una misíon al Coronel: ", "Asignar Misión",
-                JOptionPane.QUESTION_MESSAGE);
-
-        // Asignamos una mision al soldado
-        asignarMision(mision); // Se asigna la mision al soldado
-
-        // Reportamos el estado del soldado
-        reportarEstado();
         realizarAccion();
 
-        Coronel nuevoCoronel = new Coronel(estrategia, nivel, nombre, id, rango);
+        Coronel nuevoCoronel = new Coronel(estrategia, nivel, nombre, id, rango,mision,reporte);
 
         // Verificacion si el ID existe en la lista
         if (!idExisteEnLista(listaCoronel, id)) {
@@ -108,7 +103,10 @@ public class Coronel extends Rango implements OperacionesMilitares {
 
     }
 
-    // Mostrar informacion
+    //////////////////////
+    // MOSTRARINFORMACION//
+    //////////////////////
+
     @Override
     public void mostrarInformacion() {
 
@@ -117,9 +115,7 @@ public class Coronel extends Rango implements OperacionesMilitares {
 
         // Datos que se compararan con la lista
         rango = "4";
-        //nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del coronel: ", "Información Coronel ",
-         //       JOptionPane.QUESTION_MESSAGE);
-        id = JOptionPane.showInputDialog(null, "Ingrese el ID del coronel: ", "Información Coronel ",
+        id = JOptionPane.showInputDialog(null, "Ingrese el ID del soldado:", "Información Coronel ",
                 JOptionPane.QUESTION_MESSAGE);
 
         int contador = 0;
@@ -129,7 +125,7 @@ public class Coronel extends Rango implements OperacionesMilitares {
             System.out.println(listaCoronel.size());
             // Condicion para verificar si el soldado existe comparando con los datos
             // ingresados
-            if (/*nombre.equals(soldado.nombre) && */rango.equals(soldado.rango) && id.equals(soldado.id)) {
+            if (/*nombre.equals(soldado.nombre) &&*/ rango.equals(soldado.rango) && id.equals(soldado.id)) {
 
                 // Si se cumple muestra lo siguiente
                 JOptionPane.showMessageDialog(null,
@@ -137,19 +133,11 @@ public class Coronel extends Rango implements OperacionesMilitares {
                                 "ID: " + soldado.id + "\n" +
                                 "Rango: " + soldado.rango + "\n" +
                                 "Nivel: " + soldado.nivel + "\n" +
-                                "Estrategia del coronel: " + soldado.estrategia + "\n",
+                                "Mision: " + soldado.mision  + "\n" +
+                                "Reporte: " + soldado.reporte + "\n" +
+                                "estrategiaes del Coronel: " + soldado.estrategia + "\n",
                         "Información Coronel ", JOptionPane.INFORMATION_MESSAGE);
-
-                // Cuando el contador este igualado al indice se imprime en pantalla
-                JOptionPane.showMessageDialog(null, "Misión: " + misionCoronel.get(contador), "Información Coronel ",
-                        JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(null, "Reporte: " + reportarCoronel.get(contador), "Información Coronel ",
-                        JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(null, "Acción: " + accionCoronel.get(contador), "Información Coronel ",
-                        JOptionPane.INFORMATION_MESSAGE);
-
-                // asignarMision(mision);
-
+                        JOptionPane.showMessageDialog(null, "Acción: " + accionCoronel.get(contador), "Información Coronel", JOptionPane.INFORMATION_MESSAGE);
                 System.out.println("x");
 
                 // Si el soldado fue encontrado la varieable se actualiza
@@ -167,20 +155,21 @@ public class Coronel extends Rango implements OperacionesMilitares {
         }
     }
 
-    // Modificar soldado
+    ////////////////////
+    // MODIFICARSOLDADO//
+    ////////////////////
+
     @Override
     public void modificarSoldado() {
 
         // Variable para verificar si el soldado fue encontrado
         boolean encontrado = false;
-        //String nuevoId;
-        //boolean idValido;
 
         // Datos que se compararan con la lista
         rango = "4";
-        // nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del coronel: ", "Modificar Coronel ",
-        //         JOptionPane.QUESTION_MESSAGE);
-        id = JOptionPane.showInputDialog(null, "Ingrese el ID del coronel: ", "Modificar Coronel ",
+       // nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre del soldado:", "Modificar Coronel ",
+        //        JOptionPane.QUESTION_MESSAGE);
+        id = JOptionPane.showInputDialog(null, "Ingrese el ID del soldado:", "Modificar Coronel ",
                 JOptionPane.QUESTION_MESSAGE);
         int contador = 0;
         // Siclo para recorrer la lista
@@ -188,49 +177,25 @@ public class Coronel extends Rango implements OperacionesMilitares {
 
             // Condicion para verificar si el soldado existe comparando con los datos
             // ingresados
-            if (/*nombre.equals(soldado.nombre) &&*/ rango.equals(soldado.rango) && id.equals(soldado.id)) {
+            if (/*nombre.equals(soldado.nombre) && */rango.equals(soldado.rango) && id.equals(soldado.id)) {
 
                 // Recordatorio no se puede modificar Rangos ya que hace conflicto con la lista
                 // donde se almacenan los soldados
                 // Remplazo de datos
-                JOptionPane.showMessageDialog(null, "Soldado encontrado", "Modificar Coronel ",
-                        JOptionPane.INFORMATION_MESSAGE);
-                soldado.nivel = Integer
-                        .parseInt(JOptionPane.showInputDialog(null, "Ingrese el nuevo nivel del Coronel: ",
-                                "Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE));
-                soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del Coronel: ",
-                        "Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
-                soldado.estrategia = JOptionPane.showInputDialog(null, "Ingrese la nueva estrategia del coronel: ",
-                        "Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Soldado encontrado", "Modificar Coronel ",JOptionPane.INFORMATION_MESSAGE);
+                soldado.nivel = JOptionPane.showInputDialog(null, "Ingrese el nuevo nivel del Coronel: ","Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
+                soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del Coronel: ","Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
+                soldado.estrategia = JOptionPane.showInputDialog(null, "Ingrese la nueva cantidad: ","Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
 
                 // do while para evitar ids repetidos
                 do {
-                    // Variable para ingresar el nuevo id
-                   // nuevoId = JOptionPane.showInputDialog(null, "Ingrese el nuevo ID del coronel: ",
-                     //       "Modificar ID Coronel ", JOptionPane.QUESTION_MESSAGE);
 
-                    // Si el id existe entonces la variable idValido sera falsa
-                    // De lo contrario sera false
-                    //idValido = !idExisteEnLista(listaCoronel, nuevoId);
-
-                    // convertimos la variable a lo contrario entonces se muestra el mensaje
-                //     if (!idValido && nuevoId == null) {
-                //         JOptionPane.showMessageDialog(null, "El ID ya existe en la lista", "Información Coronel ",
-                //                 JOptionPane.ERROR_MESSAGE);
-                //     }
-
-                    // Mientras siga siendo verdad
-                    // seguira en el siclo hasta que el id sea diferente a uno existente
-                    //soldado.id = nuevoId; // Se actualiza el id del soldado
-                    
                 // Remplazamos el elemento de la posicion contador con su nueva mision,reprote y
                 // accion
-                String mision = JOptionPane.showInputDialog(null, "Ingrese la nueva misión del Coronel: ",
-                        "Modificar Misión", JOptionPane.QUESTION_MESSAGE);
-                misionCoronel.set(contador, mision);
-                String reporte = JOptionPane.showInputDialog(null, "Ingrese el nuevo reporte del Coronel: ",
-                        "Modificar reporte", JOptionPane.QUESTION_MESSAGE);
-                reportarCoronel.set(contador, reporte);
+                mision = JOptionPane.showInputDialog(null, "Ingrese la nueva misión del Coronel: ","Modificar Misión", JOptionPane.QUESTION_MESSAGE);
+                //misionCoronel.set(contador, mision);
+                reporte = JOptionPane.showInputDialog(null, "Ingrese el nuevo reporte del Coronel: ","Modificar reporte", JOptionPane.QUESTION_MESSAGE);
+                //reportarCoronel.set(contador, reporte);
                 String accion = JOptionPane.showInputDialog(null, "Ingrese la nueva accion del Coronel: ",
                 "Modificar acción", JOptionPane.QUESTION_MESSAGE);
                 accionCoronel.set(contador, accion);
@@ -238,32 +203,28 @@ public class Coronel extends Rango implements OperacionesMilitares {
                 JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Coronel ",
                         JOptionPane.INFORMATION_MESSAGE);
 
-                // Mostrar la informacion del soldado actualizada
-                JOptionPane.showMessageDialog(null,
-                "Nombre: " + soldado.nombre + "\n" +
-                "ID: " + soldado.id + "\n" +
-                "Rango: " + soldado.rango + "\n" +
-                                "Nivel: " + soldado.nivel + "\n" +
-                                "Estrategia del coronel: " + soldado.estrategia + "\n",
-                        "Modificar Coronel ", JOptionPane.INFORMATION_MESSAGE);
-
-                System.out.println("FUNCIONA");
-                JOptionPane.showMessageDialog(null, "Misión: " + misionCoronel.get(contador), "Información Coronel ",
-                        JOptionPane.INFORMATION_MESSAGE);
-                JOptionPane.showMessageDialog(null, "Reporte: " + reportarCoronel.get(contador), "Información Coronel ",
-                JOptionPane.INFORMATION_MESSAGE);
+                 //Mostrar la informacion del soldado actualizada
+                 JOptionPane.showMessageDialog(null, 
+                 "Nombre: " + soldado.nombre + "\n" +
+                 "ID: " + soldado.id + "\n" +
+                 "Rango: " + soldado.rango + "\n" + 
+                 "Nivel: " + soldado.nivel + "\n" +
+                 "Mision: " + soldado.mision  + "\n" +
+                 "Estrategia: " + soldado.mision  + "\n" +
+                 "Reporte: " + soldado.reporte, "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+                 System.out.println("FUNCIONA");
+                 
                 JOptionPane.showMessageDialog(null, "Acción: " + accionCoronel.get(contador), "Información Coronel ",
                         JOptionPane.INFORMATION_MESSAGE);
 
-                // Si el soldado fue encontrado la varieable se actualiza
-                encontrado = true;
-
-                // Fin del siclo for
-        
-                break;
-
-            } while(true); {
-                    contador++;// incrementamos el contador para que este en el mismo indice que el soldado
+                        // Si el soldado fue encontrado la varieable se actualiza
+                        encontrado = true;
+                        
+                        // Fin del siclo for
+                        break;
+                } while (true);
+            {
+                contador++;// incrementamos el contador para que este en el mismo indice que el soldado
             }
         }
         // Si el soldado no fue encontrado se muestra este mensaje
@@ -273,6 +234,18 @@ public class Coronel extends Rango implements OperacionesMilitares {
         }
 
     }
-
 }
+
+@Override
+public void asignarMision(String mision) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'asignarMision'");
+}
+
+@Override
+public void reportarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
+}
+
 }

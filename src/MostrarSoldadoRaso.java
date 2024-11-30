@@ -15,7 +15,6 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
      */
     public MostrarSoldadoRaso() {
         initComponents();
-        
     }
 
     /**
@@ -46,6 +45,9 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
         areaReporteMostrarSoldado = new javax.swing.JTextArea();
         botonMostrarSoldado = new javax.swing.JButton();
         botonResetMostrarSoldado = new javax.swing.JButton();
+        panelBuscadorSoldadoRaso = new javax.swing.JPanel();
+        textBuscadorSoldadoRaso = new javax.swing.JTextField();
+        textBuscarSoldadoRaso = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -55,7 +57,7 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
         labelNameMostrarSoldado.setForeground(new java.awt.Color(255, 255, 255));
         labelNameMostrarSoldado.setText("Nombre");
 
-        textIDMostrarSoldado.setEditable(true);
+        textIDMostrarSoldado.setEditable(false);
 
         labelIDMostrarSoldado.setForeground(new java.awt.Color(255, 255, 255));
         labelIDMostrarSoldado.setText("ID");
@@ -119,7 +121,7 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
 
         botonMostrarSoldado.setBackground(new java.awt.Color(0, 153, 153));
         botonMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonMostrarSoldado.setText("Next");
+        botonMostrarSoldado.setText("Mostrar");
 
         botonResetMostrarSoldado.setBackground(new java.awt.Color(0, 153, 153));
         botonResetMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -195,26 +197,58 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
                 .addComponent(labelMisionMostrarSoldado)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addGroup(panelMostrarSoldadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonMostrarSoldado)
                     .addComponent(botonResetMostrarSoldado))
                 .addGap(41, 41, 41))
         );
 
+        panelBuscadorSoldadoRaso.setBackground(new java.awt.Color(0, 153, 153));
+
+        textBuscadorSoldadoRaso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textBuscadorSoldadoRasoActionPerformed(evt);
+            }
+        });
+
+        textBuscarSoldadoRaso.setForeground(new java.awt.Color(255, 255, 255));
+        textBuscarSoldadoRaso.setText("Buscar ID");
+
+        javax.swing.GroupLayout panelBuscadorSoldadoRasoLayout = new javax.swing.GroupLayout(panelBuscadorSoldadoRaso);
+        panelBuscadorSoldadoRaso.setLayout(panelBuscadorSoldadoRasoLayout);
+        panelBuscadorSoldadoRasoLayout.setHorizontalGroup(
+            panelBuscadorSoldadoRasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBuscadorSoldadoRasoLayout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(panelBuscadorSoldadoRasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textBuscarSoldadoRaso)
+                    .addComponent(textBuscadorSoldadoRaso, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
+        );
+        panelBuscadorSoldadoRasoLayout.setVerticalGroup(
+            panelBuscadorSoldadoRasoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBuscadorSoldadoRasoLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(textBuscarSoldadoRaso)
+                .addGap(18, 18, 18)
+                .addComponent(textBuscadorSoldadoRaso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(panelBuscadorSoldadoRaso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelBuscadorSoldadoRaso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelMostrarSoldado, javax.swing.GroupLayout.DEFAULT_SIZE, 602, Short.MAX_VALUE)
         );
 
         pack();
@@ -227,6 +261,10 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
     private void botonResetMostrarSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResetMostrarSoldadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonResetMostrarSoldadoActionPerformed
+
+    private void textBuscadorSoldadoRasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorSoldadoRasoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textBuscadorSoldadoRasoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,9 +315,12 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
     private javax.swing.JLabel labelNameMostrarSoldado;
     private javax.swing.JLabel labelNivelMostrarSoldado;
     private javax.swing.JLabel labelReporteMostrarSoldado;
+    private javax.swing.JPanel panelBuscadorSoldadoRaso;
     private javax.swing.JPanel panelMostrarSoldado;
     private javax.swing.JPanel panelMostrarSoldado2;
     private javax.swing.JTextField textAccionMostrarSoldado;
+    private javax.swing.JTextField textBuscadorSoldadoRaso;
+    private javax.swing.JLabel textBuscarSoldadoRaso;
     private javax.swing.JTextField textIDMostrarSoldado;
     private javax.swing.JTextField textNivelMostrarSoldado;
     private javax.swing.JTextField textNombreMostrarSoldado;

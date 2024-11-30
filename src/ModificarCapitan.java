@@ -29,8 +29,6 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         jSeparator1 = new javax.swing.JSeparator();
         panelModificarCapitan = new javax.swing.JPanel();
         labelNameModificarCapitan = new javax.swing.JLabel();
-        textIDModificarCapitan = new javax.swing.JTextField();
-        labelIDModificarCapitan = new javax.swing.JLabel();
         textNombreModificarCapitan = new javax.swing.JTextField();
         labelNivelModificarCapitan = new javax.swing.JLabel();
         textNivelModificarCapitan = new javax.swing.JTextField();
@@ -49,6 +47,10 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         areaEstrategiaModificarCoronel = new javax.swing.JTextArea();
         botonModificarCapitan = new javax.swing.JButton();
         botonResetModificarCapitan1 = new javax.swing.JButton();
+        botonEliminarCapitan = new javax.swing.JButton();
+        panelBuscadorModificarCapitan = new javax.swing.JPanel();
+        textBuscarModificarCapitan = new javax.swing.JLabel();
+        textBuscadorModificarCapitan = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -56,9 +58,6 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
 
         labelNameModificarCapitan.setForeground(new java.awt.Color(255, 255, 255));
         labelNameModificarCapitan.setText("Nombre");
-
-        labelIDModificarCapitan.setForeground(new java.awt.Color(255, 255, 255));
-        labelIDModificarCapitan.setText("ID");
 
         textNombreModificarCapitan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,43 +124,46 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         botonResetModificarCapitan1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetModificarCapitan1.setText("Reset");
 
+        botonEliminarCapitan.setBackground(new java.awt.Color(0, 153, 153));
+        botonEliminarCapitan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        botonEliminarCapitan.setText("Eliminar");
+        botonEliminarCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarCapitanActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelModificarCapitanLayout = new javax.swing.GroupLayout(panelModificarCapitan);
         panelModificarCapitan.setLayout(panelModificarCapitanLayout);
         panelModificarCapitanLayout.setHorizontalGroup(
             panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelModificarCapitan2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(34, 34, 34)
+                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(botonResetModificarCapitan1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                        .addComponent(botonEliminarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122)
+                        .addComponent(botonModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                        .addComponent(labelMisionModificarCapitan)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarCapitanLayout.createSequentialGroup()
-                        .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                                .addComponent(botonResetModificarCapitan1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textIDModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(textNombreModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelIDModificarCapitan)
-                                    .addComponent(labelNivelModificarCapitan)
-                                    .addComponent(labelNameModificarCapitan)
-                                    .addComponent(textNivelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelAccionModificarCapitan)
-                                    .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelReporteModificarCapitan)
-                                    .addComponent(labelModificarEstrategia)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(43, 43, 43))))
+                        .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textNombreModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelNivelModificarCapitan)
+                            .addComponent(labelNameModificarCapitan)
+                            .addComponent(textNivelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelAccionModificarCapitan)
+                            .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelMisionModificarCapitan)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelReporteModificarCapitan)
+                            .addComponent(labelModificarEstrategia)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(34, 34, 34))
         );
         panelModificarCapitanLayout.setVerticalGroup(
             panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,49 +178,82 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
                         .addGap(12, 12, 12)
                         .addComponent(textNombreModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(labelIDModificarCapitan)
+                        .addComponent(labelNivelModificarCapitan)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(textIDModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textNivelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panelModificarCapitanLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNivelModificarCapitan)
-                    .addComponent(labelModificarEstrategia))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                        .addComponent(textNivelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(labelAccionModificarCapitan)
-                        .addGap(12, 12, 12)
-                        .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(labelMisionModificarCapitan)
+                        .addComponent(labelModificarEstrategia))
+                    .addGroup(panelModificarCapitanLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(labelAccionModificarCapitan)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelModificarCapitanLayout.createSequentialGroup()
+                        .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(labelMisionModificarCapitan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonModificarCapitan)
-                    .addComponent(botonResetModificarCapitan1))
-                .addGap(41, 41, 41))
+                    .addComponent(botonResetModificarCapitan1)
+                    .addComponent(botonEliminarCapitan))
+                .addGap(64, 64, 64))
+        );
+
+        panelBuscadorModificarCapitan.setBackground(new java.awt.Color(0, 153, 153));
+        panelBuscadorModificarCapitan.setPreferredSize(new java.awt.Dimension(222, 0));
+
+        textBuscarModificarCapitan.setForeground(new java.awt.Color(255, 255, 255));
+        textBuscarModificarCapitan.setText("Buscar ID");
+
+        textBuscadorModificarCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textBuscadorModificarCapitanActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelBuscadorModificarCapitanLayout = new javax.swing.GroupLayout(panelBuscadorModificarCapitan);
+        panelBuscadorModificarCapitan.setLayout(panelBuscadorModificarCapitanLayout);
+        panelBuscadorModificarCapitanLayout.setHorizontalGroup(
+            panelBuscadorModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBuscadorModificarCapitanLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(panelBuscadorModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textBuscadorModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textBuscarModificarCapitan))
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        panelBuscadorModificarCapitanLayout.setVerticalGroup(
+            panelBuscadorModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBuscadorModificarCapitanLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(textBuscarModificarCapitan)
+                .addGap(18, 18, 18)
+                .addComponent(textBuscadorModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(panelBuscadorModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelModificarCapitan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelBuscadorModificarCapitan, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
         );
 
         pack();
@@ -227,6 +262,14 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
     private void textNombreModificarCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreModificarCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreModificarCapitanActionPerformed
+
+    private void botonEliminarCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonEliminarCapitanActionPerformed
+
+    private void textBuscadorModificarCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorModificarCapitanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textBuscadorModificarCapitanActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,6 +311,7 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
     private javax.swing.JTextArea areaEstrategiaModificarCoronel;
     private javax.swing.JTextArea areaMisionModificarCoronel;
     private javax.swing.JTextArea areaReporteModificarCoronel;
+    private javax.swing.JButton botonEliminarCapitan;
     private javax.swing.JButton botonModificarCapitan;
     private javax.swing.JButton botonResetModificarCapitan1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -275,17 +319,18 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labelAccionModificarCapitan;
-    private javax.swing.JLabel labelIDModificarCapitan;
     private javax.swing.JLabel labelMisionModificarCapitan;
     private javax.swing.JLabel labelModificarCapitan2;
     private javax.swing.JLabel labelModificarEstrategia;
     private javax.swing.JLabel labelNameModificarCapitan;
     private javax.swing.JLabel labelNivelModificarCapitan;
     private javax.swing.JLabel labelReporteModificarCapitan;
+    private javax.swing.JPanel panelBuscadorModificarCapitan;
     private javax.swing.JPanel panelModificarCapitan;
     private javax.swing.JPanel panelModificarCapitan2;
     private javax.swing.JTextField textAccionModificarCoronel;
-    private javax.swing.JTextField textIDModificarCapitan;
+    private javax.swing.JTextField textBuscadorModificarCapitan;
+    private javax.swing.JLabel textBuscarModificarCapitan;
     private javax.swing.JTextField textNivelModificarCapitan;
     private javax.swing.JTextField textNombreModificarCapitan;
     // End of variables declaration//GEN-END:variables
