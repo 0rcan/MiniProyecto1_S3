@@ -268,7 +268,7 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
             } else {
                 listaTeniente.add(nuevoTeniente);
                 accionTeniente.add(accion); //Se cumple la condicion se agrega el soldado
-                JOptionPane.showMessageDialog(null, "Soldado Raso creado exitosamente");
+                JOptionPane.showMessageDialog(null, "Teniente creado exitosamente");
                 // Limpiar campos
                 textNombreCrearTeniente.setText("");
                 textIDCrearTeniente.setText("");
