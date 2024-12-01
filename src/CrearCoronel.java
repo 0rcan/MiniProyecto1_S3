@@ -266,7 +266,7 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
                 
                 listaCoronel.add(nuevoCoronel);
                 accionCoronel.add(accion); //Se cumple la condicion se agrega el soldado
-                JOptionPane.showMessageDialog(null, "Soldado Raso creado exitosamente");
+                JOptionPane.showMessageDialog(null, "Coronel creado exitosamente");
                 // Limpiar campos
                 textNombreCrearCoronel.setText("");
                 textIDCrearCoronel.setText("");
