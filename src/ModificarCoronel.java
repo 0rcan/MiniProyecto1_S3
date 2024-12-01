@@ -4,6 +4,8 @@
  */
 //package com.mycompany.project;
 
+import java.awt.event.ActionEvent;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -146,11 +148,21 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
 
         botonModificarCoronel.setBackground(new java.awt.Color(0, 153, 153));
         botonModificarCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonModificarCoronel.setText("Next");
+        botonModificarCoronel.setText("Modificar");
+        botonModificarCoronel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarCoronelActionPerformed(evt);
+            }
+        });
 
         botonResetModificarCoronel1.setBackground(new java.awt.Color(0, 153, 153));
         botonResetModificarCoronel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetModificarCoronel1.setText("Reset");
+        botonResetModificarCoronel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetModificarCoronel1ActionPerformed(evt);
+                            }
+        });
 
         botonEliminarCoronel.setBackground(new java.awt.Color(0, 153, 153));
         botonEliminarCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -259,13 +271,134 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreModificarCoronelActionPerformed
 
+
+
+
+
+
+
     private void textBuscadorModificarCoronelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorModificarCoronelActionPerformed
-        // TODO add your handling code here:
+        int contador = 0;
+        boolean encontrado = false;
+        String buscador;
+        buscador=textBuscadorModificarCoronel.getText();
+
+        for (Coronel Coronel: listaCoronel) {
+
+            if(buscador.equals(Coronel.id)){
+        
+                textNombreModificarCoronel.setText(Coronel.nombre);
+                textNivelModificarCoronel.setText(Coronel.nivel);
+                areaMisionModificarCoronel.setText(Coronel.mision);
+                areaReporteModificarCoronel1.setText(Coronel.reporte);
+                textAccionModificarCoronel.setText(accionCoronel.get(contador));
+                textMando.setText(Coronel.cantidadSoldadosBajoSuMnado);
+            
+                encontrado = true;
+            }else{
+                contador ++;
+            
+            }
+        }
+        if(encontrado == false){
+            JOptionPane.showMessageDialog(null, "No se encontró el Coronel", "Información Coronel", JOptionPane.ERROR_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "Coronel encontrado"+ "\n" + "Modifique los campos", "Modificar Coronel", JOptionPane.INFORMATION_MESSAGE);
+        }
+
     }//GEN-LAST:event_textBuscadorModificarCoronelActionPerformed
 
+    private void botonModificarCoronelActionPerformed(ActionEvent evt) {
+        ////////////////////
+        //MODIFICARCoronel//
+        ////////////////////
+
+        //Variable para verificar si el Coronel fue encontrado
+            
+        //Dato que se compararan con la lista 
+        String buscador;
+        buscador=textBuscadorModificarCoronel.getText();
+
+        int contador = 0;
+        //Siclo para recorrer la lista
+        //Si el Coronel no fue encontrado se muestra este mensaje
+
+        for (Coronel Coronel : listaCoronel) {
+
+            //Condicion para verificar si el Coronel existe comparando con los datos ingresados
+            if(buscador.equals(Coronel.id)){
+                    
+                textBuscadorModificarCoronel.setText("");
+                
+                //Remplazo de datos
+                
+                Coronel.nombre = textNombreModificarCoronel.getText();
+                Coronel.nivel=textNivelModificarCoronel.getText();
+
+                    //do while para evitar ids repetidos
+                    do {
+                    
+                    //Remplazamos el elemento de la posicion contador con su nueva mision,reprote y accion
+                    Coronel.mision = areaMisionModificarCoronel.getText();                 
+                    Coronel.reporte = areaReporteModificarCoronel1.getText();
+                    Coronel.cantidadSoldadosBajoSuMnado = textMando.getText();
+                    String accion = textAccionModificarCoronel.getText();
+                    accionCoronel.set(contador,accion);
+
+                    JOptionPane.showMessageDialog(null, "Coronel Actualizado Con éxito", "Modificar Coronel", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    //Mostrar la informacion del Coronel actualizada
+                    JOptionPane.showMessageDialog(null, 
+                    "Nombre: " + Coronel.nombre + "\n" +
+                    "ID: " + Coronel.id + "\n" +
+                    "Rango: " + Coronel.rango + "\n" + 
+                    "Nivel: " + Coronel.nivel + "\n" +
+                    "Mision: " + Coronel.mision  + "\n" +
+                    "Mando: " + Coronel.cantidadSoldadosBajoSuMnado + "\n" +
+                    "Reporte: " + Coronel.reporte, "Modificar Coronel", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println("FUNCIONA");
+                    
+                    
+                    JOptionPane.showMessageDialog(null, "Acción: " + accionCoronel.get(contador), "Información Coronel", JOptionPane.INFORMATION_MESSAGE);
+
+                    //Fin del siclo for
+                    break;
+                }while (true);{
+                    contador++;//incrementamos el contador para que este en el mismo indice que el Coronel
+                }
+            }
+        }
+    }
+
     private void botonEliminarCoronelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCoronelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminarCoronelActionPerformed
+        int contador = 0;
+        String buscador;
+        buscador=textBuscadorModificarCoronel.getText();
+
+        for (Coronel Coronel : listaCoronel) {
+
+            if(buscador.equals(Coronel.id)){
+
+                listaCoronel.remove(Coronel);
+                accionCoronel.remove(contador);
+
+            }else{
+                contador ++;
+
+            }
+        }
+    }
+
+    private void botonResetModificarCoronel1ActionPerformed(ActionEvent evt) {
+        textBuscadorModificarCoronel.setText("");
+        textNombreModificarCoronel.setText("");
+        textNivelModificarCoronel.setText("");
+        textAccionModificarCoronel.setText("");
+        areaMisionModificarCoronel.setText("");
+        areaReporteModificarCoronel1.setText("");
+        textMando.setText("");
+    }
+    
 
     /**
      * @param args the command line arguments

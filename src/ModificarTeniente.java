@@ -43,7 +43,7 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
         labelAccionModificarTeniente = new javax.swing.JLabel();
         textAccionModificarTeniente = new javax.swing.JTextField();
         panelModificarTeniente2 = new javax.swing.JPanel();
-        labelModificarSoldado = new javax.swing.JLabel();
+        labelModificarTeniente = new javax.swing.JLabel();
         labelModificarUnidades = new javax.swing.JLabel();
         textModificarUnidades = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -91,11 +91,6 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
         labelNameModificarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         labelNameModificarTeniente.setText("Nombre");
 
-        textNombreModificarTeniente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textNombreModificarTenienteActionPerformed(evt);
-            }
-        });
 
         labelNivelModificarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         labelNivelModificarTeniente.setText("Nivel");
@@ -115,11 +110,11 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
 
         panelModificarTeniente2.setBackground(new java.awt.Color(0, 153, 153));
 
-        labelModificarSoldado.setBackground(new java.awt.Color(0, 153, 153));
-        labelModificarSoldado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        labelModificarSoldado.setForeground(new java.awt.Color(255, 255, 255));
-        labelModificarSoldado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelModificarSoldado.setText("Modificar Teniente");
+        labelModificarTeniente.setBackground(new java.awt.Color(0, 153, 153));
+        labelModificarTeniente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        labelModificarTeniente.setForeground(new java.awt.Color(255, 255, 255));
+        labelModificarTeniente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelModificarTeniente.setText("Modificar Teniente");
 
         javax.swing.GroupLayout panelModificarTeniente2Layout = new javax.swing.GroupLayout(panelModificarTeniente2);
         panelModificarTeniente2.setLayout(panelModificarTeniente2Layout);
@@ -127,13 +122,13 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
             panelModificarTeniente2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarTeniente2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelModificarSoldado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelModificarTeniente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelModificarTeniente2Layout.setVerticalGroup(
             panelModificarTeniente2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelModificarTeniente2Layout.createSequentialGroup()
-                .addComponent(labelModificarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelModificarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -146,7 +141,7 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
 
         botonModificarTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonModificarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonModificarTeniente.setText("Next");
+        botonModificarTeniente.setText("Modificar");
         botonModificarTeniente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonModificarTenienteActionPerformed(evt);
@@ -265,25 +260,130 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textNombreModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreModificarTenienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textNombreModificarTenienteActionPerformed
+    private void textBuscadorModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreModificarTenienteActionPerformed
+
+        int contador = 0;
+        boolean encontrado = false;
+        String buscador;
+        buscador=textBuscadorModificarTeniente.getText();
+
+        for (Teniente Teniente: listaTeniente) {
+
+            if(buscador.equals(Teniente.id)){
+        
+                textNombreModificarTeniente.setText(Teniente.nombre);
+                textNivelModificarTeniente.setText(Teniente.nivel);
+                areaMisionModificarTeniente.setText(Teniente.mision);
+                areaReporteModificarTeniente1.setText(Teniente.reporte);
+                textAccionModificarTeniente.setText(accionTeniente.get(contador));
+                textModificarUnidades.setText(Teniente.unidad);
+            
+                encontrado = true;
+            }else{
+                contador ++;
+            
+            }
+        }
+        if(encontrado == false){
+            JOptionPane.showMessageDialog(null, "No se encontró el Teniente", "Información Teniente", JOptionPane.ERROR_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "Teniente encontrado"+ "\n" + "Modifique los campos", "Modificar Teniente", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
 
     private void botonModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarTenienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonModificarTenienteActionPerformed
+        ////////////////////
+        //MODIFICARTeniente//
+        ////////////////////
 
-    private void botonResetModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResetModificarTenienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonResetModificarTenienteActionPerformed
+        //Variable para verificar si el Teniente fue encontrado
+            
+        //Dato que se compararan con la lista 
+        String buscador;
+        buscador=textBuscadorModificarTeniente.getText();
+
+        int contador = 0;
+        //Siclo para recorrer la lista
+        //Si el Teniente no fue encontrado se muestra este mensaje
+
+        for (Teniente Teniente : listaTeniente) {
+
+            //Condicion para verificar si el Teniente existe comparando con los datos ingresados
+            if(buscador.equals(Teniente.id)){
+                    
+                textBuscadorModificarTeniente.setText("");
+                
+                //Remplazo de datos
+                
+                Teniente.nombre = textNombreModificarTeniente.getText();
+                Teniente.nivel=textNivelModificarTeniente.getText();
+
+                    //do while para evitar ids repetidos
+                    do {
+                    
+                    //Remplazamos el elemento de la posicion contador con su nueva mision,reprote y accion
+                    Teniente.mision = areaMisionModificarTeniente.getText();                 
+                    Teniente.reporte = areaReporteModificarTeniente1.getText();
+                    Teniente.unidad = textModificarUnidades.getText();
+                    String accion = textAccionModificarTeniente.getText();
+                    accionTeniente.set(contador,accion);
+
+                    JOptionPane.showMessageDialog(null, "Teniente Actualizado Con éxito", "Modificar Teniente", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    //Mostrar la informacion del Teniente actualizada
+                    JOptionPane.showMessageDialog(null, 
+                    "Nombre: " + Teniente.nombre + "\n" +
+                    "ID: " + Teniente.id + "\n" +
+                    "Rango: " + Teniente.rango + "\n" + 
+                    "Nivel: " + Teniente.nivel + "\n" +
+                    "Mision: " + Teniente.mision  + "\n" +
+                    "Unidades: " + Teniente.unidad + "\n" +
+                    "Reporte: " + Teniente.reporte, "Modificar Teniente", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println("FUNCIONA");
+                    
+                    
+                    JOptionPane.showMessageDialog(null, "Acción: " + accionTeniente.get(contador), "Información Teniente", JOptionPane.INFORMATION_MESSAGE);
+
+                    //Fin del siclo for
+                    break;
+                }while (true);{
+                    contador++;//incrementamos el contador para que este en el mismo indice que el Teniente
+                }
+            }
+        }
+    }
 
     private void botonEliminarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarTenienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminarTenienteActionPerformed
+        
+        int contador = 0;
+        String buscador;
+        buscador=textBuscadorModificarTeniente.getText();
 
-    private void textBuscadorModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorModificarTenienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textBuscadorModificarTenienteActionPerformed
+        for (Teniente Teniente : listaTeniente) {
+
+            if(buscador.equals(Teniente.id)){
+
+                listaTeniente.remove(Teniente);
+                accionTeniente.remove(contador);
+
+            }else{
+                contador ++;
+
+            }
+        }
+
+    }//GEN-LAST:event_botonEliminarTenienteActionPerformed
+    
+    private void botonResetModificarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResetModificarTenienteActionPerformed
+        textBuscadorModificarTeniente.setText("");
+        textNombreModificarTeniente.setText("");
+        textNivelModificarTeniente.setText("");
+        textAccionModificarTeniente.setText("");
+        areaMisionModificarTeniente.setText("");
+        areaReporteModificarTeniente1.setText("");
+        textModificarUnidades.setText("");
+    }//GEN-LAST:event_botonResetModificarTenienteActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -331,7 +431,7 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel labelAccionModificarTeniente;
     private javax.swing.JLabel labelMisionModificarTeniente;
-    private javax.swing.JLabel labelModificarSoldado;
+    private javax.swing.JLabel labelModificarTeniente;
     private javax.swing.JLabel labelModificarUnidades;
     private javax.swing.JLabel labelNameModificarTeniente;
     private javax.swing.JLabel labelNivelModificarTeniente;
@@ -346,11 +446,6 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
     private javax.swing.JTextField textNivelModificarTeniente;
     private javax.swing.JTextField textNombreModificarTeniente;
     // End of variables declaration//GEN-END:variables
-    @Override
-    public void crearSoldado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'crearSoldado'");
-    }
 
     @Override
     public void mostrarInformacion() {
@@ -358,11 +453,7 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
         throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
     }
 
-    @Override
-    public void modificarSoldado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
-    }
+
 
     @Override
     public void asignarMision(String mision) {
@@ -374,5 +465,17 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
     public void reportarEstado() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
+    }
+
+    @Override
+    public void crearSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crearSoldado'");
+    }
+
+    @Override
+    public void modificarSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
     }
 }

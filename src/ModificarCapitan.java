@@ -4,6 +4,8 @@
  */
 //package com.mycompany.project;
 
+import java.awt.event.ActionEvent;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -36,17 +38,17 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         textNivelModificarCapitan = new javax.swing.JTextField();
         labelReporteModificarCapitan = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        areaReporteModificarCoronel = new javax.swing.JTextArea();
+        areaReporteModificarCapitan = new javax.swing.JTextArea();
         labelMisionModificarCapitan = new javax.swing.JLabel();
         labelAccionModificarCapitan = new javax.swing.JLabel();
-        textAccionModificarCoronel = new javax.swing.JTextField();
+        textAccionModificarCapitan = new javax.swing.JTextField();
         panelModificarCapitan2 = new javax.swing.JPanel();
         labelModificarCapitan2 = new javax.swing.JLabel();
         labelModificarEstrategia = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        areaMisionModificarCoronel = new javax.swing.JTextArea();
+        areaMisionModificarCapitan = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        areaEstrategiaModificarCoronel = new javax.swing.JTextArea();
+        areaEstrategiaModificarCapitan = new javax.swing.JTextArea();
         botonModificarCapitan = new javax.swing.JButton();
         botonResetModificarCapitan1 = new javax.swing.JButton();
         botonEliminarCapitan = new javax.swing.JButton();
@@ -73,9 +75,9 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         labelReporteModificarCapitan.setForeground(new java.awt.Color(255, 255, 255));
         labelReporteModificarCapitan.setText("Reporte");
 
-        areaReporteModificarCoronel.setColumns(20);
-        areaReporteModificarCoronel.setRows(5);
-        jScrollPane1.setViewportView(areaReporteModificarCoronel);
+        areaReporteModificarCapitan.setColumns(20);
+        areaReporteModificarCapitan.setRows(5);
+        jScrollPane1.setViewportView(areaReporteModificarCapitan);
 
         labelMisionModificarCapitan.setForeground(new java.awt.Color(255, 255, 255));
         labelMisionModificarCapitan.setText("Misión");
@@ -110,21 +112,31 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         labelModificarEstrategia.setForeground(new java.awt.Color(255, 255, 255));
         labelModificarEstrategia.setText("Estrategia");
 
-        areaMisionModificarCoronel.setColumns(20);
-        areaMisionModificarCoronel.setRows(5);
-        jScrollPane3.setViewportView(areaMisionModificarCoronel);
+        areaMisionModificarCapitan.setColumns(20);
+        areaMisionModificarCapitan.setRows(5);
+        jScrollPane3.setViewportView(areaMisionModificarCapitan);
 
-        areaEstrategiaModificarCoronel.setColumns(20);
-        areaEstrategiaModificarCoronel.setRows(5);
-        jScrollPane2.setViewportView(areaEstrategiaModificarCoronel);
+        areaEstrategiaModificarCapitan.setColumns(20);
+        areaEstrategiaModificarCapitan.setRows(5);
+        jScrollPane2.setViewportView(areaEstrategiaModificarCapitan);
 
         botonModificarCapitan.setBackground(new java.awt.Color(0, 153, 153));
         botonModificarCapitan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonModificarCapitan.setText("Next");
+        botonModificarCapitan.setText("Modificar");
+        botonModificarCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarCapitanActionPerformed(evt);
+            }
+        });
 
         botonResetModificarCapitan1.setBackground(new java.awt.Color(0, 153, 153));
         botonResetModificarCapitan1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetModificarCapitan1.setText("Reset");
+        botonResetModificarCapitan1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetModificarCapitan1ActionPerformed(evt);
+                            }
+        });
 
         botonEliminarCapitan.setBackground(new java.awt.Color(0, 153, 153));
         botonEliminarCapitan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -156,7 +168,7 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
                             .addComponent(labelNameModificarCapitan)
                             .addComponent(textNivelModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelAccionModificarCapitan)
-                            .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textAccionModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelMisionModificarCapitan)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, Short.MAX_VALUE)
@@ -197,7 +209,7 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
                 .addGroup(panelModificarCapitanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelModificarCapitanLayout.createSequentialGroup()
-                        .addComponent(textAccionModificarCoronel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textAccionModificarCapitan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(labelMisionModificarCapitan)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -265,13 +277,133 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreModificarCapitanActionPerformed
 
-    private void botonEliminarCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCapitanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonEliminarCapitanActionPerformed
+
+
+
+
+
 
     private void textBuscadorModificarCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorModificarCapitanActionPerformed
-        // TODO add your handling code here:
+        int contador = 0;
+        boolean encontrado = false;
+        String buscador;
+        buscador=textBuscadorModificarCapitan.getText();
+
+        for (Capitan Capitan: listaCapitan) {
+
+            if(buscador.equals(Capitan.id)){
+        
+                textNombreModificarCapitan.setText(Capitan.nombre);
+                textNivelModificarCapitan.setText(Capitan.nivel);
+                areaMisionModificarCapitan.setText(Capitan.mision);
+                areaReporteModificarCapitan.setText(Capitan.reporte);
+                textAccionModificarCapitan.setText(accionCapitan.get(contador));
+                areaEstrategiaModificarCapitan.setText(Capitan.estrategia);
+            
+                encontrado = true;
+            }else{
+                contador ++;
+            
+            }
+        }
+        if(encontrado == false){
+            JOptionPane.showMessageDialog(null, "No se encontró el Capitan", "Información Capitan", JOptionPane.ERROR_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "Capitan encontrado"+ "\n" + "Modifique los campos", "Modificar Capitan", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_textBuscadorModificarCapitanActionPerformed
+
+    private void botonModificarCapitanActionPerformed(ActionEvent evt) {
+         ////////////////////
+        //MODIFICARCapitan//
+        ////////////////////
+
+        //Variable para verificar si el Capitan fue encontrado
+            
+        //Dato que se compararan con la lista 
+        String buscador;
+        buscador=textBuscadorModificarCapitan.getText();
+
+        int contador = 0;
+        //Siclo para recorrer la lista
+        //Si el Capitan no fue encontrado se muestra este mensaje
+
+        for (Capitan Capitan : listaCapitan) {
+
+            //Condicion para verificar si el Capitan existe comparando con los datos ingresados
+            if(buscador.equals(Capitan.id)){
+                    
+                textBuscadorModificarCapitan.setText("");
+                
+                //Remplazo de datos
+                
+                Capitan.nombre = textNombreModificarCapitan.getText();
+                Capitan.nivel=textNivelModificarCapitan.getText();
+
+                    //do while para evitar ids repetidos
+                    do {
+                    
+                    //Remplazamos el elemento de la posicion contador con su nueva mision,reprote y accion
+                    Capitan.mision = areaMisionModificarCapitan.getText();                 
+                    Capitan.reporte = areaReporteModificarCapitan.getText();
+                    Capitan.estrategia = areaEstrategiaModificarCapitan.getText();
+                    String accion = textAccionModificarCapitan.getText();
+                    accionCapitan.set(contador,accion);
+
+                    JOptionPane.showMessageDialog(null, "Capitan Actualizado Con éxito", "Modificar Capitan", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    //Mostrar la informacion del Capitan actualizada
+                    JOptionPane.showMessageDialog(null, 
+                    "Nombre: " + Capitan.nombre + "\n" +
+                    "ID: " + Capitan.id + "\n" +
+                    "Rango: " + Capitan.rango + "\n" + 
+                    "Nivel: " + Capitan.nivel + "\n" +
+                    "Mision: " + Capitan.mision  + "\n" +
+                    "Estrategia: " + Capitan.estrategia + "\n" +
+                    "Reporte: " + Capitan.reporte, "Modificar Capitan", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println("FUNCIONA");
+                    
+                    
+                    JOptionPane.showMessageDialog(null, "Acción: " + accionCapitan.get(contador), "Información Capitan", JOptionPane.INFORMATION_MESSAGE);
+
+                    //Fin del siclo for
+                    break;
+                }while (true);{
+                    contador++;//incrementamos el contador para que este en el mismo indice que el Capitan
+                }
+            }
+        }
+    }
+
+    private void botonEliminarCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarCapitanActionPerformed
+        int contador = 0;
+        String buscador;
+        buscador=textBuscadorModificarCapitan.getText();
+
+        for (Capitan Capitan : listaCapitan) {
+
+            if(buscador.equals(Capitan.id)){
+
+                listaCapitan.remove(Capitan);
+                accionCapitan.remove(contador);
+
+            }else{
+                contador ++;
+
+            }
+        }
+    }//GEN-LAST:event_botonEliminarCapitanActionPerformed
+
+    private void botonResetModificarCapitan1ActionPerformed(ActionEvent evt) {
+        textBuscadorModificarCapitan.setText("");
+        textNombreModificarCapitan.setText("");
+        textNivelModificarCapitan.setText("");
+        textAccionModificarCapitan.setText("");
+        areaMisionModificarCapitan.setText("");
+        areaReporteModificarCapitan.setText("");
+        areaEstrategiaModificarCapitan.setText("");
+    }
+
 
     /**
      * @param args the command line arguments
@@ -310,9 +442,9 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea areaEstrategiaModificarCoronel;
-    private javax.swing.JTextArea areaMisionModificarCoronel;
-    private javax.swing.JTextArea areaReporteModificarCoronel;
+    private javax.swing.JTextArea areaEstrategiaModificarCapitan;
+    private javax.swing.JTextArea areaMisionModificarCapitan;
+    private javax.swing.JTextArea areaReporteModificarCapitan;
     private javax.swing.JButton botonEliminarCapitan;
     private javax.swing.JButton botonModificarCapitan;
     private javax.swing.JButton botonResetModificarCapitan1;
@@ -330,7 +462,7 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
     private javax.swing.JPanel panelBuscadorModificarCapitan;
     private javax.swing.JPanel panelModificarCapitan;
     private javax.swing.JPanel panelModificarCapitan2;
-    private javax.swing.JTextField textAccionModificarCoronel;
+    private javax.swing.JTextField textAccionModificarCapitan;
     private javax.swing.JTextField textBuscadorModificarCapitan;
     private javax.swing.JLabel textBuscarModificarCapitan;
     private javax.swing.JTextField textNivelModificarCapitan;

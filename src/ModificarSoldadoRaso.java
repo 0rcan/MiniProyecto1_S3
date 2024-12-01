@@ -276,7 +276,7 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
                 textNombreModificarSoldado1.setText(soldado.nombre);
                 textNivelModificarSoldado.setText(soldado.nivel);
                 areaMisionModificarSoldado.setText(soldado.mision);
-                areaReporteModificarSoldado1.setText(soldado.reporte);;
+                areaReporteModificarSoldado1.setText(soldado.reporte);
                 textAccionModificarSoldado.setText(accionSoldadoRaso.get(contador));
 
                 encontrado = true;
@@ -288,7 +288,7 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
         if(encontrado == false){
             JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Información Soldado", JOptionPane.ERROR_MESSAGE);
         }else{
-            JOptionPane.showMessageDialog(null, "Soldado encontrado"+ "\n" + "Rellene los campos", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Soldado encontrado"+ "\n" + "Modifique los campos", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
