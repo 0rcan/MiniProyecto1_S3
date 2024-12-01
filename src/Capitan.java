@@ -11,7 +11,7 @@ public class Capitan extends Rango implements OperacionesMilitares {
 
     String mision;
     String reporte;
-    String cantidadSoldadosBajoSuMnado;
+    String estrategia;
 
     static ArrayList<Capitan> listaCapitan = new ArrayList<>();
     static List<String> accionCapitan = new ArrayList<>();
@@ -22,11 +22,11 @@ public class Capitan extends Rango implements OperacionesMilitares {
     // CONSTRUCTOR//
     ///////////////
 
-    public Capitan(String cantidadSoldadosBajoSuMnado,String nivel, String nombre, String id, String rango,String mision,String reporte) {
+    public Capitan(String estrategia,String nivel, String nombre, String id, String rango,String mision,String reporte) {
             super(nivel, nombre, id, rango);
             this.mision = mision;
             this.reporte = reporte;
-            this.cantidadSoldadosBajoSuMnado = cantidadSoldadosBajoSuMnado;
+            this.estrategia = estrategia;
     }    
 
     public Capitan() { // constructor vacio necesario para crear objetos de la clase
@@ -83,11 +83,11 @@ public class Capitan extends Rango implements OperacionesMilitares {
         //Reportamos el estado del soldado
         reporte = JOptionPane.showInputDialog(null, "Ingrese el reporte del soldado", "Reportar Estado", JOptionPane.QUESTION_MESSAGE);
         
-        cantidadSoldadosBajoSuMnado = JOptionPane.showInputDialog(null, "Ingrese la cantidad de soldados bajo su mando: ","Crear Capitan ", JOptionPane.QUESTION_MESSAGE);
+        estrategia = JOptionPane.showInputDialog(null, "Ingrese la cantidad de soldados bajo su mando: ","Crear Capitan ", JOptionPane.QUESTION_MESSAGE);
 
         realizarAccion();
 
-        Capitan nuevoCapitan = new Capitan(cantidadSoldadosBajoSuMnado, nivel, nombre, id, rango,mision,reporte);
+        Capitan nuevoCapitan = new Capitan(estrategia, nivel, nombre, id, rango,mision,reporte);
 
         // Verificacion si el ID existe en la lista
         if (!idExisteEnLista(listaCapitan, id)) {
@@ -135,7 +135,7 @@ public class Capitan extends Rango implements OperacionesMilitares {
                                 "Nivel: " + soldado.nivel + "\n" +
                                 "Mision: " + soldado.mision  + "\n" +
                                 "Reporte: " + soldado.reporte + "\n" +
-                                "cantidadSoldadosBajoSuMnadoes del Capitan: " + soldado.cantidadSoldadosBajoSuMnado + "\n",
+                                "estrategiaes del Capitan: " + soldado.estrategia + "\n",
                         "Información Capitan ", JOptionPane.INFORMATION_MESSAGE);
                         JOptionPane.showMessageDialog(null, "Acción: " + accionCapitan.get(contador), "Información Capitan", JOptionPane.INFORMATION_MESSAGE);
                 System.out.println("x");
@@ -185,7 +185,7 @@ public class Capitan extends Rango implements OperacionesMilitares {
                 JOptionPane.showMessageDialog(null, "Soldado encontrado", "Modificar Capitan ",JOptionPane.INFORMATION_MESSAGE);
                 soldado.nivel = JOptionPane.showInputDialog(null, "Ingrese el nuevo nivel del Capitan: ","Modificar Nombre Capitan ", JOptionPane.QUESTION_MESSAGE);
                 soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del Capitan: ","Modificar Nombre Capitan ", JOptionPane.QUESTION_MESSAGE);
-                soldado.cantidadSoldadosBajoSuMnado = JOptionPane.showInputDialog(null, "Ingrese la nueva cantidad: ","Modificar Nombre Capitan ", JOptionPane.QUESTION_MESSAGE);
+                soldado.estrategia = JOptionPane.showInputDialog(null, "Ingrese la nueva cantidad: ","Modificar Nombre Capitan ", JOptionPane.QUESTION_MESSAGE);
 
                 // do while para evitar ids repetidos
                 do {

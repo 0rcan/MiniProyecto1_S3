@@ -5,6 +5,9 @@
 //package com.mycompany.project;
 
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -117,6 +120,11 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
         botonCoronel.setBackground(new java.awt.Color(0, 153, 153));
         botonCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonCoronel.setText("Next");
+        botonCoronel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCoronelActionPerformed(evt);
+                            }
+        });
 
         botonResetCoronel.setBackground(new java.awt.Color(0, 153, 153));
         botonResetCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -126,8 +134,6 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonResetCoronelActionPerformed(evt);
             }
-
-           
         });
 
         javax.swing.GroupLayout panelCrearCoronelLayout = new javax.swing.GroupLayout(panelCrearCoronel);
@@ -227,6 +233,56 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
     private void textNombreCrearCoronelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearCoronelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearCoronelActionPerformed
+
+    public static boolean idExisteEnLista(ArrayList<Coronel> lista, String id) {
+        
+        //Recorre la lista<Coronel> verificando si el id ya existe
+        for (Coronel soldado : lista) {
+            if (soldado.id.equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void botonCoronelActionPerformed(ActionEvent evt) {
+        String rango = "1";
+        String nombre= textNombreCrearCoronel.getText();
+        String id =textIDCrearCoronel.getText();
+        String nivel =  textNivelCrearCoronel.getText();
+        String mision = areaMisionCrearCoronel.getText();
+        String reporte = areaReporteCrearCoronel1.getText();
+
+        String accion= textAccionCrearCoronel.getText();
+        String cantidadSoldadosBajoSuMnado = textMando.getText();
+
+        Coronel nuevoCoronel = new Coronel(cantidadSoldadosBajoSuMnado, nivel, nombre, id, rango,mision,reporte);
+
+        if(!idExisteEnLista(listaCoronel, id)){
+                    
+            if (nombre.equals("") || id.equals("")||nivel.equals("") || accion.equals("") || mision.equals("") || reporte.equals("")) {
+                JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
+            } else {
+                
+                listaCoronel.add(nuevoCoronel);
+                accionCoronel.add(accion); //Se cumple la condicion se agrega el soldado
+                JOptionPane.showMessageDialog(null, "Soldado Raso creado exitosamente");
+                // Limpiar campos
+                textNombreCrearCoronel.setText("");
+                textIDCrearCoronel.setText("");
+                textNivelCrearCoronel.setText("");
+                textAccionCrearCoronel.setText("");
+                areaMisionCrearCoronel.setText("");
+                areaReporteCrearCoronel1.setText("");
+                textMando.setText("");
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }
+
 
     private void botonResetCoronelActionPerformed(java.awt.event.ActionEvent evt) {
         textNombreCrearCoronel.setText("");

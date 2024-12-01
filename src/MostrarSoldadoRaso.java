@@ -4,6 +4,12 @@
  */
 //package com.mycompany.project;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.JOptionPane;
+
+import org.w3c.dom.Text;
+
 /**
  *
  * @author josue
@@ -35,7 +41,7 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
         textNivelMostrarSoldado = new javax.swing.JTextField();
         labelReporteMostrarSoldado = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        areaMisionCrearSoldado = new javax.swing.JTextArea();
+        areaMisionMostrarSoldadoRaso = new javax.swing.JTextArea();
         labelMisionMostrarSoldado = new javax.swing.JLabel();
         labelAccionMostrarSoldado = new javax.swing.JLabel();
         textAccionMostrarSoldado = new javax.swing.JTextField();
@@ -77,10 +83,10 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
         labelReporteMostrarSoldado.setForeground(new java.awt.Color(255, 255, 255));
         labelReporteMostrarSoldado.setText("Reporte");
 
-        areaMisionCrearSoldado.setEditable(false);
-        areaMisionCrearSoldado.setColumns(20);
-        areaMisionCrearSoldado.setRows(5);
-        jScrollPane1.setViewportView(areaMisionCrearSoldado);
+        areaMisionMostrarSoldadoRaso.setEditable(false);
+        areaMisionMostrarSoldadoRaso.setColumns(20);
+        areaMisionMostrarSoldadoRaso.setRows(5);
+        jScrollPane1.setViewportView(areaMisionMostrarSoldadoRaso);
 
         labelMisionMostrarSoldado.setForeground(new java.awt.Color(255, 255, 255));
         labelMisionMostrarSoldado.setText("Misión");
@@ -122,6 +128,12 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
         botonMostrarSoldado.setBackground(new java.awt.Color(0, 153, 153));
         botonMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonMostrarSoldado.setText("Mostrar");
+        botonMostrarSoldado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMostrarSoldadoActionPerformed(evt);
+            }
+
+        });
 
         botonResetMostrarSoldado.setBackground(new java.awt.Color(0, 153, 153));
         botonResetMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -256,15 +268,71 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
 
     private void textNombreMostrarSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreMostrarSoldadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textNombreMostrarSoldadoActionPerformed
+    }//GEN-LAST:event_textNombreMostrarSoldadoAct ionPerformed
 
     private void botonResetMostrarSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonResetMostrarSoldadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonResetMostrarSoldadoActionPerformed
+        
+        textNombreMostrarSoldado.setText("");
+        textIDMostrarSoldado.setText("");
+        textNivelMostrarSoldado.setText("");
+        textAccionMostrarSoldado.setText("");
+        areaMisionMostrarSoldadoRaso.setText("");
+        areaReporteMostrarSoldado.setText("");
+
+    }
 
     private void textBuscadorSoldadoRasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorSoldadoRasoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_textBuscadorSoldadoRasoActionPerformed
+
+    private void botonMostrarSoldadoActionPerformed(ActionEvent evt) {
+
+        String buscador;
+
+        buscador=textBuscadorSoldadoRaso.getText();
+
+        System.out.println(buscador);
+
+        textBuscadorSoldadoRaso.setText("");
+
+        //////////////////////
+        //MOSTRARINFORMACION//
+        //////////////////////
+
+            Boolean encontrado = false;
+            int contador = 0;
+            //Siclo para recorrer la lista
+            for (SoldadoRaso soldado : listaSoldadoRaso) {
+
+                System.out.println(listaSoldadoRaso.size());
+                //Condicion para verificar si el soldado existe comparando con los datos ingresados
+                if(buscador.equals(soldado.id)){
+                    
+                    
+                    //Si se cumple muestra lo siguiente
+                    textNombreMostrarSoldado.setText(soldado.nombre);
+                    textIDMostrarSoldado.setText(soldado.id);
+                    textNivelMostrarSoldado.setText(soldado.nivel);
+                    textAccionMostrarSoldado.setText(accionSoldadoRaso.get(contador));
+                    areaMisionMostrarSoldadoRaso.setText(soldado.mision);
+                    areaReporteMostrarSoldado.setText(soldado.reporte);
+
+                    System.out.println("x");
+
+                    //Si el soldado fue encontrado la varieable se actualiza
+                    encontrado = true;
+                    break;
+                }else{
+                    contador ++;
+                }
+            }
+            
+            //Si el soldado no fue encontrado se muestra este mensaje
+            if (encontrado == false) {
+                JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Información Soldado", JOptionPane.ERROR_MESSAGE);
+            }
+    }
+
 
     /**
      * @param args the command line arguments
@@ -302,7 +370,7 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea areaMisionCrearSoldado;
+    private javax.swing.JTextArea areaMisionMostrarSoldadoRaso;
     private javax.swing.JTextArea areaReporteMostrarSoldado;
     private javax.swing.JButton botonMostrarSoldado;
     private javax.swing.JButton botonResetMostrarSoldado;

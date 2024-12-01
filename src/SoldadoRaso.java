@@ -104,7 +104,7 @@ public class SoldadoRaso extends Rango implements OperacionesMilitares {
                 }else{
                     JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
                 }
-        
+                
     }
 
     //////////////////////

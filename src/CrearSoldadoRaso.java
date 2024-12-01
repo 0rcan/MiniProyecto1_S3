@@ -224,12 +224,20 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearSoldadoRasoActionPerformed
 
+
+    public static boolean idExisteEnLista(ArrayList<SoldadoRaso> lista, String id) {
+        
+        //Recorre la lista<SoldadoRaso> verificando si el id ya existe
+        for (SoldadoRaso soldado : lista) {
+            if (soldado.id.equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void botonSoldadoRasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BototnResetSoldadoRasoActionPerformed
         
-        //  static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
-        // static List<String> accionSoldadoRaso = new ArrayList<>();
-        // static List<String> misionSoldadoRaso = new ArrayList<>();
-        // static List<String> reportarSoldadoRaso = new ArrayList<>();
         String rango = "1";
         String nombre= textNombreCrearSoldadoRaso.getText();
         String id =textIDCrearSoldadoRaso.getText();
@@ -241,15 +249,15 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
 
         SoldadoRaso nuevoSoldadoRaso = new SoldadoRaso(nivel,nombre, id,rango,mision,reporte);
 
-        listaSoldadoRaso.add(nuevoSoldadoRaso);
-        accionSoldadoRaso.add(accion);
-
-        
+        if(!idExisteEnLista(listaSoldadoRaso, id)){
+                    
             if (nombre.equals("") || id.equals("")||nivel.equals("") || accion.equals("") || mision.equals("") || reporte.equals("")) {
                 JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
             } else {
+                
+                listaSoldadoRaso.add(nuevoSoldadoRaso);
+                accionSoldadoRaso.add(accion); //Se cumple la condicion se agrega el soldado
                 JOptionPane.showMessageDialog(null, "Soldado Raso creado exitosamente");
-        
                 // Limpiar campos
                 textNombreCrearSoldadoRaso.setText("");
                 textIDCrearSoldadoRaso.setText("");
@@ -258,9 +266,11 @@ public class CrearSoldadoRaso extends javax.swing.JFrame implements ActionListen
                 areaMisionCrearSoldadoRaso.setText("");
                 areaReporteCrearSoldadoRaso.setText("");
             }
-
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
+        }
         
-
     }
 
 

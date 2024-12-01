@@ -4,6 +4,10 @@
  */
 //package com.mycompany.project;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author josue
@@ -133,10 +137,21 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
         botonResetMostrarCoronel.setBackground(new java.awt.Color(0, 153, 153));
         botonResetMostrarCoronel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetMostrarCoronel.setText("Reset");
+        botonResetMostrarCoronel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetMostrarCoronelActionPerformed(evt);
+            }
+        });
 
         botonMostrarCoronel1.setBackground(new java.awt.Color(0, 153, 153));
         botonMostrarCoronel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonMostrarCoronel1.setText("Mostrar");
+        botonMostrarCoronel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMostrarCoronel1ActionPerformed(evt);
+                            }
+
+        });
 
         javax.swing.GroupLayout panelMostrarCoronelLayout = new javax.swing.GroupLayout(panelMostrarCoronel);
         panelMostrarCoronel.setLayout(panelMostrarCoronelLayout);
@@ -280,6 +295,69 @@ public class MostrarCoronel extends javax.swing.JFrame implements ActionListener
     private void textAccionMostrarCoronelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAccionMostrarCoronelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textAccionMostrarCoronelActionPerformed
+
+    private void botonResetMostrarCoronelActionPerformed(ActionEvent evt) {
+        textNombreMostrarCoronel.setText("");
+        textIDMostrarCoronel.setText("");
+        textNivelMostrarCoronel.setText("");
+        textAccionMostrarCoronel.setText("");
+        areaMisionMostrarCoronel.setText("");
+        areaReporteMostrarCoronel.setText("");
+        textMostrarMando.setText("");
+    }
+
+
+
+
+    private void botonMostrarCoronel1ActionPerformed(ActionEvent evt) {
+        String buscador;
+
+        buscador=textBuscadorCoronel.getText();
+
+        System.out.println(buscador);
+
+        textBuscadorCoronel.setText("");
+
+        //////////////////////
+        //MOSTRARINFORMACION//
+        //////////////////////
+
+            Boolean encontrado = false;
+            int contador = 0;
+            //Siclo para recorrer la lista
+            for (Coronel Coronel : listaCoronel) {
+
+                System.out.println(listaCoronel.size());
+                //Condicion para verificar si el Coronel existe comparando con los datos ingresados
+                if(buscador.equals(Coronel.id)){
+                    
+                    
+                    //Si se cumple muestra lo siguiente
+                    textNombreMostrarCoronel.setText(Coronel.nombre);
+                    textIDMostrarCoronel.setText(Coronel.id);
+                    textNivelMostrarCoronel.setText(Coronel.nivel);
+                    textAccionMostrarCoronel.setText(accionCoronel.get(contador));
+                    areaMisionMostrarCoronel.setText(Coronel.mision);
+                    areaReporteMostrarCoronel.setText(Coronel.reporte);
+                    textMostrarMando.setText(Coronel.cantidadSoldadosBajoSuMnado);
+
+                    System.out.println("x");
+
+                    //Si el Coronel fue encontrado la varieable se actualiza
+                    encontrado = true;
+                    break;
+                }else{
+                    contador ++;
+                }
+            }
+            
+            //Si el Coronel no fue encontrado se muestra este mensaje
+            if (encontrado == false) {
+                JOptionPane.showMessageDialog(null, "No se encontró el Coronel", "Información Coronel", JOptionPane.ERROR_MESSAGE);
+            }
+    }
+    
+
 
     /**
      * @param args the command line arguments

@@ -11,7 +11,7 @@ public class Coronel extends Rango implements OperacionesMilitares {
 
     String mision;
     String reporte;
-    String estrategia;
+    String cantidadSoldadosBajoSuMnado;
 
     static ArrayList<Coronel> listaCoronel = new ArrayList<>();
     static List<String> accionCoronel = new ArrayList<>();
@@ -22,11 +22,11 @@ public class Coronel extends Rango implements OperacionesMilitares {
     // CONSTRUCTOR//
     ///////////////
 
-    public Coronel(String estrategia,String nivel, String nombre, String id, String rango,String mision,String reporte) {
+    public Coronel(String cantidadSoldadosBajoSuMnado,String nivel, String nombre, String id, String rango,String mision,String reporte) {
             super(nivel, nombre, id, rango);
             this.mision = mision;
             this.reporte = reporte;
-            this.estrategia = estrategia;
+            this.cantidadSoldadosBajoSuMnado = cantidadSoldadosBajoSuMnado;
     }    
 
     public Coronel() { // constructor vacio necesario para crear objetos de la clase
@@ -83,11 +83,11 @@ public class Coronel extends Rango implements OperacionesMilitares {
         //Reportamos el estado del soldado
         reporte = JOptionPane.showInputDialog(null, "Ingrese el reporte del soldado", "Reportar Estado", JOptionPane.QUESTION_MESSAGE);
         
-        estrategia = JOptionPane.showInputDialog(null, "Ingrese la cantidad de soldados bajo su mando: ","Crear Coronel ", JOptionPane.QUESTION_MESSAGE);
+        cantidadSoldadosBajoSuMnado = JOptionPane.showInputDialog(null, "Ingrese la cantidad de soldados bajo su mando: ","Crear Coronel ", JOptionPane.QUESTION_MESSAGE);
 
         realizarAccion();
 
-        Coronel nuevoCoronel = new Coronel(estrategia, nivel, nombre, id, rango,mision,reporte);
+        Coronel nuevoCoronel = new Coronel(cantidadSoldadosBajoSuMnado, nivel, nombre, id, rango,mision,reporte);
 
         // Verificacion si el ID existe en la lista
         if (!idExisteEnLista(listaCoronel, id)) {
@@ -135,7 +135,7 @@ public class Coronel extends Rango implements OperacionesMilitares {
                                 "Nivel: " + soldado.nivel + "\n" +
                                 "Mision: " + soldado.mision  + "\n" +
                                 "Reporte: " + soldado.reporte + "\n" +
-                                "estrategiaes del Coronel: " + soldado.estrategia + "\n",
+                                "cantidadSoldadosBajoSuMnadoes del Coronel: " + soldado.cantidadSoldadosBajoSuMnado + "\n",
                         "Información Coronel ", JOptionPane.INFORMATION_MESSAGE);
                         JOptionPane.showMessageDialog(null, "Acción: " + accionCoronel.get(contador), "Información Coronel", JOptionPane.INFORMATION_MESSAGE);
                 System.out.println("x");
@@ -185,7 +185,7 @@ public class Coronel extends Rango implements OperacionesMilitares {
                 JOptionPane.showMessageDialog(null, "Soldado encontrado", "Modificar Coronel ",JOptionPane.INFORMATION_MESSAGE);
                 soldado.nivel = JOptionPane.showInputDialog(null, "Ingrese el nuevo nivel del Coronel: ","Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
                 soldado.nombre = JOptionPane.showInputDialog(null, "Ingrese el nuevo nombre del Coronel: ","Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
-                soldado.estrategia = JOptionPane.showInputDialog(null, "Ingrese la nueva cantidad: ","Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
+                soldado.cantidadSoldadosBajoSuMnado = JOptionPane.showInputDialog(null, "Ingrese la nueva cantidad: ","Modificar Nombre Coronel ", JOptionPane.QUESTION_MESSAGE);
 
                 // do while para evitar ids repetidos
                 do {
@@ -210,7 +210,7 @@ public class Coronel extends Rango implements OperacionesMilitares {
                  "Rango: " + soldado.rango + "\n" + 
                  "Nivel: " + soldado.nivel + "\n" +
                  "Mision: " + soldado.mision  + "\n" +
-                 "Estrategia: " + soldado.mision  + "\n" +
+                 "cantidadSoldadosBajoSuMnado: " + soldado.mision  + "\n" +
                  "Reporte: " + soldado.reporte, "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
                  System.out.println("FUNCIONA");
                  

@@ -4,6 +4,11 @@
  */
 //package com.mycompany.project;
 
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author josue
@@ -114,6 +119,11 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
         botonNextTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonNextTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonNextTeniente.setText("Next");
+        botonNextTeniente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonNextTenienteActionPerformed(evt);
+            }
+        });
 
         
 
@@ -226,6 +236,55 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
     private void textNombreCrearTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearTenienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearTenienteActionPerformed
+
+     public static boolean idExisteEnLista(ArrayList<Teniente> lista, String id) {
+        
+        //Recorre la lista<Teniente> verificando si el id ya existe
+        for (Teniente soldado : lista) {
+            if (soldado.id.equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void botonNextTenienteActionPerformed(ActionEvent evt) {
+       String rango = "1";
+        String nombre= textNombreCrearTeniente.getText();
+        String id =textIDCrearTeniente.getText();
+        String nivel =  textNivelCrearTeniente.getText();
+        String mision = areaMisionCrearTeniente.getText();
+        String reporte = areaReporteCrearTeniente.getText();
+        
+        String accion= textAccionCrearTeniente.getText();
+        String unidad= textUnidades.getText();
+
+        Teniente nuevoTeniente = new Teniente(unidad, nivel, nombre, id, rango,mision,reporte);
+
+        if(!idExisteEnLista(listaTeniente, id)){       
+            
+            if (nombre.equals("") || id.equals("")||nivel.equals("") || accion.equals("") || mision.equals("") || reporte.equals("")) {
+                JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
+            } else {
+                listaTeniente.add(nuevoTeniente);
+                accionTeniente.add(accion); //Se cumple la condicion se agrega el soldado
+                JOptionPane.showMessageDialog(null, "Soldado Raso creado exitosamente");
+                // Limpiar campos
+                textNombreCrearTeniente.setText("");
+                textIDCrearTeniente.setText("");
+                textNivelCrearTeniente.setText("");
+                textAccionCrearTeniente.setText("");
+                areaMisionCrearTeniente.setText("");
+                areaReporteCrearTeniente.setText("");
+                textUnidades.setText("");
+            }
+
+        }else{
+            JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
+        }
+       
+    }
+
 
     private void botonResetTenienteActionPerformed(java.awt.event.ActionEvent evt) {
 

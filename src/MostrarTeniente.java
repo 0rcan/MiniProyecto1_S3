@@ -2,13 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.project;
+//package com.mycompany.project;
+
+import java.awt.event.ActionEvent;
+
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author josue
  */
-public class MostrarTeniente extends javax.swing.JFrame {
+public class MostrarTeniente extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
 
     /**
      * Creates new form MostrarTeniente
@@ -35,12 +39,12 @@ public class MostrarTeniente extends javax.swing.JFrame {
         textNivelMostrarTeniente = new javax.swing.JTextField();
         labelReporteMostrarTeniente = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        areaMisionCrearTeniente = new javax.swing.JTextArea();
+        areaMisionMostrarTeniente = new javax.swing.JTextArea();
         labelMisionMostrarTeniente = new javax.swing.JLabel();
         labelAccionMostrarTeniente = new javax.swing.JLabel();
         textAccionMostrarTeniente = new javax.swing.JTextField();
         panelMostrarTeniente2 = new javax.swing.JPanel();
-        labelMostrarSoldado = new javax.swing.JLabel();
+        labelMostrarTeniente = new javax.swing.JLabel();
         labelMostrarUnidades = new javax.swing.JLabel();
         textMostrarUnidades = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -78,10 +82,10 @@ public class MostrarTeniente extends javax.swing.JFrame {
         labelReporteMostrarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         labelReporteMostrarTeniente.setText("Reporte");
 
-        areaMisionCrearTeniente.setEditable(false);
-        areaMisionCrearTeniente.setColumns(20);
-        areaMisionCrearTeniente.setRows(5);
-        jScrollPane1.setViewportView(areaMisionCrearTeniente);
+        areaMisionMostrarTeniente.setEditable(false);
+        areaMisionMostrarTeniente.setColumns(20);
+        areaMisionMostrarTeniente.setRows(5);
+        jScrollPane1.setViewportView(areaMisionMostrarTeniente);
 
         labelMisionMostrarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         labelMisionMostrarTeniente.setText("Misión");
@@ -93,11 +97,11 @@ public class MostrarTeniente extends javax.swing.JFrame {
 
         panelMostrarTeniente2.setBackground(new java.awt.Color(0, 153, 153));
 
-        labelMostrarSoldado.setBackground(new java.awt.Color(0, 153, 153));
-        labelMostrarSoldado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        labelMostrarSoldado.setForeground(new java.awt.Color(255, 255, 255));
-        labelMostrarSoldado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelMostrarSoldado.setText("Modificar Teniente");
+        labelMostrarTeniente.setBackground(new java.awt.Color(0, 153, 153));
+        labelMostrarTeniente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        labelMostrarTeniente.setForeground(new java.awt.Color(255, 255, 255));
+        labelMostrarTeniente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelMostrarTeniente.setText("Mostrar Teniente");
 
         javax.swing.GroupLayout panelMostrarTeniente2Layout = new javax.swing.GroupLayout(panelMostrarTeniente2);
         panelMostrarTeniente2.setLayout(panelMostrarTeniente2Layout);
@@ -105,13 +109,13 @@ public class MostrarTeniente extends javax.swing.JFrame {
             panelMostrarTeniente2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMostrarTeniente2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelMostrarSoldado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelMostrarTeniente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelMostrarTeniente2Layout.setVerticalGroup(
             panelMostrarTeniente2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMostrarTeniente2Layout.createSequentialGroup()
-                .addComponent(labelMostrarSoldado, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelMostrarTeniente, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -128,10 +132,22 @@ public class MostrarTeniente extends javax.swing.JFrame {
         botonMostrarTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonMostrarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonMostrarTeniente.setText("Mostrar");
+        botonMostrarTeniente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonMostrarTenienteActionPerformed(evt);
+            }
+        });
+
 
         botonResetMostrarTeniente.setBackground(new java.awt.Color(0, 153, 153));
         botonResetMostrarTeniente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetMostrarTeniente.setText("Reset");
+        botonResetMostrarTeniente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetMostrarTenienteActionPerformed(evt);
+            }
+        });
+
 
         javax.swing.GroupLayout panelMostrarTenienteLayout = new javax.swing.GroupLayout(panelMostrarTeniente);
         panelMostrarTeniente.setLayout(panelMostrarTenienteLayout);
@@ -213,12 +229,6 @@ public class MostrarTeniente extends javax.swing.JFrame {
 
         panelBuscadorTeniente.setBackground(new java.awt.Color(0, 153, 153));
 
-        textBuscadorTeniente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textBuscadorTenienteActionPerformed(evt);
-            }
-        });
-
         textBuscarTeniente.setForeground(new java.awt.Color(255, 255, 255));
         textBuscarTeniente.setText("Buscar ID");
 
@@ -265,9 +275,66 @@ public class MostrarTeniente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreMostrarTenienteActionPerformed
 
-    private void textBuscadorTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorTenienteActionPerformed
-        // TODO add your handling code here:
+    private void botonResetMostrarTenienteActionPerformed(ActionEvent evt) {
+        textNombreMostrarTeniente.setText("");
+        textIDMostrarTeniente.setText("");
+        textNivelMostrarTeniente.setText("");
+        textAccionMostrarTeniente.setText("");
+        areaMisionMostrarTeniente.setText("");
+        areaReporteMostrarTeniente1.setText("");
+        textMostrarUnidades.setText("");
+    }
+    
+    private void botonMostrarTenienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorTenienteActionPerformed
+        String buscador;
+
+        buscador=textBuscadorTeniente.getText();
+
+        System.out.println(buscador);
+
+        textBuscadorTeniente.setText("");
+
+        //////////////////////
+        //MOSTRARINFORMACION//
+        //////////////////////
+
+            Boolean encontrado = false;
+            int contador = 0;
+            //Siclo para recorrer la lista
+            for (Teniente Teniente : listaTeniente) {
+
+                System.out.println(listaTeniente.size());
+                //Condicion para verificar si el Teniente existe comparando con los datos ingresados
+                if(buscador.equals(Teniente.id)){
+                    
+                    
+                    //Si se cumple muestra lo siguiente
+                    textNombreMostrarTeniente.setText(Teniente.nombre);
+                    textIDMostrarTeniente.setText(Teniente.id);
+                    textNivelMostrarTeniente.setText(Teniente.nivel);
+                    textAccionMostrarTeniente.setText(accionTeniente.get(contador));
+                    areaMisionMostrarTeniente.setText(Teniente.mision);
+                    areaReporteMostrarTeniente1.setText(Teniente.reporte);
+                    textMostrarUnidades.setText(Teniente.reporte);
+
+                    System.out.println("x");
+
+                    //Si el Teniente fue encontrado la varieable se actualiza
+                    encontrado = true;
+                    break;
+                }else{
+                    contador ++;
+                }
+            }
+            
+            //Si el Teniente no fue encontrado se muestra este mensaje
+            if (encontrado == false) {
+                JOptionPane.showMessageDialog(null, "No se encontró el Teniente", "Información Teniente", JOptionPane.ERROR_MESSAGE);
+            }
+
     }//GEN-LAST:event_textBuscadorTenienteActionPerformed
+
+
 
     /**
      * @param args the command line arguments
@@ -305,7 +372,7 @@ public class MostrarTeniente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea areaMisionCrearTeniente;
+    private javax.swing.JTextArea areaMisionMostrarTeniente;
     private javax.swing.JTextArea areaReporteMostrarTeniente1;
     private javax.swing.JButton botonMostrarTeniente;
     private javax.swing.JButton botonResetMostrarTeniente;
@@ -314,7 +381,7 @@ public class MostrarTeniente extends javax.swing.JFrame {
     private javax.swing.JLabel labelAccionMostrarTeniente;
     private javax.swing.JLabel labelIDMostrarTeniente;
     private javax.swing.JLabel labelMisionMostrarTeniente;
-    private javax.swing.JLabel labelMostrarSoldado;
+    private javax.swing.JLabel labelMostrarTeniente;
     private javax.swing.JLabel labelMostrarUnidades;
     private javax.swing.JLabel labelNameMostrarTeniente;
     private javax.swing.JLabel labelNivelMostrarTeniente;
@@ -330,4 +397,33 @@ public class MostrarTeniente extends javax.swing.JFrame {
     private javax.swing.JTextField textNivelMostrarTeniente;
     private javax.swing.JTextField textNombreMostrarTeniente;
     // End of variables declaration//GEN-END:variables
+    @Override
+    public void crearSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'crearSoldado'");
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
+    }
+
+    @Override
+    public void modificarSoldado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
+    }
+
+    @Override
+    public void asignarMision(String mision) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'asignarMision'");
+    }
+
+    @Override
+    public void reportarEstado() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
+    }
 }
