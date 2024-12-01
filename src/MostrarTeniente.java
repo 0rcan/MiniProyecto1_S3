@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-//package com.mycompany.project;
+package com.mycompany.project;
 
 /**
  *
  * @author josue
  */
-public class MostrarTeniente extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
+public class MostrarTeniente extends javax.swing.JFrame {
 
     /**
      * Creates new form MostrarTeniente
@@ -330,33 +330,4 @@ public class MostrarTeniente extends javax.swing.JFrame implements ActionListene
     private javax.swing.JTextField textNivelMostrarTeniente;
     private javax.swing.JTextField textNombreMostrarTeniente;
     // End of variables declaration//GEN-END:variables
-    @Override
-    public void crearSoldado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'crearSoldado'");
-    }
-
-    @Override
-    public void mostrarInformacion() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarInformacion'");
-    }
-
-    @Override
-    public void modificarSoldado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'modificarSoldado'");
-    }
-
-    @Override
-    public void asignarMision(String mision) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'asignarMision'");
-    }
-
-    @Override
-    public void reportarEstado() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'reportarEstado'");
-    }
 }
