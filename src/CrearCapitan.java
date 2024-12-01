@@ -279,7 +279,7 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
                 
                 listaCapitan.add(nuevoCapitan);
                 accionCapitan.add(accion); //Se cumple la condicion se agrega el soldado
-                JOptionPane.showMessageDialog(null, "Soldado Raso creado exitosamente");
+                JOptionPane.showMessageDialog(null, "Capitan creado exitosamente");
                 // Limpiar campos
                 textNombreCrearCapitan.setText("");
                 textIDCrearCapitan.setText("");
