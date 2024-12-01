@@ -4,6 +4,11 @@
  */
 //package com.mycompany.project;
 
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author josue
@@ -120,6 +125,11 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
         botonCapitan.setBackground(new java.awt.Color(0, 153, 153));
         botonCapitan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonCapitan.setText("Next");
+        botonCapitan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCapitanActionPerformed(evt);
+            }
+        });
 
         botonResetCapitan1.setBackground(new java.awt.Color(0, 153, 153));
         botonResetCapitan1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -234,6 +244,57 @@ public class CrearCapitan extends javax.swing.JFrame implements ActionListener, 
     private void textNombreCrearCapitanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreCrearCapitanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreCrearCapitanActionPerformed
+
+
+    public static boolean idExisteEnLista(ArrayList<Capitan> lista, String id) {
+        
+        //Recorre la lista<Capitan> verificando si el id ya existe
+        for (Capitan soldado : lista) {
+            if (soldado.id.equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void botonCapitanActionPerformed(ActionEvent evt) {
+
+        String rango = "3";
+        String nombre= textNombreCrearCapitan.getText();
+        String id = textIDCrearCapitan.getText();
+        String nivel =  textNivelCrearCapitan.getText();
+        String mision = areaMisionCrearCapitan.getText();
+        String reporte = areaReporteCrearCapitan.getText();
+
+        String accion= textAccionCrearCapitan.getText();
+        String estrategia = areaEstrategiaCrearCapitan.getText();
+
+        Capitan nuevoCapitan = new Capitan(estrategia, nivel, nombre, id, rango,mision,reporte);
+
+        if(!idExisteEnLista(listaCapitan, id)){
+                    
+            if (nombre.equals("") || id.equals("")||nivel.equals("") || accion.equals("") || mision.equals("") || reporte.equals("")) {
+                JOptionPane.showMessageDialog(null, "Por favor llene todos los campos");
+            } else {
+                
+                listaCapitan.add(nuevoCapitan);
+                accionCapitan.add(accion); //Se cumple la condicion se agrega el soldado
+                JOptionPane.showMessageDialog(null, "Soldado Raso creado exitosamente");
+                // Limpiar campos
+                textNombreCrearCapitan.setText("");
+                textIDCrearCapitan.setText("");
+                textNivelCrearCapitan.setText("");
+                textAccionCrearCapitan.setText("");
+                areaMisionCrearCapitan.setText("");
+                areaReporteCrearCapitan.setText("");
+                areaEstrategiaCrearCapitan.setText("");
+            }
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "El ID ya existe", "Crear Soldado", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }
 
     private void botonResetCapitan1ActionPerformed(java.awt.event.ActionEvent evt) {
         textNombreCrearCapitan.setText("");

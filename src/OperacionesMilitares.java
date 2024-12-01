@@ -18,7 +18,7 @@ public interface OperacionesMilitares {
      // static List<String> misionCoronel = new ArrayList<>();
      // static List<String> reportarCoronel = new ArrayList<>();
 
-     static ArrayList<Coronel> listaCapitan = new ArrayList<>();
+     static ArrayList<Capitan> listaCapitan = new ArrayList<>();
      static List<String> accionCapitan = new ArrayList<>();
      // static List<String> misionCapitan = new ArrayList<>();
      // static List<String> reportarCapitan = new ArrayList<>();

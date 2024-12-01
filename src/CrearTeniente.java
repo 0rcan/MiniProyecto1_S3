@@ -249,7 +249,7 @@ public class CrearTeniente extends javax.swing.JFrame implements ActionListener,
     }
 
     private void botonNextTenienteActionPerformed(ActionEvent evt) {
-       String rango = "1";
+       String rango = "2";
         String nombre= textNombreCrearTeniente.getText();
         String id =textIDCrearTeniente.getText();
         String nivel =  textNivelCrearTeniente.getText();

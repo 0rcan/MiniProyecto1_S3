@@ -246,7 +246,7 @@ public class CrearCoronel extends javax.swing.JFrame implements ActionListener, 
     }
 
     private void botonCoronelActionPerformed(ActionEvent evt) {
-        String rango = "1";
+        String rango = "4";
         String nombre= textNombreCrearCoronel.getText();
         String id =textIDCrearCoronel.getText();
         String nivel =  textNivelCrearCoronel.getText();
