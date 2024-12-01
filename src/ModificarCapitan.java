@@ -386,7 +386,7 @@ public class ModificarCapitan extends javax.swing.JFrame implements ActionListen
 
                 listaCapitan.remove(Capitan);
                 accionCapitan.remove(contador);
-
+                JOptionPane.showMessageDialog(null, "Soldado Eliminado Con Exito");
             }else{
                 contador ++;
 

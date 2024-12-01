@@ -381,7 +381,7 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
 
                 listaCoronel.remove(Coronel);
                 accionCoronel.remove(contador);
-
+                JOptionPane.showMessageDialog(null, "Soldado Eliminado Con Exito");
             }else{
                 contador ++;
 

@@ -367,7 +367,7 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
 
                 listaSoldadoRaso.remove(soldado);
                 accionSoldadoRaso.remove(contador);
-
+                JOptionPane.showMessageDialog(null, "Soldado Eliminado Con Exito");
             }else{
                 contador ++;
 

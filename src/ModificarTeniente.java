@@ -365,7 +365,7 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
 
                 listaTeniente.remove(Teniente);
                 accionTeniente.remove(contador);
-
+                JOptionPane.showMessageDialog(null, "Soldado Eliminado Con Exito");
             }else{
                 contador ++;
 
