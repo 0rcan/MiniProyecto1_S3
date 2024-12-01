@@ -4,6 +4,8 @@
  */
 //package com.mycompany.project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author josue
@@ -25,7 +27,7 @@ public class ModificarTeniente extends javax.swing.JFrame implements ActionListe
     //@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        JOptionPane.showMessageDialog(null,"Use enter en el buscador para realizar su busqueda");
         panelBuscadorModificarTeniente = new javax.swing.JPanel();
         textBuscadorModificarTeniente = new javax.swing.JTextField();
         textBuscarModificarTeniente = new javax.swing.JLabel();

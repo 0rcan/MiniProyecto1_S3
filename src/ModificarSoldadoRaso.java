@@ -4,6 +4,10 @@
  */
 //package com.mycompany.project;
 
+import java.awt.event.ActionEvent;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author josue
@@ -25,7 +29,7 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
     //@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        JOptionPane.showMessageDialog(null,"Use enter en el buscador para realizar su busqueda");
         panelModificarSoldado = new javax.swing.JPanel();
         labelNameModificarSoldado = new javax.swing.JLabel();
         textNombreModificarSoldado1 = new javax.swing.JTextField();
@@ -107,11 +111,21 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
 
         botonModificarSoldado.setBackground(new java.awt.Color(0, 153, 153));
         botonModificarSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        botonModificarSoldado.setText("Next");
+        botonModificarSoldado.setText("Modificar");
+        botonModificarSoldado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarSoldadoActionPerformed(evt);
+            }
+        });
 
         botonResetrSoldado.setBackground(new java.awt.Color(0, 153, 153));
         botonResetrSoldado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         botonResetrSoldado.setText("Reset");
+        botonResetrSoldado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonResetrSoldadoActionPerformed(evt);
+                            }
+        });
 
         botonEliminarSoldadoRaso.setBackground(new java.awt.Color(0, 153, 153));
         botonEliminarSoldadoRaso.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -245,14 +259,132 @@ public class ModificarSoldadoRaso extends javax.swing.JFrame implements ActionLi
         // TODO add your handling code here:
     }//GEN-LAST:event_textNombreModificarSoldado1ActionPerformed
 
+
+    
+    
     private void textBuscadorModificarSoldadoRasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorModificarSoldadoRasoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textBuscadorModificarSoldadoRasoActionPerformed
+        
+        int contador = 0;
+        boolean encontrado = false;
+        String buscador;
+        buscador=textBuscadorModificarSoldadoRaso.getText();
+
+        for (SoldadoRaso soldado : listaSoldadoRaso) {
+
+            if(buscador.equals(soldado.id)){
+
+                textNombreModificarSoldado1.setText(soldado.nombre);
+                textNivelModificarSoldado.setText(soldado.nivel);
+                areaMisionModificarSoldado.setText(soldado.mision);
+                areaReporteModificarSoldado1.setText(soldado.reporte);;
+                textAccionModificarSoldado.setText(accionSoldadoRaso.get(contador));
+
+                encontrado = true;
+            }else{
+                contador ++;
+
+            }
+        }
+        if(encontrado == false){
+            JOptionPane.showMessageDialog(null, "No se encontró el soldado", "Información Soldado", JOptionPane.ERROR_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "Soldado encontrado"+ "\n" + "Rellene los campos", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private void botonModificarSoldadoActionPerformed(ActionEvent evt) {
+        ////////////////////
+        //MODIFICARSOLDADO//
+        ////////////////////
+
+        //Variable para verificar si el soldado fue encontrado
+            
+        //Dato que se compararan con la lista 
+        String buscador;
+        buscador=textBuscadorModificarSoldadoRaso.getText();
+
+        int contador = 0;
+        //Siclo para recorrer la lista
+        //Si el soldado no fue encontrado se muestra este mensaje
+
+        for (SoldadoRaso soldado : listaSoldadoRaso) {
+
+            //Condicion para verificar si el soldado existe comparando con los datos ingresados
+            if(buscador.equals(soldado.id)){
+                    
+                textBuscadorModificarSoldadoRaso.setText("");
+                
+                //Remplazo de datos
+                
+                soldado.nombre = textNombreModificarSoldado1.getText();
+                soldado.nivel=textNivelModificarSoldado.getText();
+
+                    //do while para evitar ids repetidos
+                    do {
+                    
+                    //Remplazamos el elemento de la posicion contador con su nueva mision,reprote y accion
+                    soldado.mision = areaMisionModificarSoldado.getText();
+                    //misionSoldadoRaso.set(contador,mision);
+                    soldado.reporte = areaReporteModificarSoldado1.getText();
+                    //reportarSoldadoRaso.set(contador,reporte);
+                    String accion = textAccionModificarSoldado.getText();
+                    accionSoldadoRaso.set(contador,accion);
+
+                    JOptionPane.showMessageDialog(null, "Soldado Actualizado Con éxito", "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    //Mostrar la informacion del soldado actualizada
+                    JOptionPane.showMessageDialog(null, 
+                    "Nombre: " + soldado.nombre + "\n" +
+                    "ID: " + soldado.id + "\n" +
+                    "Rango: " + soldado.rango + "\n" + 
+                    "Nivel: " + soldado.nivel + "\n" +
+                    "Mision: " + soldado.mision  + "\n" +
+                    "Reporte: " + soldado.reporte, "Modificar Soldado", JOptionPane.INFORMATION_MESSAGE);
+                    System.out.println("FUNCIONA");
+                    
+                    
+                    JOptionPane.showMessageDialog(null, "Acción: " + accionSoldadoRaso.get(contador), "Información Soldado", JOptionPane.INFORMATION_MESSAGE);
+
+                    //Fin del siclo for
+                    break;
+                }while (true);{
+                    contador++;//incrementamos el contador para que este en el mismo indice que el soldado
+                }
+            }
+        }
+
+    }
 
     private void botonEliminarSoldadoRasoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarSoldadoRasoActionPerformed
-        // TODO add your handling code here:
+        
+        int contador = 0;
+        String buscador;
+        buscador=textBuscadorModificarSoldadoRaso.getText();
+
+        for (SoldadoRaso soldado : listaSoldadoRaso) {
+
+            if(buscador.equals(soldado.id)){
+
+                listaSoldadoRaso.remove(soldado);
+                accionSoldadoRaso.remove(contador);
+
+            }else{
+                contador ++;
+
+            }
+        }
     }//GEN-LAST:event_botonEliminarSoldadoRasoActionPerformed
 
+    private void botonResetrSoldadoActionPerformed(ActionEvent evt) {
+
+        textBuscadorModificarSoldadoRaso.setText("");
+        textNombreModificarSoldado1.setText("");
+        textNivelModificarSoldado.setText("");
+        textAccionModificarSoldado.setText("");
+        areaMisionModificarSoldado.setText("");
+        areaReporteModificarSoldado1.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */

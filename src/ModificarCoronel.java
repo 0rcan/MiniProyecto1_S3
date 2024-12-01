@@ -4,6 +4,8 @@
  */
 //package com.mycompany.project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author josue
@@ -25,8 +27,7 @@ public class ModificarCoronel extends javax.swing.JFrame implements ActionListen
     //@SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
-        
+        JOptionPane.showMessageDialog(null,"Use enter en el buscador para realizar su busqueda");
         panelBuscadorModificarCoronel = new javax.swing.JPanel();
         textBuscarModificarCoronel = new javax.swing.JLabel();
         textBuscadorModificarCoronel = new javax.swing.JTextField();
