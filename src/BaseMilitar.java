@@ -9,7 +9,7 @@
  * @author josue
  */
 public class BaseMilitar extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form pp
      */
