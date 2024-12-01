@@ -11,6 +11,8 @@ import java.awt.event.ItemListener;
 
 import javax.swing.ButtonGroup;
 
+//import com.mycompany.project.MostrarTeniente;
+
 /**
  *
  * @author josue
@@ -104,16 +106,18 @@ public class MenuRangosMostrar extends javax.swing.JFrame implements ActionListe
                     MostrarSoldadoRaso mostrar = new MostrarSoldadoRaso();
                     mostrar.setVisible(true);
                         
-                } else if (radioCapitanMostrar.isSelected()) {
+                } 
+                else if (radioTenienteMostrar.isSelected()) {
+                    MostrarTeniente mostrar = new MostrarTeniente();
+                    mostrar.setVisible(true);
+                }
+                else if (radioCapitanMostrar.isSelected()) {
                     MostrarCapitan mostrar = new MostrarCapitan();
                     mostrar.setVisible(true);    
                 } else if (radioCoronelMostrar.isSelected()) {
                     MostrarCoronel mostrar= new MostrarCoronel();
                     mostrar.setVisible(true);
-                } else if (radioTenienteMostrar.isSelected()) {
-                    MostrarTeniente mostrar = new MostrarTeniente();
-                    mostrar.setVisible(true);
-                }
+                } 
             }
                 
             

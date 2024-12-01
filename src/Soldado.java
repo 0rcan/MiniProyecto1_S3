@@ -1,4 +1,5 @@
 
+
 import javax.swing.JOptionPane;
 public class Soldado{ //Clase Principal Soldado 
     

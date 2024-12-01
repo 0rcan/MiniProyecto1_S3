@@ -1,5 +1,7 @@
 [ INTEGRANTES ]
 
+[[Nota] Ejecutar desde el BaseMilitar.java]
+
 -Josue Jacinto Zambrano Loaiza 2380741 
 -Diego Andres Bolaños 2379918 
 -Jesus Alberto Tunubala 2379924
