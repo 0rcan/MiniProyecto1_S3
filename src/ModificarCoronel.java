@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author josue
  */
-public class ModificarCoronel extends javax.swing.JFrame {
+public class ModificarCoronel extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
 
     /**
      * Creates new form crearCoronel

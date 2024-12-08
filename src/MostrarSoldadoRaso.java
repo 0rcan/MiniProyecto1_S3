@@ -15,24 +15,7 @@ import javax.swing.JOptionPane;
  * @author josue
  */
 public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
-    private int index;
-    static ArrayList<SoldadoRaso> listaSoldadoRaso = new ArrayList<>();
 
-    public MostrarSoldadoRaso(SoldadoRaso soldado, int index) {
-        initComponents();
-        this.index = index;
-        llenarDatos(soldado);
-    }
-
-    private void llenarDatos(SoldadoRaso soldado) {
-        textNombreMostrarSoldado.setText(soldado.getNombre());
-        textIDMostrarSoldado.setText(soldado.getId());
-        textNivelMostrarSoldado.setText(String.valueOf(soldado.getNivel()));
-        textAccionMostrarSoldado.setText(soldado.getAccion());
-        areaMisionCrearSoldado.setText(soldado.getMision());
-        areaReporteMostrarSoldado.setText(soldado.getReporte());
-    }
-    
     /**
      * Creates new form MostrarSoldadoRaso
      */
@@ -282,9 +265,6 @@ public class MostrarSoldadoRaso extends javax.swing.JFrame implements ActionList
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  
-
-    
 
     private void textNombreMostrarSoldadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreMostrarSoldadoActionPerformed
         // TODO add your handling code here:

@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author josue
  */
-public class ModificarCapitan extends javax.swing.JFrame {
+public class ModificarCapitan extends javax.swing.JFrame implements ActionListener, ItemListener, OperacionesMilitares{
 
     /**
      * Creates new form crearCapitan
@@ -56,7 +56,7 @@ public class ModificarCapitan extends javax.swing.JFrame {
         textBuscarModificarCapitan = new javax.swing.JLabel();
         textBuscadorModificarCapitan = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         panelModificarCapitan.setBackground(new java.awt.Color(19, 71, 89));
 
