@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-import controlador.OperacionesMilitares;
+import modelo.OperacionesMilitares;
 
 public class SoldadoRaso extends Rango implements OperacionesMilitares {
 

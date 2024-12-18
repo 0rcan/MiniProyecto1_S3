@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import controlador.OperacionesMilitares;
+import modelo.OperacionesMilitares;
 
 public class Teniente extends Rango implements OperacionesMilitares {
 

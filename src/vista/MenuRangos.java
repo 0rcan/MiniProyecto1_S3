@@ -12,6 +12,11 @@ import java.awt.event.ItemListener;
 
 import javax.swing.ButtonGroup;
 
+import controlador.CrearCapitan;
+import controlador.CrearCoronel;
+import controlador.CrearSoldadoRaso;
+import controlador.CrearTeniente;
+
 /**
  *
  * @author josue

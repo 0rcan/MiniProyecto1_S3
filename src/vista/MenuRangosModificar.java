@@ -7,7 +7,11 @@ package vista;
 
 import javax.swing.ButtonGroup;
 
-import controlador.OperacionesMilitares;
+import controlador.ModificarCapitan;
+import controlador.ModificarCoronel;
+import controlador.ModificarSoldadoRaso;
+import controlador.ModificarTeniente;
+import modelo.OperacionesMilitares;
 
 /**
  *

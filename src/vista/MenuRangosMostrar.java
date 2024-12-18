@@ -12,7 +12,11 @@ import java.awt.event.ItemListener;
 
 import javax.swing.ButtonGroup;
 
-import controlador.OperacionesMilitares;
+import controlador.MostrarCapitan;
+import controlador.MostrarCoronel;
+import controlador.MostrarSoldadoRaso;
+import controlador.MostrarTeniente;
+import modelo.OperacionesMilitares;
 
 //import com.mycompany.project.MostrarTeniente;
 
